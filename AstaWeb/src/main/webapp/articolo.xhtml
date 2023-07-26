@@ -1,0 +1,69 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:h="http://java.sun.com/jsf/html">
+
+
+
+	<p:panelGrid columns="1" styleClass="showcase-text-align-center"
+		layout="grid" rendered="#{userBean.showArticolo==true}">
+		<h:outputLabel for="art" value="NOME PRODOTTO:" />
+		<p:inputText id="art" value="#{articoloBean.articolo.nome_articolo}">
+		</p:inputText>
+		<h:outputLabel for="desc" value="desc:" />
+		<p:inputText id="desc" value="#{articoloBean.articolo.desc}">
+		</p:inputText>
+
+
+		<h2>Crea un tag per questo articolo</h2>
+		<h:outputLabel for="tagg" value="NOME TAG" />
+		<p:inputText id="tagg" value="#{articoloBean.tag.descrizioneTag}">
+		</p:inputText>
+		<p:commandButton value="crea questo tag"
+			action="#{articoloBean.creaUnTag()}" />
+		<h2>Oppure usa i Tag gia esistenti</h2>
+		<div class="card">
+			<h:form>
+				<p:selectManyButton value="#{articoloBean.listaDeiTagArticolo}">
+					<f:selectItems value="#{articoloBean.listaDiTuttiITag}" var="tag"
+						itemLabel="#{tag.descrizioneTag}" itemValue="#{tag}" />
+
+				</p:selectManyButton>
+			</h:form>
+		</div>
+		<p:commandButton value="Inserisci l articolo dopo aver creato il tag"
+			onclick="PF('dlg2').show();" action="#{userBean.creaArticoloo()}">
+		</p:commandButton>
+		<p:commandButton value="crea un asta" update="app" immediate="true"
+			ajax="false" action="#{userBean.vediAsta()}">
+		</p:commandButton>
+		<p:commandButton value="Vedi tutte le aste" update="app"
+			immediate="true" ajax="false" action="#{userBean.vediTutteAste()}">
+		</p:commandButton>
+		<p:commandButton value="Vai alla Home" update="app" immediate="true"
+			ajax="false" action="#{userBean.vaiAllaHome()}">
+		</p:commandButton>
+		<p:outputPanel>
+			<div class="product card">
+				<h5>Lista Di Tutti i tuoi prodotti</h5>
+				<p:dataList value="#{userBean.listaDegliArticoli}" var="product"
+					type="ordered">
+					<div class="product-list-item">
+						<div class="product-list-detail">
+							<p>Nome del prodotto::</p>
+							<div class="product-name">#{product.nome_articolo}</div>
+							<p>Descrizione del prodotto::</p>
+							<div class="product-description">#{product.desc}</div>
+						</div>
+					</div>
+				</p:dataList>
+			</div>
+		</p:outputPanel>
+		<p:dialog header="Effects" widgetVar="dlg2" showEffect="explode"
+			hideEffect="bounce" height="100">
+			<h:outputText value="Articolo inserito con successo" />
+		</p:dialog>
+	</p:panelGrid>
+</ui:composition>

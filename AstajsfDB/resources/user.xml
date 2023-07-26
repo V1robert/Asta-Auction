@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<mapper namespace="mapping.UserMapping">
+
+	<insert id="insert" parameterType="models.Utente" useGeneratedKeys="true" keyProperty="idUtente" keyColumn="IDUTENTE">
+		INSERT INTO utente (NOME,COGNOME,EMAIL,PASS,CF,SOLDI)
+		VALUES(
+			#{nome},
+			#{cognome},
+			#{email},
+			#{pass},
+			#{cf},
+			#{soldi}
+		)
+	</insert>
+	
+	
+		
+	<select id="findByEmailPass" resultMap="userMap"	parameterType="models.Utente">
+
+		SELECT 
+		us.ID,
+		us.NOME,
+		us.COGNOME,
+		us.EMAIL,
+		us.PASS,
+		us.CF,
+		us.SOLDI
+		
+		
+		FROM utente as us
+		WHERE us.EMAIL = #{email} AND us.PASS = #{pass}
+
+	</select>
+
+	<update id="update"
+		parameterType="models.Utente">
+
+		UPDATE utente SET
+			EMAIL=#{email},
+			PASS=#{pass}
+		WHERE IDUTENTE = #{idUtente}
+	</update>
+	
+	<update id="updateUserAdmin"
+		parameterType="models.Utente">
+
+		UPDATE utente SET
+			NOME=#{nome},
+			COGNOME=#{cognome},
+			EMAIL=#{email},
+			PASS=#{pass},
+			ETA=#{eta},
+			IDRUOLO=#{idRuolo}
+		WHERE IDUTENTE = #{idUtente}
+	</update>
+	
+	<update id="updateEmailAndPassword"
+	 parameterType="models.Utente">
+	 UPDATE user SET
+			EMAIL=#{email},
+			PASS=#{pass}
+	
+		WHERE IDUTENTE = #{idUtente}
+	 </update>
+
+
+	<delete id="delete" parameterType="Integer">
+		
+		DELETE FROM utente WHERE ID = #{id}
+
+	</delete>
+
+	<select id="findAll" resultMap="userMap">
+
+		SELECT * FROM utente
+
+	</select>
+
+	<resultMap id="userMap" type="models.Utente">
+		<result property="idUtente" column="ID" />
+		<result property="nome" column="NOME" />
+		<result property="cognome" column="COGNOME" />
+		<result property="email" column="EMAIL" />
+		<result property="cf" column="CF" />
+		<result property="pass" column="PASS" />
+		<result property="soldi" column="SOLDI"/>
+	</resultMap>
+	
+
+</mapper>

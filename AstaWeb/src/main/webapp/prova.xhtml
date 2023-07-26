@@ -1,0 +1,70 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:h="http://java.sun.com/jsf/html">
+
+
+
+	<p:panelGrid columns="1" layout="grid"
+		styleClass="showcase-text-align-center"
+		rendered="#{userBean.showRegister==true}">
+		<p:messages>
+			<p:autoUpdate />
+		</p:messages>
+		<h:outputLabel for="emaill" value="Email:" />
+		<p:inputText id="emaill" value="#{userBean.utente.email}"
+			required="true">
+			<f:validateRegex pattern="^[a-z0-9.-_$]+@[a-z]{2,}+.[a-z]{2,3}$" />
+		</p:inputText>
+		<p:message for="emaill" />
+		<h:outputLabel for="password" value="Pass:" />
+		<p:inputText id="password" value="#{userBean.utente.pass}"
+			required="true">
+			<f:validateRegex pattern="^[A-Za-z][A-Za-z0-9_]{7,29}$" />
+		</p:inputText>
+		<p:message for="password" />
+		<h:outputLabel for="codicefiscale" value="CODICEFISCALE:" />
+		<p:inputText id="codicefiscale" value="#{userBean.utente.cf}">
+			<f:validateRegex
+				pattern="/^(?:[A-Z][AEIOU][AEIOUX]|[AEIOU]X{2}|[B-DF-HJ-NP-TV-Z]{2}[A-Z]){2}(?:
+        [\dLMNP-V]{2}(?:[A-EHLMPR-T](?:[04LQ][1-9MNP-V]|[15MR][\dLMNP-V]|[26NS][0-8LMNP-U])|[DHPS][37PT][0L]|
+        [ACELMRT][37PT][01LM]|[AC-EHLMPR-T][26NS][9V])|(?:[02468LNQSU][048LQU]|[13579MPRTV][26NS])B
+        [26NS][9V])(?:[A-MZ][1-9MNP-V][\dLMNP-V]{2}|[A-M][0L](?:[1-9MNP-V][\dLMNP-V]|[0L][1-9MNP-V]))[A-Z]$/i">
+			</f:validateRegex>
+		</p:inputText>
+		<p:message for="codicefiscale" />
+		<h:outputLabel for="soldiinseriti" value="SOLDI:" />
+		<p:inputText id="soldiinseriti" value="#{userBean.utente.soldi}">
+			<f:validateRegex
+				pattern="([+-]?(?=\.\d|\d)(?:\d+)?(?:\.?\d*))(?:[Ee]([+-]?\d+))?"></f:validateRegex>
+		</p:inputText>
+		<p:message for="soldiinseriti" />
+		<h:outputLabel for="nome" value="NOME:" />
+		<p:inputText id="nome" value="#{userBean.utente.nome}">
+			<f:validateRegex pattern="^[A-Za-z]{2,15}$"></f:validateRegex>
+		</p:inputText>
+		<p:message for="nome" />
+		<h:outputLabel for="cognome" value="cognome:" />
+		<p:inputText id="cognome" value="#{userBean.utente.cognome}">
+			<f:validateRegex pattern="^[A-Za-z]{2,15}$"></f:validateRegex>
+		</p:inputText>
+		<p:message for="cognome" />
+		<p:commandButton value="Registrati" onclick="PF('dlg3').show();"
+			action="#{userBean.register()}">
+		</p:commandButton>
+		<p:dialog header="Effects" widgetVar="dlg3" showEffect="explode"
+			hideEffect="bounce" height="100">
+			<h:outputText value="Registrato con successo" update="app" />
+		</p:dialog>
+		<p:commandButton value="vaialLogin" update="app" immediate="true"
+			ajax="false"  action="#{userBean.vaiAlLogin()}">
+		</p:commandButton>
+		<p:commandButton value="Vai alla Home" update="app" immediate="true"
+			ajax="false" action="#{userBean.vaiAllaHome()}">
+		</p:commandButton>
+
+	</p:panelGrid>
+
+</ui:composition>

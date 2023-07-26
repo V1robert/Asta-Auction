@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:h="http://java.sun.com/jsf/html">
+
+	<p:panelGrid columns="1"  layout="grid"  rendered="#{userBean.vediLeTueAsteVinte==true}" >
+	<p>Le tue aste vinte</p>
+		<p:outputPanel >
+			<div class="">
+				<h5>Lista Di Tutte le aste</h5>
+				<p:dataList value="#{astaBean.listaDelleAsteVinte}" var="product"
+					type="ordered" rows="10" Style="text-align:center">
+					<div class="product-list-item">
+						<div class="product-list-detail">
+							<p>DataScadenza del asta::</p>
+							<div class="product-name">#{product.dataScadenza}</div>
+							<p>Propietario dell asta::</p>
+							<div class="product-description">#{product.utente.nome}</div>
+							<p>Prezzo partenza::</p>
+							<div class="product-description">#{product.prezzoPartenza}</div>
+							<p>Nome Articolo::</p>
+							<div class="product-description">#{product.articolo.nome_articolo}</div>
+							<p>Descrizione Articolo::</p>
+							<div class="product-description">#{product.articolo.desc}</div>
+							<p>Prezzo Piu Alto:</p>
+							<div class="product-description">#{product.offerta.soldiOfferti}</div>
+							<p>Prezzo venduto:</p>
+							<div class="product-description">#{product.prezzoVenduto}</div>
+							<p>Tag dell asta:</p>
+							<div class="product-description">#{product.tag.descrizioneTag}</div>
+							<p:commandButton value="Inviami una email con le mie aste" update="app" immediate="true"
+					ajax="false" action="#{astaBean.inviaEmailPdf(product)}">
+				</p:commandButton>
+						</div>
+					</div> 
+				</p:dataList>
+				<p:commandButton value="Vai alla Home" update="app" immediate="true"
+					ajax="false" action="#{userBean.vaiAllaHome()}">
+				</p:commandButton>
+				
+			</div>
+		</p:outputPanel>
+	</p:panelGrid>
+
+
+</ui:composition>

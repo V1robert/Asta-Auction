@@ -1,0 +1,35 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:h="http://java.sun.com/jsf/html">
+
+	<p:panelGrid columns="1" layout="grid"
+		rendered="#{userBean.vediPaginaAdmin==true}">
+
+			<h2>Quali dati vuoi ricevere nel tuo pdf?</h2>
+			
+					<p:selectManyButton value="#{astaBean.listaPDFscelti}">
+						<f:selectItem itemLabel="Tutte le Aste" itemValue="TutteAste"/>
+						<f:selectItem itemLabel="Tutti gli articoli" itemValue="TuttiArticoli"/>
+						<f:selectItem itemLabel="Tutti gli utenti" itemValue="TuttiUtenti"/>
+						<f:selectItem itemLabel="Tutti i tag" itemValue="TuttiTag"/>
+					</p:selectManyButton>
+			
+
+
+
+				<p:commandButton value="Inviami il pdf" 
+					 action="#{astaBean.inviaEmailPdfAdmin()}">
+				</p:commandButton>
+				<p:commandButton value="Vai alla Home" update="app" immediate="true"
+					ajax="false" action="#{userBean.vaiAllaHome()}">
+				</p:commandButton>
+		
+		
+
+	</p:panelGrid>
+
+
+</ui:composition>

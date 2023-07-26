@@ -1,0 +1,27 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:h="http://java.sun.com/jsf/html">
+       
+    <p:panelGrid columns="1" columnClasses=" ui-md-10,ui-g-12 ui-md-2,ui-g-12 ui-md-8" rendered="#{userBean.showLogin==true}"
+   >
+        <h:outputLabel for="email" value="Email:"  />
+        <p:inputText id="mail" value="#{userBean.utente.email}" >
+        </p:inputText>
+        <h:outputLabel for="pass" value="Pass:"  />
+        <p:inputText id="pass" value="#{userBean.utente.pass}" >
+        </p:inputText>
+        <p:commandButton value="Loggati"  onclick="PF('dlg3').show();" action="#{userBean.login()}" >
+        </p:commandButton>
+        <p:dialog header="Effects" widgetVar="dlg3" showEffect="explode" hideEffect="bounce" height="100">
+    <h:outputText value="Sei Loggato  con successo" />
+</p:dialog>
+        <p:commandButton value="vai alla register" update="app" immediate="true" ajax="false" action="#{userBean.vaiAlRegister()}" >
+        </p:commandButton>
+           <p:commandButton value="Vai alla Home" update="app" immediate="true" ajax="false" action="#{userBean.vaiAllaHome()}">
+           </p:commandButton>
+    </p:panelGrid>
+  
+</ui:composition>

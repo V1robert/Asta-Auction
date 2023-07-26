@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<mapper namespace="mapping.AstaMapping">
+
+	<insert id="insert" parameterType="models.Asta" useGeneratedKeys="true" keyProperty="id" keyColumn="ID">
+		INSERT INTO asta (DATA_SCADENZA,PREZZO_PARTENZA,PREZZO_VENDUTO,ID_ARTICOLO,ID_UTENTE_PROPIETARIO,ID_OFFERTA_PIU_ALTA,ID_TAG)
+		VALUES(
+			#{dataScadenza},
+			#{prezzoPartenza},
+			#{prezzoVenduto},
+			#{idArticolo},
+			#{idUtentePropietario},
+			#{idOffertaPiuAlta},
+			#{idTag}
+		
+		)
+	</insert>
+	
+	<update id="update" parameterType="models.Asta">
+	
+
+		UPDATE asta SET
+			ID_OFFERTA_PIU_ALTA=#{idOffertaPiuAlta}
+		WHERE ID = #{id}
+	</update>
+	
+	<update id="astaFinita" parameterType="models.Asta">
+	UPDATE asta SET
+			PREZZO_VENDUTO=#{offerta.soldiOfferti}
+		WHERE ID = #{id}
+	
+	</update>
+	
+	<select id="findAllAste" resultMap="astaMap"	parameterType="models.Asta">
+
+		SELECT 
+		ast.ID,
+		ast.DATA_SCADENZA,
+		ast.PREZZO_PARTENZA,
+		ast.PREZZO_VENDUTO,
+		ast.ID_ARTICOLO,
+		ast.ID_UTENTE_PROPIETARIO,
+		ast.ID_OFFERTA_PIU_ALTA,
+		ast.ID_TAG,
+		
+		art.NOME_ARTICOLO,
+		art.DESC,
+		
+		off.SOLDI_OFFERTI,
+		off.DATAINIZIO,
+		
+		ut.NOME,
+		ut.COGNOME,
+		ut.EMAIL,
+		ut.CF,
+		ut.SOLDI,
+		
+		ta.DESCRIZIONE_TAG
+		
+		FROM asta as ast
+		LEFT JOIN articolo as art ON ast.ID_ARTICOLO = art.ID
+		LEFT JOIN offerta as off ON ast.ID_OFFERTA_PIU_ALTA = off.ID
+		LEFT JOIN utente as ut ON ast.ID_UTENTE_PROPIETARIO = ut.ID
+		LEFT JOIN tag as ta ON ast.ID_TAG = ta.ID
+
+	</select>
+	
+	<select id="vediLeAsteVincentii" resultMap="astaMap" parameterType="models.Asta">
+	SELECT 
+		ast.ID,
+		ast.DATA_SCADENZA,
+		ast.PREZZO_PARTENZA,
+		ast.PREZZO_VENDUTO,
+		ast.ID_ARTICOLO,
+		ast.ID_UTENTE_PROPIETARIO,
+		ast.ID_OFFERTA_PIU_ALTA,
+		ast.ID_TAG,
+		
+		art.NOME_ARTICOLO,
+		art.DESC,
+		
+		off.SOLDI_OFFERTI,
+		off.DATAINIZIO,
+		
+		ut.NOME,
+		ut.COGNOME,
+		ut.EMAIL,
+		ut.CF,
+		ut.SOLDI,
+		
+		ta.DESCRIZIONE_TAG
+		
+		FROM asta as ast
+		LEFT JOIN articolo as art ON ast.ID_ARTICOLO = art.ID
+		LEFT JOIN offerta as off ON ast.ID_OFFERTA_PIU_ALTA = off.ID
+		LEFT JOIN utente as ut ON ast.ID_UTENTE_PROPIETARIO = ut.ID
+		LEFT JOIN tag as ta ON ast.ID_TAG = ta.ID
+		WHERE ast.ID_UTENTE_PROPIETARIO = #{idUtentePropietario}
+	</select>
+	
+	<select  id="trovaAstePerNomeArticolo" resultMap="astaMap"	parameterType="models.Asta">
+	
+	SELECT 
+		ast.ID,
+		ast.DATA_SCADENZA,
+		ast.PREZZO_PARTENZA,
+		ast.PREZZO_VENDUTO,
+		ast.ID_ARTICOLO,
+		ast.ID_UTENTE_PROPIETARIO,
+		ast.ID_OFFERTA_PIU_ALTA,
+		ast.ID_TAG,
+		
+		art.NOME_ARTICOLO,
+		art.DESC,
+		
+		off.SOLDI_OFFERTI,
+		off.DATAINIZIO,
+		
+		ut.NOME,
+		ut.COGNOME,
+		ut.EMAIL,
+		ut.CF,
+		ut.SOLDI,
+		
+		ta.DESCRIZIONE_TAG
+		
+		FROM asta as ast
+		LEFT JOIN articolo as art ON ast.ID_ARTICOLO = art.ID
+		LEFT JOIN offerta as off ON ast.ID_OFFERTA_PIU_ALTA = off.ID
+		LEFT JOIN utente as ut ON ast.ID_UTENTE_PROPIETARIO = ut.ID
+		LEFT JOIN tag as ta ON ast.ID_TAG = ta.ID
+		WHERE art.NOME_ARTICOLO = #{nomeArticolo}
+	</select>
+	
+	<resultMap id="astaMap" type="models.Asta">
+		<result property="id" column="ID" />
+		<result property="dataScadenza" column="DATA_SCADENZA" />
+		<result property="prezzoPartenza" column="PREZZO_PARTENZA" />
+		<result property="prezzoVenduto" column="PREZZO_VENDUTO" />
+		<result property="idArticolo" column="ID_ARTICOLO" />
+		<result property="idUtentePropietario" column="ID_UTENTE_PROPIETARIO" />
+		<result property="idOffertaPiuAlta" column="ID_OFFERTA_PIU_ALTA" />
+		<result property="idTag" column="ID_TAG" />
+		<association property="utente" javaType="models.Utente">
+		<result property="nome" column="NOME"/>
+		<result property="cognome" column="COGNOME"/>
+		<result property="email" column="EMAIL"/>
+		<result property="cf" column="CF"/>
+		<result property="soldi" column="SOLDI"/>
+		</association>
+		<association property="tag" javaType="models.Tag">
+		<result property="descrizioneTag" column="DESCRIZIONE_TAG"/>
+		</association>
+		<association property="offerta" javaType="models.Offerta">
+		<result property="soldiOfferti" column="SOLDI_OFFERTI"/>
+		<result property="dataInizio" column="DATA_INIZIO"/>
+		</association>
+		<association property="articolo" javaType="models.Articolo">
+		<result property="nomeArticolo" column="NOME_ARTICOLO"/>
+		<result property="desc" column="DESC"/>
+		</association>
+	</resultMap>
+</mapper>

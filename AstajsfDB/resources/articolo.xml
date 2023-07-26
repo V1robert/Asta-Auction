@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<mapper namespace="mapping.ArticoloMapping">
+
+	<insert id="insert" parameterType="models.Articolo"
+		useGeneratedKeys="true" keyProperty="id" keyColumn="ID">
+		INSERT INTO articolo 
+		VALUES(
+		#{id},
+		#{nomeArticolo},
+		#{idUtente},
+		#{desc}
+		)
+	</insert>
+
+	<select id="findArticoloUtente" resultMap="articoloMap"
+		parameterType="models.Articolo">
+
+		SELECT *
+		FROM articolo
+		WHERE articolo.ID_UTENTE = #{id_utente}
+
+	</select>
+	
+	<select id="findArticoloByNome" resultMap="articoloMap"
+	 parameterType="models.Articolo">
+	SELECT *
+	FROM articolo
+	WHERE articolo.NOME_ARTICOLO = #{nomeArticolo}
+	</select>
+	
+	<select id="findAll" resultMap="articoloMap">
+	SELECT *
+	FROM articolo
+	</select>
+
+	<resultMap id="articoloMap" type="models.Articolo">
+		<result property="id" column="ID" />
+		<result property="nomeArticolo" column="NOME_ARTICOLO" />
+		<result property="idUtente" column="ID_UTENTE" />
+		<result property="desc" column="DESC" />
+	</resultMap>
+</mapper>

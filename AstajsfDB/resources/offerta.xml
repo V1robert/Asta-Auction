@@ -1,0 +1,32 @@
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<mapper namespace="mapping.OffertaMapping">
+
+	<insert id="insert" parameterType="models.Offerta" useGeneratedKeys="true" keyProperty="id" keyColumn="ID">
+		INSERT INTO offerta (ID_STATO_OFFERTA,ID_UTENTE,SOLDI_OFFERTI,DATAINIZIO)
+		VALUES(
+			#{idStatoOfferta},
+			#{idUtente},
+			#{soldiOfferti},
+			#{dataInizio}
+		)
+	</insert>
+	
+	<select id="trovaOffertaDelUtente" resultMap="offertaMap" parameterType="models.Offerta">
+	SELECT *
+	FROM offerta
+	WHERE ID = #{id}
+	</select>
+	
+	<resultMap id="offertaMap" type="models.Offerta">
+		<result property="id" column="ID" />
+		<result property="idStatoOfferta" column="ID_STATO_OFFERTA" />
+		<result property="idUtente" column="ID_UTENTE" />
+		<result property="soldiOfferti" column="SOLDI_OFFERTI" />
+		<result property="dataInizio" column="DATAINIZIO"/>
+	</resultMap>
+	
+	</mapper>

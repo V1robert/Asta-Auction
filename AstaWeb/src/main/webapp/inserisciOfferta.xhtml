@@ -1,0 +1,46 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:h="http://java.sun.com/jsf/html">
+
+
+
+	<p:panelGrid columns="1" layout="grid"
+		styleClass="showcase-text-align-center"
+		rendered="#{userBean.showOfferta==true}">
+
+		<div class="product card"></div>
+		<h5>Asta su cui vuoi puntare</h5>
+		<p:outputLabel for="prezzoasta" value="prezzo minimo" />
+		<h:outputText id="prezzoasta"
+			value="#{offertaBean.astaInSessione.prezzoPartenza}" />
+		<p:outputLabel for="scadenza" value="data fine asta" />
+		<h:outputText id="scadenza"
+			value="#{offertaBean.astaInSessione.dataScadenza}" />
+
+
+
+		<p:outputLabel for="MONEY" value="Quanti soldi vuoi offrire?" />
+		<p:inputText id="MONEY" value="#{offertaBean.offerta.soldiOfferti}">
+		</p:inputText>
+
+		<p:commandButton value="Effettua l'offerta"
+			action="#{offertaBean.inserisciOfferta()}" update="app"  onclick="PF('dlg1').show();">
+		</p:commandButton>
+		<p:dialog header="Effects" widgetVar="dlg1" showEffect="explode" hideEffect="bounce" height="100">
+    <h:outputText value="Offerta Inserita" />
+</p:dialog>
+		
+
+		<p:commandButton value="torna alla lista d'aste" update="app"
+			immediate="true" ajax="false" action="#{userBean.vediTutteAste()}">
+		</p:commandButton>
+		<p:commandButton value="Vai alla Home" update="app" immediate="true"
+			ajax="false" action="#{userBean.vaiAllaHome()}">
+		</p:commandButton>
+
+	</p:panelGrid>
+
+</ui:composition>

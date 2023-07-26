@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<configuration>
+
+	<environments default="development">
+		<environment id="development">
+ 			<transactionManager type="MANAGED" /> <!-- Java DataBase Connectivity, protocollo di connesisone al db -->
+				<dataSource type="JNDI"> <!-- tipo di connessione, POOLED tiene la connessione sempre aperta senza doversi riautenticarsi ogni volta -->
+				<property name="data_source" value="java:/asta" />
+			</dataSource>
+		</environment>
+	</environments>
+
+	<mappers>
+		<mapper resource="user.xml" />
+		<mapper resource="ruolo.xml"/>
+		<mapper resource="articolo.xml"/>
+		<mapper resource="Asta.xml"/>
+		<mapper resource="offerta.xml"/>
+		<mapper resource="tag.xml"/>
+		<mapper resource="articolotag.xml"/>
+	</mappers>
+
+</configuration>
