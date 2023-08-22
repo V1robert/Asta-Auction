@@ -29,7 +29,8 @@
 		us.EMAIL,
 		us.PASS,
 		us.CF,
-		us.SOLDI
+		us.SOLDI,
+		us.ID_RUOLO
 		
 		
 		FROM utente as us
@@ -89,6 +90,7 @@
 		<result property="cf" column="CF" />
 		<result property="pass" column="PASS" />
 		<result property="soldi" column="SOLDI"/>
+		<result property="idRuolo" column="ID_RUOLO"/>
 	</resultMap>
 	
 

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<mapper namespace="mapping.TagMapping">
+
+	<insert id="insert" parameterType="models.Tag" useGeneratedKeys="true" keyProperty="id" keyColumn="ID">
+		INSERT INTO tag (DESCRIZIONE_TAG)
+		VALUES(
+			#{descrizioneTag}
+		)
+	</insert>
+	
+	
+	<select id="findByDescrizione" resultMap="tagMap" parameterType="models.Tag">
+	
+	SELECT
+	t.ID,
+	t.DESCRIZIONE_TAG
+	
+	FROM tag as t
+	WHERE t.DESCRIZIONE_TAG = #{descrizioneTag}
+	
+	</select>
+	
+	<select id="findAll" resultMap="tagMap" >
+	
+	SELECT *
+	FROM tag
+	
+	</select>
+	
+	<resultMap id="tagMap" type="models.Tag" >
+	  <result property="id" column="ID" />
+	  <result property="descrizioneTag" column="DESCRIZIONE_TAG"/>
+	</resultMap>
+	
+	</mapper>

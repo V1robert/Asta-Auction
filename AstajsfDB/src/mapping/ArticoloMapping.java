@@ -21,4 +21,6 @@ public interface ArticoloMapping {
 	
 	public List<Articolo> findAll();
 	
+	public byte[] inserisciFoto(byte[] file);
+	
 }

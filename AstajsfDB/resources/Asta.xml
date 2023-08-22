@@ -15,8 +15,9 @@
 			#{idArticolo},
 			#{idUtentePropietario},
 			#{idOffertaPiuAlta},
-			#{idTag}
-		
+			#{idTag},
+			#{idStatoAsta}
+			
 		)
 	</insert>
 	
@@ -30,9 +31,16 @@
 	
 	<update id="astaFinita" parameterType="models.Asta">
 	UPDATE asta SET
-			PREZZO_VENDUTO=#{offerta.soldiOfferti}
+			PREZZO_VENDUTO=#{offerta.soldiOfferti},
+			ID_STATO_ASTA=3
 		WHERE ID = #{id}
 	
+	</update>
+	
+	<update id="chiusuraAsta" parameterType="models.Asta">
+	UPDATE asta SET
+			ID_STATO_ASTA=3
+		WHERE ID = #{id}
 	</update>
 	
 	<select id="findAllAste" resultMap="astaMap"	parameterType="models.Asta">
@@ -46,9 +54,11 @@
 		ast.ID_UTENTE_PROPIETARIO,
 		ast.ID_OFFERTA_PIU_ALTA,
 		ast.ID_TAG,
+		ast.ID_STATO_ASTA,
 		
 		art.NOME_ARTICOLO,
 		art.DESC,
+		art.IMG,
 		
 		off.SOLDI_OFFERTI,
 		off.DATAINIZIO,
@@ -59,6 +69,10 @@
 		ut.CF,
 		ut.SOLDI,
 		
+		stato.STATO,
+		stato.DESC,
+		
+		
 		ta.DESCRIZIONE_TAG
 		
 		FROM asta as ast
@@ -66,10 +80,11 @@
 		LEFT JOIN offerta as off ON ast.ID_OFFERTA_PIU_ALTA = off.ID
 		LEFT JOIN utente as ut ON ast.ID_UTENTE_PROPIETARIO = ut.ID
 		LEFT JOIN tag as ta ON ast.ID_TAG = ta.ID
+		LEFT JOIN stato_asta as stato ON ast.ID_STATO_ASTA = stato.ID
 
 	</select>
 	
-	<select id="vediLeAsteVincentii" resultMap="astaMap" parameterType="models.Asta">
+	<select id="vediLeAsteVincentii" resultMap="astaMap" parameterType="models.Utente">
 	SELECT 
 		ast.ID,
 		ast.DATA_SCADENZA,
@@ -79,27 +94,29 @@
 		ast.ID_UTENTE_PROPIETARIO,
 		ast.ID_OFFERTA_PIU_ALTA,
 		ast.ID_TAG,
+		ast.ID_STATO_ASTA,
 		
 		art.NOME_ARTICOLO,
 		art.DESC,
+		art.IMG,
 		
 		off.SOLDI_OFFERTI,
 		off.DATAINIZIO,
 		
-		ut.NOME,
-		ut.COGNOME,
-		ut.EMAIL,
-		ut.CF,
-		ut.SOLDI,
+		stato.STATO,
+		stato.DESC,
 		
 		ta.DESCRIZIONE_TAG
+		
+		
 		
 		FROM asta as ast
 		LEFT JOIN articolo as art ON ast.ID_ARTICOLO = art.ID
 		LEFT JOIN offerta as off ON ast.ID_OFFERTA_PIU_ALTA = off.ID
-		LEFT JOIN utente as ut ON ast.ID_UTENTE_PROPIETARIO = ut.ID
 		LEFT JOIN tag as ta ON ast.ID_TAG = ta.ID
-		WHERE ast.ID_UTENTE_PROPIETARIO = #{idUtentePropietario}
+		LEFT JOIN stato_asta as stato ON ast.ID_STATO_ASTA = stato.ID
+		WHERE off.ID_UTENTE = #{idUtente} AND
+		ast.ID_STATO_ASTA=3
 	</select>
 	
 	<select  id="trovaAstePerNomeArticolo" resultMap="astaMap"	parameterType="models.Asta">
@@ -113,9 +130,11 @@
 		ast.ID_UTENTE_PROPIETARIO,
 		ast.ID_OFFERTA_PIU_ALTA,
 		ast.ID_TAG,
+		ast.ID_STATO_ASTA,
 		
 		art.NOME_ARTICOLO,
 		art.DESC,
+		art.IMG,
 		
 		off.SOLDI_OFFERTI,
 		off.DATAINIZIO,
@@ -126,6 +145,9 @@
 		ut.CF,
 		ut.SOLDI,
 		
+		stato.STATO,
+		stato.DESC,
+		
 		ta.DESCRIZIONE_TAG
 		
 		FROM asta as ast
@@ -133,6 +155,7 @@
 		LEFT JOIN offerta as off ON ast.ID_OFFERTA_PIU_ALTA = off.ID
 		LEFT JOIN utente as ut ON ast.ID_UTENTE_PROPIETARIO = ut.ID
 		LEFT JOIN tag as ta ON ast.ID_TAG = ta.ID
+		LEFT JOIN stato_asta as stato ON ast.ID_STATO_ASTA = stato.ID
 		WHERE art.NOME_ARTICOLO = #{nomeArticolo}
 	</select>
 	
@@ -145,6 +168,7 @@
 		<result property="idUtentePropietario" column="ID_UTENTE_PROPIETARIO" />
 		<result property="idOffertaPiuAlta" column="ID_OFFERTA_PIU_ALTA" />
 		<result property="idTag" column="ID_TAG" />
+		<result property="idStatoAsta" column="ID_STATO_ASTA"/>
 		<association property="utente" javaType="models.Utente">
 		<result property="nome" column="NOME"/>
 		<result property="cognome" column="COGNOME"/>
@@ -161,6 +185,11 @@
 		</association>
 		<association property="articolo" javaType="models.Articolo">
 		<result property="nomeArticolo" column="NOME_ARTICOLO"/>
+		<result property="desc" column="DESC"/>
+		<result property="img" column="IMG"/>
+		</association>
+		<association property="statoAsta" javaType="models.StatoAsta">
+		<result property="stato" column="STATO"/>
 		<result property="desc" column="DESC"/>
 		</association>
 	</resultMap>

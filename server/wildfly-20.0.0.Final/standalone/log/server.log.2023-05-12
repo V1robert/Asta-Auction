@@ -1,0 +1,681 @@
+2023-05-12 10:43:18,145 INFO  [org.jboss.modules] (main) JBoss Modules version 1.10.1.Final
+2023-05-12 10:43:26,173 INFO  [org.jboss.msc] (main) JBoss MSC version 1.4.11.Final
+2023-05-12 10:43:26,199 INFO  [org.jboss.threads] (main) JBoss Threads version 2.3.3.Final
+2023-05-12 10:43:26,393 INFO  [org.jboss.as] (MSC service thread 1-2) WFLYSRV0049: WildFly Full 20.0.0.Final (WildFly Core 12.0.1.Final) starting
+2023-05-12 10:43:26,398 DEBUG [org.jboss.as.config] (MSC service thread 1-2) Configured system properties:
+	file.encoding = UTF-8
+	file.separator = \
+	java.awt.headless = true
+	java.class.path = C:\dev\server\wildfly-20.0.0.Final\jboss-modules.jar
+	java.class.version = 61.0
+	java.home = C:\Program Files\Java\jdk-17.0.7
+	java.io.tmpdir = C:\Users\feder\AppData\Local\Temp\
+	java.library.path = C:\Program Files\Java\jdk-17.0.7\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;native;C:/Sviluppo/Eclipse//plugins/org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_17.0.5.v20221102-0933/jre/bin/server;C:/Sviluppo/Eclipse//plugins/org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_17.0.5.v20221102-0933/jre/bin;C:\Program Files\Java\jdk-17.0.7\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Sviluppo\Git\cmd;C:\Sviluppo\Maven\bin;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Program Files\MySQL\MySQL Shell 8.0\bin\;C:\Users\feder\AppData\Local\Microsoft\WindowsApps;;C:\Sviluppo\Eclipse;;.
+	java.net.preferIPv4Stack = true
+	java.runtime.name = Java(TM) SE Runtime Environment
+	java.runtime.version = 17.0.7+8-LTS-224
+	java.specification.name = Java Platform API Specification
+	java.specification.vendor = Oracle Corporation
+	java.specification.version = 17
+	java.util.logging.manager = org.jboss.logmanager.LogManager
+	java.vendor = Oracle Corporation
+	java.vendor.url = https://java.oracle.com/
+	java.vendor.url.bug = https://bugreport.java.com/bugreport/
+	java.version = 17.0.7
+	java.version.date = 2023-04-18
+	java.vm.compressedOopsMode = 32-bit
+	java.vm.info = mixed mode, sharing
+	java.vm.name = Java HotSpot(TM) 64-Bit Server VM
+	java.vm.specification.name = Java Virtual Machine Specification
+	java.vm.specification.vendor = Oracle Corporation
+	java.vm.specification.version = 17
+	java.vm.vendor = Oracle Corporation
+	java.vm.version = 17.0.7+8-LTS-224
+	javax.management.builder.initial = org.jboss.as.jmx.PluggableMBeanServerBuilder
+	jboss.bind.address = localhost
+	jboss.bind.address.management = localhost
+	jboss.home.dir = C:\dev\server\wildfly-20.0.0.Final
+	jboss.host.name = cipollino
+	jboss.modules.dir = C:\dev\server\wildfly-20.0.0.Final\modules
+	jboss.modules.system.pkgs = org.jboss.byteman
+	jboss.node.name = cipollino
+	jboss.qualified.host.name = cipollino
+	jboss.server.base.dir = C:\dev\server\wildfly-20.0.0.Final\standalone
+	jboss.server.config.dir = C:\dev\server\wildfly-20.0.0.Final\standalone\configuration
+	jboss.server.data.dir = C:\dev\server\wildfly-20.0.0.Final\standalone\data
+	jboss.server.deploy.dir = C:\dev\server\wildfly-20.0.0.Final\standalone\data\content
+	jboss.server.log.dir = C:\dev\server\wildfly-20.0.0.Final\standalone\log
+	jboss.server.name = cipollino
+	jboss.server.persist.config = true
+	jboss.server.temp.dir = C:\dev\server\wildfly-20.0.0.Final\standalone\tmp
+	jdk.debug = release
+	line.separator = 
+
+	logging.configuration = file:C:\dev\server\wildfly-20.0.0.Final\standalone\configuration\logging.properties
+	module.path = C:\dev\server\wildfly-20.0.0.Final\modules
+	native.encoding = Cp1252
+	org.jboss.boot.log.file = C:\dev\server\wildfly-20.0.0.Final\standalone\log\boot.log
+	org.jboss.logmanager.nocolor = true
+	org.jboss.resolver.warning = true
+	os.arch = amd64
+	os.name = Windows 11
+	os.version = 10.0
+	path.separator = ;
+	program.name = JBossTools: WildFly 20
+	sun.arch.data.model = 64
+	sun.boot.library.path = C:\Program Files\Java\jdk-17.0.7\bin
+	sun.cpu.endian = little
+	sun.cpu.isalist = amd64
+	sun.io.unicode.encoding = UnicodeLittle
+	sun.java.command = org.jboss.modules.Main -mp C:\dev\server\wildfly-20.0.0.Final\modules org.jboss.as.standalone -b localhost --server-config=standalone.xml -Djboss.server.base.dir=C:\dev\server\wildfly-20.0.0.Final\standalone
+	sun.java.launcher = SUN_STANDARD
+	sun.jnu.encoding = Cp1252
+	sun.management.compiler = HotSpot 64-Bit Tiered Compilers
+	sun.os.patch.level = 
+	sun.rmi.dgc.client.gcInterval = 3600000
+	sun.rmi.dgc.server.gcInterval = 3600000
+	user.country = IT
+	user.dir = C:\dev\server\wildfly-20.0.0.Final\bin
+	user.home = C:\Users\feder
+	user.language = it
+	user.name = feder
+	user.script = 
+	user.timezone = Europe/Rome
+	user.variant = 
+2023-05-12 10:43:26,405 DEBUG [org.jboss.as.config] (MSC service thread 1-2) VM Arguments: -Dprogram.name=JBossTools: WildFly 20 -Xms64m -Xmx512m -Dorg.jboss.resolver.warning=true -Djava.net.preferIPv4Stack=true -Dsun.rmi.dgc.client.gcInterval=3600000 -Dsun.rmi.dgc.server.gcInterval=3600000 -Djboss.modules.system.pkgs=org.jboss.byteman -Djava.awt.headless=true -Dorg.jboss.boot.log.file=C:\dev\server\wildfly-20.0.0.Final\standalone\log\boot.log -Dlogging.configuration=file:C:\dev\server\wildfly-20.0.0.Final\standalone\configuration\logging.properties -Djboss.home.dir=C:\dev\server\wildfly-20.0.0.Final -Dorg.jboss.logmanager.nocolor=true --add-exports=java.desktop/sun.awt=ALL-UNNAMED --add-exports=java.naming/com.sun.jndi.ldap=ALL-UNNAMED --add-opens=java.base/java.lang=ALL-UNNAMED --add-opens=java.base/java.lang.invoke=ALL-UNNAMED --add-opens=java.base/java.lang.reflect=ALL-UNNAMED --add-opens=java.base/java.io=ALL-UNNAMED --add-opens=java.base/java.security=ALL-UNNAMED --add-opens=java.base/java.util=ALL-UNNAMED --add-opens=java.base/java.util.concurrent=ALL-UNNAMED --add-opens=java.management/javax.management=ALL-UNNAMED --add-opens=java.naming/javax.naming=ALL-UNNAMED --add-exports=java.base/sun.nio.ch=ALL-UNNAMED --add-exports=jdk.unsupported/sun.misc=ALL-UNNAMED --add-exports=jdk.unsupported/sun.reflect=ALL-UNNAMED --add-modules=java.se -Djboss.bind.address.management=localhost -Dfile.encoding=UTF-8 -XX:+ShowCodeDetailsInExceptionMessages 
+2023-05-12 10:43:35,513 INFO  [org.wildfly.security] (ServerService Thread Pool -- 28) ELY00001: WildFly Elytron version 1.12.1.Final
+2023-05-12 10:43:52,605 INFO  [org.jboss.as.controller.management-deprecated] (Controller Boot Thread) WFLYCTL0028: Attribute 'security-realm' in the resource at address '/core-service=management/management-interface=http-interface' is deprecated, and may be removed in a future version. See the attribute description in the output of the read-resource-description operation to learn more about the deprecation.
+2023-05-12 10:43:52,842 INFO  [org.jboss.as.controller.management-deprecated] (ServerService Thread Pool -- 45) WFLYCTL0028: Attribute 'security-realm' in the resource at address '/subsystem=undertow/server=default-server/https-listener=https' is deprecated, and may be removed in a future version. See the attribute description in the output of the read-resource-description operation to learn more about the deprecation.
+2023-05-12 10:43:52,953 INFO  [org.jboss.as.server.deployment.scanner] (DeploymentScanner-threads - 1) WFLYDS0004: Found ExoplaneServlet.war in deployment directory. To trigger deployment create a file called ExoplaneServlet.war.dodeploy
+2023-05-12 10:43:53,055 INFO  [org.jboss.as.server] (Controller Boot Thread) WFLYSRV0039: Creating http management service using socket-binding (management-http)
+2023-05-12 10:43:53,117 INFO  [org.xnio] (MSC service thread 1-4) XNIO version 3.8.1.Final
+2023-05-12 10:43:53,144 INFO  [org.xnio.nio] (MSC service thread 1-4) XNIO NIO Implementation Version 3.8.1.Final
+2023-05-12 10:43:53,289 WARN  [org.jboss.as.txn] (ServerService Thread Pool -- 82) WFLYTX0013: The node-identifier attribute on the /subsystem=transactions is set to the default value. This is a danger for environments running multiple servers. Please make sure the attribute value is unique.
+2023-05-12 10:43:53,346 INFO  [org.wildfly.extension.microprofile.jwt.smallrye._private] (ServerService Thread Pool -- 71) WFLYJWT0001: Activating WildFly MicroProfile JWT Subsystem
+2023-05-12 10:43:53,351 INFO  [org.wildfly.extension.microprofile.config.smallrye._private] (ServerService Thread Pool -- 69) WFLYCONF0001: Activating WildFly MicroProfile Config Subsystem
+2023-05-12 10:43:53,392 INFO  [org.jboss.as.clustering.infinispan] (ServerService Thread Pool -- 60) WFLYCLINF0001: Activating Infinispan subsystem.
+2023-05-12 10:43:53,399 INFO  [org.wildfly.extension.microprofile.metrics.smallrye] (ServerService Thread Pool -- 72) WFLYMETRICS0001: Activating Eclipse MicroProfile Metrics Subsystem
+2023-05-12 10:43:53,414 INFO  [org.wildfly.extension.microprofile.health.smallrye] (ServerService Thread Pool -- 70) WFLYHEALTH0001: Activating Eclipse MicroProfile Health Subsystem
+2023-05-12 10:43:53,417 INFO  [org.wildfly.extension.microprofile.opentracing] (ServerService Thread Pool -- 73) WFLYTRACEXT0001: Activating MicroProfile OpenTracing Subsystem
+2023-05-12 10:43:53,431 INFO  [org.jboss.as.jsf] (ServerService Thread Pool -- 67) WFLYJSF0007: Activated the following JSF Implementations: [main]
+2023-05-12 10:43:53,667 INFO  [org.jboss.as.naming] (ServerService Thread Pool -- 74) WFLYNAM0001: Activating Naming Subsystem
+2023-05-12 10:43:53,881 INFO  [org.jboss.as.webservices] (ServerService Thread Pool -- 84) WFLYWS0002: Activating WebServices Extension
+2023-05-12 10:43:53,929 INFO  [org.jboss.as.security] (ServerService Thread Pool -- 80) WFLYSEC0002: Activating Security Subsystem
+2023-05-12 10:43:55,123 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 83) WFLYUT0014: Creating file handler for path 'C:\dev\server\wildfly-20.0.0.Final/welcome-content' with options [directory-listing: 'false', follow-symlink: 'false', case-sensitive: 'true', safe-symlink-paths: '[]']
+2023-05-12 10:43:55,143 INFO  [org.jboss.as.connector.subsystems.datasources] (ServerService Thread Pool -- 52) WFLYJCA0004: Deploying JDBC-compliant driver class org.h2.Driver (version 1.4)
+2023-05-12 10:43:55,487 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-3) WFLYUT0003: Undertow 2.1.3.Final starting
+2023-05-12 10:43:55,995 INFO  [org.jboss.as.security] (MSC service thread 1-3) WFLYSEC0001: Current PicketBox version=5.0.3.Final-redhat-00005
+2023-05-12 10:43:56,032 INFO  [org.jboss.as.connector] (MSC service thread 1-3) WFLYJCA0009: Starting JCA Subsystem (WildFly/IronJacamar 1.4.22.Final)
+2023-05-12 10:43:56,461 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-3) WFLYJCA0018: Started Driver service with driver-name = h2
+2023-05-12 10:43:56,501 INFO  [org.jboss.as.naming] (MSC service thread 1-3) WFLYNAM0003: Starting Naming Service
+2023-05-12 10:43:56,784 INFO  [org.jboss.as.mail.extension] (MSC service thread 1-3) WFLYMAIL0001: Bound mail session [java:jboss/mail/Default]
+2023-05-12 10:43:57,015 INFO  [org.jboss.as.jaxrs] (ServerService Thread Pool -- 62) WFLYRS0016: RESTEasy version 3.12.1.Final
+2023-05-12 10:43:57,838 INFO  [org.wildfly.extension.io] (ServerService Thread Pool -- 61) WFLYIO001: Worker 'default' has auto-configured to 4 IO threads with 32 max task threads based on your 2 available processors
+2023-05-12 10:43:57,867 INFO  [org.jboss.as.ejb3] (MSC service thread 1-1) WFLYEJB0481: Strict pool slsb-strict-max-pool is using a max instance size of 32 (per class), which is derived from thread worker pool sizing.
+2023-05-12 10:43:57,870 INFO  [org.jboss.as.ejb3] (MSC service thread 1-1) WFLYEJB0482: Strict pool mdb-strict-max-pool is using a max instance size of 8 (per class), which is derived from the number of CPUs on this host.
+2023-05-12 10:43:57,961 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-1) WFLYUT0012: Started server default-server.
+2023-05-12 10:43:58,029 INFO  [org.jboss.remoting] (MSC service thread 1-3) JBoss Remoting version 5.0.18.Final
+2023-05-12 10:43:58,064 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-2) WFLYUT0018: Host default-host starting
+2023-05-12 10:43:58,118 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-1) WFLYUT0006: Undertow HTTP listener default listening on 127.0.0.1:8080
+2023-05-12 10:43:58,232 INFO  [org.jboss.as.ejb3] (MSC service thread 1-4) WFLYEJB0493: EJB subsystem suspension complete
+2023-05-12 10:43:58,872 INFO  [org.jboss.as.connector.subsystems.datasources] (MSC service thread 1-1) WFLYJCA0001: Bound data source [java:jboss/datasources/ExampleDS]
+2023-05-12 10:44:05,351 INFO  [org.jboss.as.patching] (MSC service thread 1-1) WFLYPAT0050: WildFly Full cumulative patch ID is: base, one-off patches include: none
+2023-05-12 10:44:05,406 WARN  [org.jboss.as.domain.management.security] (MSC service thread 1-4) WFLYDM0111: Keystore C:\dev\server\wildfly-20.0.0.Final\standalone\configuration\application.keystore not found, it will be auto generated on first use with a self signed certificate for host localhost
+2023-05-12 10:44:05,424 INFO  [org.jboss.as.server.deployment.scanner] (MSC service thread 1-4) WFLYDS0013: Started FileSystemDeploymentService for directory C:\dev\server\wildfly-20.0.0.Final\standalone\deployments
+2023-05-12 10:44:05,482 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-2) WFLYSRV0027: Starting deployment of "ExoplaneServlet.war" (runtime-name: "ExoplaneServlet.war")
+2023-05-12 10:44:05,487 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-4) WFLYSRV0027: Starting deployment of "mysql-connector-java-8.0.25" (runtime-name: "mysql-connector-java-8.0.25.jar")
+2023-05-12 10:44:06,368 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-3) WFLYUT0006: Undertow HTTPS listener https listening on 127.0.0.1:8443
+2023-05-12 10:44:12,764 INFO  [org.jboss.ws.common.management] (MSC service thread 1-3) JBWS022052: Starting JBossWS 5.4.1.Final (Apache CXF 3.3.6) 
+2023-05-12 10:44:15,560 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-4) WFLYJCA0005: Deploying non-JDBC-compliant driver class com.mysql.cj.jdbc.Driver (version 8.0)
+2023-05-12 10:44:15,624 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-4) WFLYJCA0018: Started Driver service with driver-name = mysql-connector-java-8.0.25.jar
+2023-05-12 10:44:16,635 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-4) WFLYJCA0005: Deploying non-JDBC-compliant driver class com.mysql.jdbc.Driver (version 5.1)
+2023-05-12 10:44:16,639 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-4) WFLYJCA0005: Deploying non-JDBC-compliant driver class com.mysql.fabric.jdbc.FabricMySQLDriver (version 5.1)
+2023-05-12 10:44:16,772 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-3) WFLYJCA0018: Started Driver service with driver-name = ExoplaneServlet.war_com.mysql.jdbc.Driver_5_1
+2023-05-12 10:44:16,773 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-3) WFLYJCA0018: Started Driver service with driver-name = ExoplaneServlet.war_com.mysql.fabric.jdbc.FabricMySQLDriver_5_1
+2023-05-12 10:44:16,775 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-2) WFLYJCA0018: Started Driver service with driver-name = ExoplaneServlet.war
+2023-05-12 10:44:16,851 INFO  [org.infinispan.PERSISTENCE] (MSC service thread 1-1) ISPN000556: Starting user marshaller 'org.wildfly.clustering.infinispan.marshalling.jboss.JBossMarshaller'
+2023-05-12 10:44:16,896 INFO  [org.infinispan.CONTAINER] (MSC service thread 1-1) ISPN000128: Infinispan version: Infinispan 'Turia' 10.1.8.Final
+2023-05-12 10:44:17,600 INFO  [org.jboss.as.clustering.infinispan] (ServerService Thread Pool -- 88) WFLYCLINF0002: Started client-mappings cache from ejb container
+2023-05-12 10:44:17,793 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 90) WFLYUT0021: Registered web context: '/ExoplaneServlet' for server 'default-server'
+2023-05-12 10:44:18,068 INFO  [org.jboss.as.server] (Controller Boot Thread) WFLYSRV0010: Deployed "mysql-connector-java-8.0.25" (runtime-name : "mysql-connector-java-8.0.25.jar")
+2023-05-12 10:44:18,072 INFO  [org.jboss.as.server] (ServerService Thread Pool -- 53) WFLYSRV0010: Deployed "ExoplaneServlet.war" (runtime-name : "ExoplaneServlet.war")
+2023-05-12 10:44:18,387 INFO  [org.jboss.as.server] (Controller Boot Thread) WFLYSRV0212: Resuming server
+2023-05-12 10:44:18,394 INFO  [org.jboss.as] (Controller Boot Thread) WFLYSRV0025: WildFly Full 20.0.0.Final (WildFly Core 12.0.1.Final) started in 67981ms - Started 475 of 705 services (378 services are lazy, passive or on-demand)
+2023-05-12 10:44:18,405 INFO  [org.jboss.as] (Controller Boot Thread) WFLYSRV0060: Http management interface listening on http://127.0.0.1:9990/management
+2023-05-12 10:44:18,421 INFO  [org.jboss.as] (Controller Boot Thread) WFLYSRV0051: Admin console listening on http://127.0.0.1:9990
+2023-05-12 11:10:03,344 INFO  [stdout] (default task-3) Nella servlet - POST
+2023-05-12 11:10:03,358 INFO  [stdout] (default task-3) Nell toLogin
+2023-05-12 11:10:03,368 INFO  [stdout] (default task-3) findByEmailPassword Controller passeggero --> Passeggero [id=null, nome=null, cognome=null, mail=bozzetto@gmail.com, telefono=0, password=gennarino, listaPrenotazioni=null]
+2023-05-12 11:10:03,371 INFO  [stdout] (default task-3) findByEmailPassword Crud passeggero --> Passeggero [id=null, nome=null, cognome=null, mail=bozzetto@gmail.com, telefono=0, password=gennarino, listaPrenotazioni=null]
+2023-05-12 11:10:05,583 ERROR [stderr] (default task-3) org.apache.ibatis.exceptions.PersistenceException: 
+2023-05-12 11:10:05,584 ERROR [stderr] (default task-3) ### Error querying database.  Cause: com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+2023-05-12 11:10:05,584 ERROR [stderr] (default task-3) 
+2023-05-12 11:10:05,584 ERROR [stderr] (default task-3) The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+2023-05-12 11:10:05,585 ERROR [stderr] (default task-3) ### The error may exist in passeggero.xml
+2023-05-12 11:10:05,585 ERROR [stderr] (default task-3) ### The error may involve it.exolab.exoplane.mapper.PasseggeroMapper.findByEmailPassword
+2023-05-12 11:10:05,585 ERROR [stderr] (default task-3) ### The error occurred while executing a query
+2023-05-12 11:10:05,586 ERROR [stderr] (default task-3) ### Cause: com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+2023-05-12 11:10:05,586 ERROR [stderr] (default task-3) 
+2023-05-12 11:10:05,586 ERROR [stderr] (default task-3) The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+2023-05-12 11:10:05,586 ERROR [stderr] (default task-3) 	at deployment.ExoplaneServlet.war//org.apache.ibatis.exceptions.ExceptionFactory.wrapException(ExceptionFactory.java:30)
+2023-05-12 11:10:05,590 ERROR [stderr] (default task-3) 	at deployment.ExoplaneServlet.war//org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:149)
+2023-05-12 11:10:05,591 ERROR [stderr] (default task-3) 	at deployment.ExoplaneServlet.war//org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:140)
+2023-05-12 11:10:05,591 ERROR [stderr] (default task-3) 	at deployment.ExoplaneServlet.war//org.apache.ibatis.session.defaults.DefaultSqlSession.selectOne(DefaultSqlSession.java:76)
+2023-05-12 11:10:05,595 ERROR [stderr] (default task-3) 	at deployment.ExoplaneServlet.war//org.apache.ibatis.binding.MapperMethod.execute(MapperMethod.java:87)
+2023-05-12 11:10:05,595 ERROR [stderr] (default task-3) 	at deployment.ExoplaneServlet.war//org.apache.ibatis.binding.MapperProxy$PlainMethodInvoker.invoke(MapperProxy.java:152)
+2023-05-12 11:10:05,596 ERROR [stderr] (default task-3) 	at deployment.ExoplaneServlet.war//org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:85)
+2023-05-12 11:10:05,597 ERROR [stderr] (default task-3) 	at deployment.ExoplaneServlet.war/jdk.proxy8/jdk.proxy8.$Proxy29.findByEmailPassword(Unknown Source)
+2023-05-12 11:10:05,597 ERROR [stderr] (default task-3) 	at deployment.ExoplaneServlet.war//it.exolab.exoplane.crud.PasseggeroCrud.findByEmailPassword(PasseggeroCrud.java:73)
+2023-05-12 11:10:05,598 ERROR [stderr] (default task-3) 	at deployment.ExoplaneServlet.war//it.exolab.exoplane.controller.PasseggeroController.findByEmailPassword(PasseggeroController.java:33)
+2023-05-12 11:10:05,598 ERROR [stderr] (default task-3) 	at deployment.ExoplaneServlet.war//it.exolab.exoplane.servlet.MainServlet.toLogin(MainServlet.java:97)
+2023-05-12 11:10:05,598 ERROR [stderr] (default task-3) 	at deployment.ExoplaneServlet.war//it.exolab.exoplane.servlet.MainServlet.doPost(MainServlet.java:46)
+2023-05-12 11:10:05,598 ERROR [stderr] (default task-3) 	at javax.servlet.api@2.0.0.Final//javax.servlet.http.HttpServlet.service(HttpServlet.java:523)
+2023-05-12 11:10:05,598 ERROR [stderr] (default task-3) 	at javax.servlet.api@2.0.0.Final//javax.servlet.http.HttpServlet.service(HttpServlet.java:590)
+2023-05-12 11:10:05,598 ERROR [stderr] (default task-3) 	at io.undertow.servlet@2.1.3.Final//io.undertow.servlet.handlers.ServletHandler.handleRequest(ServletHandler.java:74)
+2023-05-12 11:10:05,603 ERROR [stderr] (default task-3) 	at io.undertow.servlet@2.1.3.Final//io.undertow.servlet.handlers.security.ServletSecurityRoleHandler.handleRequest(ServletSecurityRoleHandler.java:62)
+2023-05-12 11:10:05,603 ERROR [stderr] (default task-3) 	at io.undertow.servlet@2.1.3.Final//io.undertow.servlet.handlers.ServletChain$1.handleRequest(ServletChain.java:68)
+2023-05-12 11:10:05,603 ERROR [stderr] (default task-3) 	at io.undertow.servlet@2.1.3.Final//io.undertow.servlet.handlers.ServletDispatchingHandler.handleRequest(ServletDispatchingHandler.java:36)
+2023-05-12 11:10:05,603 ERROR [stderr] (default task-3) 	at org.wildfly.extension.undertow@20.0.0.Final//org.wildfly.extension.undertow.security.SecurityContextAssociationHandler.handleRequest(SecurityContextAssociationHandler.java:78)
+2023-05-12 11:10:05,604 ERROR [stderr] (default task-3) 	at io.undertow.core@2.1.3.Final//io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
+2023-05-12 11:10:05,604 ERROR [stderr] (default task-3) 	at io.undertow.servlet@2.1.3.Final//io.undertow.servlet.handlers.RedirectDirHandler.handleRequest(RedirectDirHandler.java:68)
+2023-05-12 11:10:05,604 ERROR [stderr] (default task-3) 	at io.undertow.servlet@2.1.3.Final//io.undertow.servlet.handlers.security.SSLInformationAssociationHandler.handleRequest(SSLInformationAssociationHandler.java:132)
+2023-05-12 11:10:05,605 ERROR [stderr] (default task-3) 	at io.undertow.servlet@2.1.3.Final//io.undertow.servlet.handlers.security.ServletAuthenticationCallHandler.handleRequest(ServletAuthenticationCallHandler.java:57)
+2023-05-12 11:10:05,605 ERROR [stderr] (default task-3) 	at io.undertow.core@2.1.3.Final//io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
+2023-05-12 11:10:05,605 ERROR [stderr] (default task-3) 	at io.undertow.core@2.1.3.Final//io.undertow.security.handlers.AbstractConfidentialityHandler.handleRequest(AbstractConfidentialityHandler.java:46)
+2023-05-12 11:10:05,605 ERROR [stderr] (default task-3) 	at io.undertow.servlet@2.1.3.Final//io.undertow.servlet.handlers.security.ServletConfidentialityConstraintHandler.handleRequest(ServletConfidentialityConstraintHandler.java:64)
+2023-05-12 11:10:05,605 ERROR [stderr] (default task-3) 	at io.undertow.core@2.1.3.Final//io.undertow.security.handlers.AuthenticationMechanismsHandler.handleRequest(AuthenticationMechanismsHandler.java:60)
+2023-05-12 11:10:05,606 ERROR [stderr] (default task-3) 	at io.undertow.servlet@2.1.3.Final//io.undertow.servlet.handlers.security.CachedAuthenticatedSessionHandler.handleRequest(CachedAuthenticatedSessionHandler.java:77)
+2023-05-12 11:10:05,606 ERROR [stderr] (default task-3) 	at io.undertow.core@2.1.3.Final//io.undertow.security.handlers.NotificationReceiverHandler.handleRequest(NotificationReceiverHandler.java:50)
+2023-05-12 11:10:05,606 ERROR [stderr] (default task-3) 	at io.undertow.core@2.1.3.Final//io.undertow.security.handlers.AbstractSecurityContextAssociationHandler.handleRequest(AbstractSecurityContextAssociationHandler.java:43)
+2023-05-12 11:10:05,606 ERROR [stderr] (default task-3) 	at io.undertow.core@2.1.3.Final//io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
+2023-05-12 11:10:05,606 ERROR [stderr] (default task-3) 	at org.wildfly.extension.undertow@20.0.0.Final//org.wildfly.extension.undertow.security.jacc.JACCContextIdHandler.handleRequest(JACCContextIdHandler.java:61)
+2023-05-12 11:10:05,607 ERROR [stderr] (default task-3) 	at io.undertow.core@2.1.3.Final//io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
+2023-05-12 11:10:05,607 ERROR [stderr] (default task-3) 	at org.wildfly.extension.undertow@20.0.0.Final//org.wildfly.extension.undertow.deployment.GlobalRequestControllerHandler.handleRequest(GlobalRequestControllerHandler.java:68)
+2023-05-12 11:10:05,607 ERROR [stderr] (default task-3) 	at io.undertow.core@2.1.3.Final//io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
+2023-05-12 11:10:05,607 ERROR [stderr] (default task-3) 	at io.undertow.servlet@2.1.3.Final//io.undertow.servlet.handlers.ServletInitialHandler.handleFirstRequest(ServletInitialHandler.java:269)
+2023-05-12 11:10:05,607 ERROR [stderr] (default task-3) 	at io.undertow.servlet@2.1.3.Final//io.undertow.servlet.handlers.ServletInitialHandler.access$100(ServletInitialHandler.java:78)
+2023-05-12 11:10:05,607 ERROR [stderr] (default task-3) 	at io.undertow.servlet@2.1.3.Final//io.undertow.servlet.handlers.ServletInitialHandler$2.call(ServletInitialHandler.java:133)
+2023-05-12 11:10:05,607 ERROR [stderr] (default task-3) 	at io.undertow.servlet@2.1.3.Final//io.undertow.servlet.handlers.ServletInitialHandler$2.call(ServletInitialHandler.java:130)
+2023-05-12 11:10:05,607 ERROR [stderr] (default task-3) 	at io.undertow.servlet@2.1.3.Final//io.undertow.servlet.core.ServletRequestContextThreadSetupAction$1.call(ServletRequestContextThreadSetupAction.java:48)
+2023-05-12 11:10:05,608 ERROR [stderr] (default task-3) 	at io.undertow.servlet@2.1.3.Final//io.undertow.servlet.core.ContextClassLoaderSetupAction$1.call(ContextClassLoaderSetupAction.java:43)
+2023-05-12 11:10:05,608 ERROR [stderr] (default task-3) 	at org.wildfly.extension.undertow@20.0.0.Final//org.wildfly.extension.undertow.security.SecurityContextThreadSetupAction.lambda$create$0(SecurityContextThreadSetupAction.java:105)
+2023-05-12 11:10:05,608 ERROR [stderr] (default task-3) 	at org.wildfly.extension.undertow@20.0.0.Final//org.wildfly.extension.undertow.deployment.UndertowDeploymentInfoService$UndertowThreadSetupAction.lambda$create$0(UndertowDeploymentInfoService.java:1530)
+2023-05-12 11:10:05,609 ERROR [stderr] (default task-3) 	at org.wildfly.extension.undertow@20.0.0.Final//org.wildfly.extension.undertow.deployment.UndertowDeploymentInfoService$UndertowThreadSetupAction.lambda$create$0(UndertowDeploymentInfoService.java:1530)
+2023-05-12 11:10:05,609 ERROR [stderr] (default task-3) 	at org.wildfly.extension.undertow@20.0.0.Final//org.wildfly.extension.undertow.deployment.UndertowDeploymentInfoService$UndertowThreadSetupAction.lambda$create$0(UndertowDeploymentInfoService.java:1530)
+2023-05-12 11:10:05,609 ERROR [stderr] (default task-3) 	at org.wildfly.extension.undertow@20.0.0.Final//org.wildfly.extension.undertow.deployment.UndertowDeploymentInfoService$UndertowThreadSetupAction.lambda$create$0(UndertowDeploymentInfoService.java:1530)
+2023-05-12 11:10:05,609 ERROR [stderr] (default task-3) 	at io.undertow.servlet@2.1.3.Final//io.undertow.servlet.handlers.ServletInitialHandler.dispatchRequest(ServletInitialHandler.java:249)
+2023-05-12 11:10:05,611 ERROR [stderr] (default task-3) 	at io.undertow.servlet@2.1.3.Final//io.undertow.servlet.handlers.ServletInitialHandler.access$000(ServletInitialHandler.java:78)
+2023-05-12 11:10:05,615 ERROR [stderr] (default task-3) 	at io.undertow.servlet@2.1.3.Final//io.undertow.servlet.handlers.ServletInitialHandler$1.handleRequest(ServletInitialHandler.java:99)
+2023-05-12 11:10:05,615 ERROR [stderr] (default task-3) 	at io.undertow.core@2.1.3.Final//io.undertow.server.Connectors.executeRootHandler(Connectors.java:370)
+2023-05-12 11:10:05,617 ERROR [stderr] (default task-3) 	at io.undertow.core@2.1.3.Final//io.undertow.server.HttpServerExchange$1.run(HttpServerExchange.java:830)
+2023-05-12 11:10:05,617 ERROR [stderr] (default task-3) 	at org.jboss.threads@2.3.3.Final//org.jboss.threads.ContextClassLoaderSavingRunnable.run(ContextClassLoaderSavingRunnable.java:35)
+2023-05-12 11:10:05,617 ERROR [stderr] (default task-3) 	at org.jboss.threads@2.3.3.Final//org.jboss.threads.EnhancedQueueExecutor.safeRun(EnhancedQueueExecutor.java:1982)
+2023-05-12 11:10:05,617 ERROR [stderr] (default task-3) 	at org.jboss.threads@2.3.3.Final//org.jboss.threads.EnhancedQueueExecutor$ThreadBody.doRunTask(EnhancedQueueExecutor.java:1486)
+2023-05-12 11:10:05,617 ERROR [stderr] (default task-3) 	at org.jboss.threads@2.3.3.Final//org.jboss.threads.EnhancedQueueExecutor$ThreadBody.run(EnhancedQueueExecutor.java:1377)
+2023-05-12 11:10:05,618 ERROR [stderr] (default task-3) 	at java.base/java.lang.Thread.run(Thread.java:833)
+2023-05-12 11:10:05,618 ERROR [stderr] (default task-3) Caused by: com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+2023-05-12 11:10:05,618 ERROR [stderr] (default task-3) 
+2023-05-12 11:10:05,618 ERROR [stderr] (default task-3) The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+2023-05-12 11:10:05,618 ERROR [stderr] (default task-3) 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+2023-05-12 11:10:05,618 ERROR [stderr] (default task-3) 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+2023-05-12 11:10:05,619 ERROR [stderr] (default task-3) 	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+2023-05-12 11:10:05,619 ERROR [stderr] (default task-3) 	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+2023-05-12 11:10:05,619 ERROR [stderr] (default task-3) 	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+2023-05-12 11:10:05,619 ERROR [stderr] (default task-3) 	at deployment.ExoplaneServlet.war//com.mysql.jdbc.Util.handleNewInstance(Util.java:425)
+2023-05-12 11:10:05,620 ERROR [stderr] (default task-3) 	at deployment.ExoplaneServlet.war//com.mysql.jdbc.SQLError.createCommunicationsException(SQLError.java:990)
+2023-05-12 11:10:05,625 ERROR [stderr] (default task-3) 	at deployment.ExoplaneServlet.war//com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:342)
+2023-05-12 11:10:05,625 ERROR [stderr] (default task-3) 	at deployment.ExoplaneServlet.war//com.mysql.jdbc.ConnectionImpl.coreConnect(ConnectionImpl.java:2188)
+2023-05-12 11:10:05,628 ERROR [stderr] (default task-3) 	at deployment.ExoplaneServlet.war//com.mysql.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:2221)
+2023-05-12 11:10:05,628 ERROR [stderr] (default task-3) 	at deployment.ExoplaneServlet.war//com.mysql.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:2016)
+2023-05-12 11:10:05,629 ERROR [stderr] (default task-3) 	at deployment.ExoplaneServlet.war//com.mysql.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:776)
+2023-05-12 11:10:05,629 ERROR [stderr] (default task-3) 	at deployment.ExoplaneServlet.war//com.mysql.jdbc.JDBC4Connection.<init>(JDBC4Connection.java:47)
+2023-05-12 11:10:05,629 ERROR [stderr] (default task-3) 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+2023-05-12 11:10:05,629 ERROR [stderr] (default task-3) 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+2023-05-12 11:10:05,629 ERROR [stderr] (default task-3) 	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+2023-05-12 11:10:05,629 ERROR [stderr] (default task-3) 	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+2023-05-12 11:10:05,629 ERROR [stderr] (default task-3) 	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+2023-05-12 11:10:05,630 ERROR [stderr] (default task-3) 	at deployment.ExoplaneServlet.war//com.mysql.jdbc.Util.handleNewInstance(Util.java:425)
+2023-05-12 11:10:05,630 ERROR [stderr] (default task-3) 	at deployment.ExoplaneServlet.war//com.mysql.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:386)
+2023-05-12 11:10:05,630 ERROR [stderr] (default task-3) 	at deployment.ExoplaneServlet.war//com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:330)
+2023-05-12 11:10:05,630 ERROR [stderr] (default task-3) 	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:681)
+2023-05-12 11:10:05,630 ERROR [stderr] (default task-3) 	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:190)
+2023-05-12 11:10:05,630 ERROR [stderr] (default task-3) 	at deployment.ExoplaneServlet.war//org.apache.ibatis.datasource.unpooled.UnpooledDataSource.doGetConnection(UnpooledDataSource.java:224)
+2023-05-12 11:10:05,630 ERROR [stderr] (default task-3) 	at deployment.ExoplaneServlet.war//org.apache.ibatis.datasource.unpooled.UnpooledDataSource.doGetConnection(UnpooledDataSource.java:219)
+2023-05-12 11:10:05,630 ERROR [stderr] (default task-3) 	at deployment.ExoplaneServlet.war//org.apache.ibatis.datasource.unpooled.UnpooledDataSource.getConnection(UnpooledDataSource.java:95)
+2023-05-12 11:10:05,630 ERROR [stderr] (default task-3) 	at deployment.ExoplaneServlet.war//org.apache.ibatis.datasource.pooled.PooledDataSource.popConnection(PooledDataSource.java:432)
+2023-05-12 11:10:05,630 ERROR [stderr] (default task-3) 	at deployment.ExoplaneServlet.war//org.apache.ibatis.datasource.pooled.PooledDataSource.getConnection(PooledDataSource.java:89)
+2023-05-12 11:10:05,631 ERROR [stderr] (default task-3) 	at deployment.ExoplaneServlet.war//org.apache.ibatis.transaction.jdbc.JdbcTransaction.openConnection(JdbcTransaction.java:139)
+2023-05-12 11:10:05,631 ERROR [stderr] (default task-3) 	at deployment.ExoplaneServlet.war//org.apache.ibatis.transaction.jdbc.JdbcTransaction.getConnection(JdbcTransaction.java:61)
+2023-05-12 11:10:05,631 ERROR [stderr] (default task-3) 	at deployment.ExoplaneServlet.war//org.apache.ibatis.executor.BaseExecutor.getConnection(BaseExecutor.java:337)
+2023-05-12 11:10:05,631 ERROR [stderr] (default task-3) 	at deployment.ExoplaneServlet.war//org.apache.ibatis.executor.SimpleExecutor.prepareStatement(SimpleExecutor.java:86)
+2023-05-12 11:10:05,631 ERROR [stderr] (default task-3) 	at deployment.ExoplaneServlet.war//org.apache.ibatis.executor.SimpleExecutor.doQuery(SimpleExecutor.java:62)
+2023-05-12 11:10:05,632 ERROR [stderr] (default task-3) 	at deployment.ExoplaneServlet.war//org.apache.ibatis.executor.BaseExecutor.queryFromDatabase(BaseExecutor.java:325)
+2023-05-12 11:10:05,636 ERROR [stderr] (default task-3) 	at deployment.ExoplaneServlet.war//org.apache.ibatis.executor.BaseExecutor.query(BaseExecutor.java:156)
+2023-05-12 11:10:05,636 ERROR [stderr] (default task-3) 	at deployment.ExoplaneServlet.war//org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:109)
+2023-05-12 11:10:05,636 ERROR [stderr] (default task-3) 	at deployment.ExoplaneServlet.war//org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:89)
+2023-05-12 11:10:05,636 ERROR [stderr] (default task-3) 	at deployment.ExoplaneServlet.war//org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:147)
+2023-05-12 11:10:05,636 ERROR [stderr] (default task-3) 	... 54 more
+2023-05-12 11:10:05,636 ERROR [stderr] (default task-3) Caused by: java.net.ConnectException: Connection refused: connect
+2023-05-12 11:10:05,636 ERROR [stderr] (default task-3) 	at java.base/sun.nio.ch.Net.connect0(Native Method)
+2023-05-12 11:10:05,636 ERROR [stderr] (default task-3) 	at java.base/sun.nio.ch.Net.connect(Net.java:579)
+2023-05-12 11:10:05,637 ERROR [stderr] (default task-3) 	at java.base/sun.nio.ch.Net.connect(Net.java:568)
+2023-05-12 11:10:05,637 ERROR [stderr] (default task-3) 	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:588)
+2023-05-12 11:10:05,637 ERROR [stderr] (default task-3) 	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
+2023-05-12 11:10:05,637 ERROR [stderr] (default task-3) 	at java.base/java.net.Socket.connect(Socket.java:633)
+2023-05-12 11:10:05,637 ERROR [stderr] (default task-3) 	at deployment.ExoplaneServlet.war//com.mysql.jdbc.StandardSocketFactory.connect(StandardSocketFactory.java:211)
+2023-05-12 11:10:05,637 ERROR [stderr] (default task-3) 	at deployment.ExoplaneServlet.war//com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:301)
+2023-05-12 11:10:05,637 ERROR [stderr] (default task-3) 	... 84 more
+2023-05-12 11:10:06,096 INFO  [stdout] (default task-1) Nella servlet - POST
+2023-05-12 11:10:06,097 INFO  [stdout] (default task-1) Nell toLogin
+2023-05-12 11:10:06,097 INFO  [stdout] (default task-1) findByEmailPassword Controller passeggero --> Passeggero [id=null, nome=null, cognome=null, mail=bozzetto@gmail.com, telefono=0, password=gennarino, listaPrenotazioni=null]
+2023-05-12 11:10:06,103 INFO  [stdout] (default task-1) findByEmailPassword Crud passeggero --> Passeggero [id=null, nome=null, cognome=null, mail=bozzetto@gmail.com, telefono=0, password=gennarino, listaPrenotazioni=null]
+2023-05-12 11:10:07,157 ERROR [stderr] (default task-1) org.apache.ibatis.exceptions.PersistenceException: 
+2023-05-12 11:10:07,168 ERROR [stderr] (default task-1) ### Error querying database.  Cause: com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+2023-05-12 11:10:07,170 ERROR [stderr] (default task-1) 
+2023-05-12 11:10:07,171 ERROR [stderr] (default task-1) The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+2023-05-12 11:10:07,171 ERROR [stderr] (default task-1) ### The error may exist in passeggero.xml
+2023-05-12 11:10:07,171 ERROR [stderr] (default task-1) ### The error may involve it.exolab.exoplane.mapper.PasseggeroMapper.findByEmailPassword
+2023-05-12 11:10:07,171 ERROR [stderr] (default task-1) ### The error occurred while executing a query
+2023-05-12 11:10:07,171 ERROR [stderr] (default task-1) ### Cause: com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+2023-05-12 11:10:07,172 ERROR [stderr] (default task-1) 
+2023-05-12 11:10:07,172 ERROR [stderr] (default task-1) The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+2023-05-12 11:10:07,172 ERROR [stderr] (default task-1) 	at deployment.ExoplaneServlet.war//org.apache.ibatis.exceptions.ExceptionFactory.wrapException(ExceptionFactory.java:30)
+2023-05-12 11:10:07,172 ERROR [stderr] (default task-1) 	at deployment.ExoplaneServlet.war//org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:149)
+2023-05-12 11:10:07,172 ERROR [stderr] (default task-1) 	at deployment.ExoplaneServlet.war//org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:140)
+2023-05-12 11:10:07,172 ERROR [stderr] (default task-1) 	at deployment.ExoplaneServlet.war//org.apache.ibatis.session.defaults.DefaultSqlSession.selectOne(DefaultSqlSession.java:76)
+2023-05-12 11:10:07,174 ERROR [stderr] (default task-1) 	at deployment.ExoplaneServlet.war//org.apache.ibatis.binding.MapperMethod.execute(MapperMethod.java:87)
+2023-05-12 11:10:07,174 ERROR [stderr] (default task-1) 	at deployment.ExoplaneServlet.war//org.apache.ibatis.binding.MapperProxy$PlainMethodInvoker.invoke(MapperProxy.java:152)
+2023-05-12 11:10:07,174 ERROR [stderr] (default task-1) 	at deployment.ExoplaneServlet.war//org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:85)
+2023-05-12 11:10:07,174 ERROR [stderr] (default task-1) 	at deployment.ExoplaneServlet.war/jdk.proxy8/jdk.proxy8.$Proxy29.findByEmailPassword(Unknown Source)
+2023-05-12 11:10:07,179 ERROR [stderr] (default task-1) 	at deployment.ExoplaneServlet.war//it.exolab.exoplane.crud.PasseggeroCrud.findByEmailPassword(PasseggeroCrud.java:73)
+2023-05-12 11:10:07,179 ERROR [stderr] (default task-1) 	at deployment.ExoplaneServlet.war//it.exolab.exoplane.controller.PasseggeroController.findByEmailPassword(PasseggeroController.java:33)
+2023-05-12 11:10:07,186 ERROR [stderr] (default task-1) 	at deployment.ExoplaneServlet.war//it.exolab.exoplane.servlet.MainServlet.toLogin(MainServlet.java:97)
+2023-05-12 11:10:07,186 ERROR [stderr] (default task-1) 	at deployment.ExoplaneServlet.war//it.exolab.exoplane.servlet.MainServlet.doPost(MainServlet.java:46)
+2023-05-12 11:10:07,219 ERROR [stderr] (default task-1) 	at javax.servlet.api@2.0.0.Final//javax.servlet.http.HttpServlet.service(HttpServlet.java:523)
+2023-05-12 11:10:07,236 ERROR [stderr] (default task-1) 	at javax.servlet.api@2.0.0.Final//javax.servlet.http.HttpServlet.service(HttpServlet.java:590)
+2023-05-12 11:10:07,237 ERROR [stderr] (default task-1) 	at io.undertow.servlet@2.1.3.Final//io.undertow.servlet.handlers.ServletHandler.handleRequest(ServletHandler.java:74)
+2023-05-12 11:10:07,237 ERROR [stderr] (default task-1) 	at io.undertow.servlet@2.1.3.Final//io.undertow.servlet.handlers.security.ServletSecurityRoleHandler.handleRequest(ServletSecurityRoleHandler.java:62)
+2023-05-12 11:10:07,237 ERROR [stderr] (default task-1) 	at io.undertow.servlet@2.1.3.Final//io.undertow.servlet.handlers.ServletChain$1.handleRequest(ServletChain.java:68)
+2023-05-12 11:10:07,238 ERROR [stderr] (default task-1) 	at io.undertow.servlet@2.1.3.Final//io.undertow.servlet.handlers.ServletDispatchingHandler.handleRequest(ServletDispatchingHandler.java:36)
+2023-05-12 11:10:07,238 ERROR [stderr] (default task-1) 	at org.wildfly.extension.undertow@20.0.0.Final//org.wildfly.extension.undertow.security.SecurityContextAssociationHandler.handleRequest(SecurityContextAssociationHandler.java:78)
+2023-05-12 11:10:07,238 ERROR [stderr] (default task-1) 	at io.undertow.core@2.1.3.Final//io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
+2023-05-12 11:10:07,238 ERROR [stderr] (default task-1) 	at io.undertow.servlet@2.1.3.Final//io.undertow.servlet.handlers.RedirectDirHandler.handleRequest(RedirectDirHandler.java:68)
+2023-05-12 11:10:07,238 ERROR [stderr] (default task-1) 	at io.undertow.servlet@2.1.3.Final//io.undertow.servlet.handlers.security.SSLInformationAssociationHandler.handleRequest(SSLInformationAssociationHandler.java:132)
+2023-05-12 11:10:07,239 ERROR [stderr] (default task-1) 	at io.undertow.servlet@2.1.3.Final//io.undertow.servlet.handlers.security.ServletAuthenticationCallHandler.handleRequest(ServletAuthenticationCallHandler.java:57)
+2023-05-12 11:10:07,239 ERROR [stderr] (default task-1) 	at io.undertow.core@2.1.3.Final//io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
+2023-05-12 11:10:07,239 ERROR [stderr] (default task-1) 	at io.undertow.core@2.1.3.Final//io.undertow.security.handlers.AbstractConfidentialityHandler.handleRequest(AbstractConfidentialityHandler.java:46)
+2023-05-12 11:10:07,239 ERROR [stderr] (default task-1) 	at io.undertow.servlet@2.1.3.Final//io.undertow.servlet.handlers.security.ServletConfidentialityConstraintHandler.handleRequest(ServletConfidentialityConstraintHandler.java:64)
+2023-05-12 11:10:07,239 ERROR [stderr] (default task-1) 	at io.undertow.core@2.1.3.Final//io.undertow.security.handlers.AuthenticationMechanismsHandler.handleRequest(AuthenticationMechanismsHandler.java:60)
+2023-05-12 11:10:07,239 ERROR [stderr] (default task-1) 	at io.undertow.servlet@2.1.3.Final//io.undertow.servlet.handlers.security.CachedAuthenticatedSessionHandler.handleRequest(CachedAuthenticatedSessionHandler.java:77)
+2023-05-12 11:10:07,239 ERROR [stderr] (default task-1) 	at io.undertow.core@2.1.3.Final//io.undertow.security.handlers.NotificationReceiverHandler.handleRequest(NotificationReceiverHandler.java:50)
+2023-05-12 11:10:07,239 ERROR [stderr] (default task-1) 	at io.undertow.core@2.1.3.Final//io.undertow.security.handlers.AbstractSecurityContextAssociationHandler.handleRequest(AbstractSecurityContextAssociationHandler.java:43)
+2023-05-12 11:10:07,239 ERROR [stderr] (default task-1) 	at io.undertow.core@2.1.3.Final//io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
+2023-05-12 11:10:07,239 ERROR [stderr] (default task-1) 	at org.wildfly.extension.undertow@20.0.0.Final//org.wildfly.extension.undertow.security.jacc.JACCContextIdHandler.handleRequest(JACCContextIdHandler.java:61)
+2023-05-12 11:10:07,241 ERROR [stderr] (default task-1) 	at io.undertow.core@2.1.3.Final//io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
+2023-05-12 11:10:07,243 ERROR [stderr] (default task-1) 	at org.wildfly.extension.undertow@20.0.0.Final//org.wildfly.extension.undertow.deployment.GlobalRequestControllerHandler.handleRequest(GlobalRequestControllerHandler.java:68)
+2023-05-12 11:10:07,245 ERROR [stderr] (default task-1) 	at io.undertow.core@2.1.3.Final//io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
+2023-05-12 11:10:07,246 ERROR [stderr] (default task-1) 	at io.undertow.servlet@2.1.3.Final//io.undertow.servlet.handlers.ServletInitialHandler.handleFirstRequest(ServletInitialHandler.java:269)
+2023-05-12 11:10:07,246 ERROR [stderr] (default task-1) 	at io.undertow.servlet@2.1.3.Final//io.undertow.servlet.handlers.ServletInitialHandler.access$100(ServletInitialHandler.java:78)
+2023-05-12 11:10:07,246 ERROR [stderr] (default task-1) 	at io.undertow.servlet@2.1.3.Final//io.undertow.servlet.handlers.ServletInitialHandler$2.call(ServletInitialHandler.java:133)
+2023-05-12 11:10:07,247 ERROR [stderr] (default task-1) 	at io.undertow.servlet@2.1.3.Final//io.undertow.servlet.handlers.ServletInitialHandler$2.call(ServletInitialHandler.java:130)
+2023-05-12 11:10:07,247 ERROR [stderr] (default task-1) 	at io.undertow.servlet@2.1.3.Final//io.undertow.servlet.core.ServletRequestContextThreadSetupAction$1.call(ServletRequestContextThreadSetupAction.java:48)
+2023-05-12 11:10:07,248 ERROR [stderr] (default task-1) 	at io.undertow.servlet@2.1.3.Final//io.undertow.servlet.core.ContextClassLoaderSetupAction$1.call(ContextClassLoaderSetupAction.java:43)
+2023-05-12 11:10:07,248 ERROR [stderr] (default task-1) 	at org.wildfly.extension.undertow@20.0.0.Final//org.wildfly.extension.undertow.security.SecurityContextThreadSetupAction.lambda$create$0(SecurityContextThreadSetupAction.java:105)
+2023-05-12 11:10:07,249 ERROR [stderr] (default task-1) 	at org.wildfly.extension.undertow@20.0.0.Final//org.wildfly.extension.undertow.deployment.UndertowDeploymentInfoService$UndertowThreadSetupAction.lambda$create$0(UndertowDeploymentInfoService.java:1530)
+2023-05-12 11:10:07,249 ERROR [stderr] (default task-1) 	at org.wildfly.extension.undertow@20.0.0.Final//org.wildfly.extension.undertow.deployment.UndertowDeploymentInfoService$UndertowThreadSetupAction.lambda$create$0(UndertowDeploymentInfoService.java:1530)
+2023-05-12 11:10:07,251 ERROR [stderr] (default task-1) 	at org.wildfly.extension.undertow@20.0.0.Final//org.wildfly.extension.undertow.deployment.UndertowDeploymentInfoService$UndertowThreadSetupAction.lambda$create$0(UndertowDeploymentInfoService.java:1530)
+2023-05-12 11:10:07,251 ERROR [stderr] (default task-1) 	at org.wildfly.extension.undertow@20.0.0.Final//org.wildfly.extension.undertow.deployment.UndertowDeploymentInfoService$UndertowThreadSetupAction.lambda$create$0(UndertowDeploymentInfoService.java:1530)
+2023-05-12 11:10:07,251 ERROR [stderr] (default task-1) 	at io.undertow.servlet@2.1.3.Final//io.undertow.servlet.handlers.ServletInitialHandler.dispatchRequest(ServletInitialHandler.java:249)
+2023-05-12 11:10:07,251 ERROR [stderr] (default task-1) 	at io.undertow.servlet@2.1.3.Final//io.undertow.servlet.handlers.ServletInitialHandler.access$000(ServletInitialHandler.java:78)
+2023-05-12 11:10:07,251 ERROR [stderr] (default task-1) 	at io.undertow.servlet@2.1.3.Final//io.undertow.servlet.handlers.ServletInitialHandler$1.handleRequest(ServletInitialHandler.java:99)
+2023-05-12 11:10:07,251 ERROR [stderr] (default task-1) 	at io.undertow.core@2.1.3.Final//io.undertow.server.Connectors.executeRootHandler(Connectors.java:370)
+2023-05-12 11:10:07,252 ERROR [stderr] (default task-1) 	at io.undertow.core@2.1.3.Final//io.undertow.server.HttpServerExchange$1.run(HttpServerExchange.java:830)
+2023-05-12 11:10:07,252 ERROR [stderr] (default task-1) 	at org.jboss.threads@2.3.3.Final//org.jboss.threads.ContextClassLoaderSavingRunnable.run(ContextClassLoaderSavingRunnable.java:35)
+2023-05-12 11:10:07,253 ERROR [stderr] (default task-1) 	at org.jboss.threads@2.3.3.Final//org.jboss.threads.EnhancedQueueExecutor.safeRun(EnhancedQueueExecutor.java:1982)
+2023-05-12 11:10:07,254 ERROR [stderr] (default task-1) 	at org.jboss.threads@2.3.3.Final//org.jboss.threads.EnhancedQueueExecutor$ThreadBody.doRunTask(EnhancedQueueExecutor.java:1486)
+2023-05-12 11:10:07,254 ERROR [stderr] (default task-1) 	at org.jboss.threads@2.3.3.Final//org.jboss.threads.EnhancedQueueExecutor$ThreadBody.run(EnhancedQueueExecutor.java:1377)
+2023-05-12 11:10:07,255 ERROR [stderr] (default task-1) 	at java.base/java.lang.Thread.run(Thread.java:833)
+2023-05-12 11:10:07,255 ERROR [stderr] (default task-1) Caused by: com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+2023-05-12 11:10:07,255 ERROR [stderr] (default task-1) 
+2023-05-12 11:10:07,255 ERROR [stderr] (default task-1) The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+2023-05-12 11:10:07,255 ERROR [stderr] (default task-1) 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+2023-05-12 11:10:07,255 ERROR [stderr] (default task-1) 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+2023-05-12 11:10:07,255 ERROR [stderr] (default task-1) 	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+2023-05-12 11:10:07,255 ERROR [stderr] (default task-1) 	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+2023-05-12 11:10:07,255 ERROR [stderr] (default task-1) 	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+2023-05-12 11:10:07,256 ERROR [stderr] (default task-1) 	at deployment.ExoplaneServlet.war//com.mysql.jdbc.Util.handleNewInstance(Util.java:425)
+2023-05-12 11:10:07,256 ERROR [stderr] (default task-1) 	at deployment.ExoplaneServlet.war//com.mysql.jdbc.SQLError.createCommunicationsException(SQLError.java:990)
+2023-05-12 11:10:07,256 ERROR [stderr] (default task-1) 	at deployment.ExoplaneServlet.war//com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:342)
+2023-05-12 11:10:07,256 ERROR [stderr] (default task-1) 	at deployment.ExoplaneServlet.war//com.mysql.jdbc.ConnectionImpl.coreConnect(ConnectionImpl.java:2188)
+2023-05-12 11:10:07,256 ERROR [stderr] (default task-1) 	at deployment.ExoplaneServlet.war//com.mysql.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:2221)
+2023-05-12 11:10:07,256 ERROR [stderr] (default task-1) 	at deployment.ExoplaneServlet.war//com.mysql.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:2016)
+2023-05-12 11:10:07,256 ERROR [stderr] (default task-1) 	at deployment.ExoplaneServlet.war//com.mysql.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:776)
+2023-05-12 11:10:07,257 ERROR [stderr] (default task-1) 	at deployment.ExoplaneServlet.war//com.mysql.jdbc.JDBC4Connection.<init>(JDBC4Connection.java:47)
+2023-05-12 11:10:07,257 ERROR [stderr] (default task-1) 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+2023-05-12 11:10:07,257 ERROR [stderr] (default task-1) 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+2023-05-12 11:10:07,257 ERROR [stderr] (default task-1) 	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+2023-05-12 11:10:07,257 ERROR [stderr] (default task-1) 	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+2023-05-12 11:10:07,257 ERROR [stderr] (default task-1) 	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+2023-05-12 11:10:07,257 ERROR [stderr] (default task-1) 	at deployment.ExoplaneServlet.war//com.mysql.jdbc.Util.handleNewInstance(Util.java:425)
+2023-05-12 11:10:07,257 ERROR [stderr] (default task-1) 	at deployment.ExoplaneServlet.war//com.mysql.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:386)
+2023-05-12 11:10:07,257 ERROR [stderr] (default task-1) 	at deployment.ExoplaneServlet.war//com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:330)
+2023-05-12 11:10:07,257 ERROR [stderr] (default task-1) 	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:681)
+2023-05-12 11:10:07,257 ERROR [stderr] (default task-1) 	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:190)
+2023-05-12 11:10:07,260 ERROR [stderr] (default task-1) 	at deployment.ExoplaneServlet.war//org.apache.ibatis.datasource.unpooled.UnpooledDataSource.doGetConnection(UnpooledDataSource.java:224)
+2023-05-12 11:10:07,260 ERROR [stderr] (default task-1) 	at deployment.ExoplaneServlet.war//org.apache.ibatis.datasource.unpooled.UnpooledDataSource.doGetConnection(UnpooledDataSource.java:219)
+2023-05-12 11:10:07,260 ERROR [stderr] (default task-1) 	at deployment.ExoplaneServlet.war//org.apache.ibatis.datasource.unpooled.UnpooledDataSource.getConnection(UnpooledDataSource.java:95)
+2023-05-12 11:10:07,260 ERROR [stderr] (default task-1) 	at deployment.ExoplaneServlet.war//org.apache.ibatis.datasource.pooled.PooledDataSource.popConnection(PooledDataSource.java:432)
+2023-05-12 11:10:07,260 ERROR [stderr] (default task-1) 	at deployment.ExoplaneServlet.war//org.apache.ibatis.datasource.pooled.PooledDataSource.getConnection(PooledDataSource.java:89)
+2023-05-12 11:10:07,260 ERROR [stderr] (default task-1) 	at deployment.ExoplaneServlet.war//org.apache.ibatis.transaction.jdbc.JdbcTransaction.openConnection(JdbcTransaction.java:139)
+2023-05-12 11:10:07,263 ERROR [stderr] (default task-1) 	at deployment.ExoplaneServlet.war//org.apache.ibatis.transaction.jdbc.JdbcTransaction.getConnection(JdbcTransaction.java:61)
+2023-05-12 11:10:07,263 ERROR [stderr] (default task-1) 	at deployment.ExoplaneServlet.war//org.apache.ibatis.executor.BaseExecutor.getConnection(BaseExecutor.java:337)
+2023-05-12 11:10:07,263 ERROR [stderr] (default task-1) 	at deployment.ExoplaneServlet.war//org.apache.ibatis.executor.SimpleExecutor.prepareStatement(SimpleExecutor.java:86)
+2023-05-12 11:10:07,263 ERROR [stderr] (default task-1) 	at deployment.ExoplaneServlet.war//org.apache.ibatis.executor.SimpleExecutor.doQuery(SimpleExecutor.java:62)
+2023-05-12 11:10:07,263 ERROR [stderr] (default task-1) 	at deployment.ExoplaneServlet.war//org.apache.ibatis.executor.BaseExecutor.queryFromDatabase(BaseExecutor.java:325)
+2023-05-12 11:10:07,264 ERROR [stderr] (default task-1) 	at deployment.ExoplaneServlet.war//org.apache.ibatis.executor.BaseExecutor.query(BaseExecutor.java:156)
+2023-05-12 11:10:07,264 ERROR [stderr] (default task-1) 	at deployment.ExoplaneServlet.war//org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:109)
+2023-05-12 11:10:07,264 ERROR [stderr] (default task-1) 	at deployment.ExoplaneServlet.war//org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:89)
+2023-05-12 11:10:07,264 ERROR [stderr] (default task-1) 	at deployment.ExoplaneServlet.war//org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:147)
+2023-05-12 11:10:07,264 ERROR [stderr] (default task-1) 	... 54 more
+2023-05-12 11:10:07,531 ERROR [stderr] (default task-1) Caused by: java.net.ConnectException: Connection refused: connect
+2023-05-12 11:10:07,531 ERROR [stderr] (default task-1) 	at java.base/sun.nio.ch.Net.connect0(Native Method)
+2023-05-12 11:10:07,532 ERROR [stderr] (default task-1) 	at java.base/sun.nio.ch.Net.connect(Net.java:579)
+2023-05-12 11:10:07,532 ERROR [stderr] (default task-1) 	at java.base/sun.nio.ch.Net.connect(Net.java:568)
+2023-05-12 11:10:07,532 ERROR [stderr] (default task-1) 	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:588)
+2023-05-12 11:10:07,532 ERROR [stderr] (default task-1) 	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
+2023-05-12 11:10:07,532 ERROR [stderr] (default task-1) 	at java.base/java.net.Socket.connect(Socket.java:633)
+2023-05-12 11:10:07,532 ERROR [stderr] (default task-1) 	at deployment.ExoplaneServlet.war//com.mysql.jdbc.StandardSocketFactory.connect(StandardSocketFactory.java:211)
+2023-05-12 11:10:07,532 ERROR [stderr] (default task-1) 	at deployment.ExoplaneServlet.war//com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:301)
+2023-05-12 11:10:07,532 ERROR [stderr] (default task-1) 	... 84 more
+2023-05-12 11:10:40,008 INFO  [stdout] (default task-1) Nella servlet - POST
+2023-05-12 11:10:40,010 INFO  [stdout] (default task-1) Nell toLogin
+2023-05-12 11:10:40,018 INFO  [stdout] (default task-1) findByEmailPassword Controller passeggero --> Passeggero [id=null, nome=null, cognome=null, mail=fsarti95@gmail.com, telefono=0, password=ciruzzo, listaPrenotazioni=null]
+2023-05-12 11:10:40,019 INFO  [stdout] (default task-1) findByEmailPassword Crud passeggero --> Passeggero [id=null, nome=null, cognome=null, mail=fsarti95@gmail.com, telefono=0, password=ciruzzo, listaPrenotazioni=null]
+2023-05-12 11:10:40,038 ERROR [stderr] (default task-1) org.apache.ibatis.exceptions.PersistenceException: 
+2023-05-12 11:10:40,039 ERROR [stderr] (default task-1) ### Error querying database.  Cause: com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+2023-05-12 11:10:40,039 ERROR [stderr] (default task-1) 
+2023-05-12 11:10:40,040 ERROR [stderr] (default task-1) The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+2023-05-12 11:10:40,040 ERROR [stderr] (default task-1) ### The error may exist in passeggero.xml
+2023-05-12 11:10:40,040 ERROR [stderr] (default task-1) ### The error may involve it.exolab.exoplane.mapper.PasseggeroMapper.findByEmailPassword
+2023-05-12 11:10:40,040 ERROR [stderr] (default task-1) ### The error occurred while executing a query
+2023-05-12 11:10:40,043 ERROR [stderr] (default task-1) ### Cause: com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+2023-05-12 11:10:40,043 ERROR [stderr] (default task-1) 
+2023-05-12 11:10:40,044 ERROR [stderr] (default task-1) The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+2023-05-12 11:10:40,044 ERROR [stderr] (default task-1) 	at deployment.ExoplaneServlet.war//org.apache.ibatis.exceptions.ExceptionFactory.wrapException(ExceptionFactory.java:30)
+2023-05-12 11:10:40,044 ERROR [stderr] (default task-1) 	at deployment.ExoplaneServlet.war//org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:149)
+2023-05-12 11:10:40,045 ERROR [stderr] (default task-1) 	at deployment.ExoplaneServlet.war//org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:140)
+2023-05-12 11:10:40,045 ERROR [stderr] (default task-1) 	at deployment.ExoplaneServlet.war//org.apache.ibatis.session.defaults.DefaultSqlSession.selectOne(DefaultSqlSession.java:76)
+2023-05-12 11:10:40,045 ERROR [stderr] (default task-1) 	at deployment.ExoplaneServlet.war//org.apache.ibatis.binding.MapperMethod.execute(MapperMethod.java:87)
+2023-05-12 11:10:40,045 ERROR [stderr] (default task-1) 	at deployment.ExoplaneServlet.war//org.apache.ibatis.binding.MapperProxy$PlainMethodInvoker.invoke(MapperProxy.java:152)
+2023-05-12 11:10:40,045 ERROR [stderr] (default task-1) 	at deployment.ExoplaneServlet.war//org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:85)
+2023-05-12 11:10:40,045 ERROR [stderr] (default task-1) 	at deployment.ExoplaneServlet.war/jdk.proxy8/jdk.proxy8.$Proxy29.findByEmailPassword(Unknown Source)
+2023-05-12 11:10:40,045 ERROR [stderr] (default task-1) 	at deployment.ExoplaneServlet.war//it.exolab.exoplane.crud.PasseggeroCrud.findByEmailPassword(PasseggeroCrud.java:73)
+2023-05-12 11:10:40,046 ERROR [stderr] (default task-1) 	at deployment.ExoplaneServlet.war//it.exolab.exoplane.controller.PasseggeroController.findByEmailPassword(PasseggeroController.java:33)
+2023-05-12 11:10:40,046 ERROR [stderr] (default task-1) 	at deployment.ExoplaneServlet.war//it.exolab.exoplane.servlet.MainServlet.toLogin(MainServlet.java:97)
+2023-05-12 11:10:40,046 ERROR [stderr] (default task-1) 	at deployment.ExoplaneServlet.war//it.exolab.exoplane.servlet.MainServlet.doPost(MainServlet.java:46)
+2023-05-12 11:10:40,046 ERROR [stderr] (default task-1) 	at javax.servlet.api@2.0.0.Final//javax.servlet.http.HttpServlet.service(HttpServlet.java:523)
+2023-05-12 11:10:40,046 ERROR [stderr] (default task-1) 	at javax.servlet.api@2.0.0.Final//javax.servlet.http.HttpServlet.service(HttpServlet.java:590)
+2023-05-12 11:10:40,046 ERROR [stderr] (default task-1) 	at io.undertow.servlet@2.1.3.Final//io.undertow.servlet.handlers.ServletHandler.handleRequest(ServletHandler.java:74)
+2023-05-12 11:10:40,046 ERROR [stderr] (default task-1) 	at io.undertow.servlet@2.1.3.Final//io.undertow.servlet.handlers.security.ServletSecurityRoleHandler.handleRequest(ServletSecurityRoleHandler.java:62)
+2023-05-12 11:10:40,048 ERROR [stderr] (default task-1) 	at io.undertow.servlet@2.1.3.Final//io.undertow.servlet.handlers.ServletChain$1.handleRequest(ServletChain.java:68)
+2023-05-12 11:10:40,048 ERROR [stderr] (default task-1) 	at io.undertow.servlet@2.1.3.Final//io.undertow.servlet.handlers.ServletDispatchingHandler.handleRequest(ServletDispatchingHandler.java:36)
+2023-05-12 11:10:40,049 ERROR [stderr] (default task-1) 	at org.wildfly.extension.undertow@20.0.0.Final//org.wildfly.extension.undertow.security.SecurityContextAssociationHandler.handleRequest(SecurityContextAssociationHandler.java:78)
+2023-05-12 11:10:40,049 ERROR [stderr] (default task-1) 	at io.undertow.core@2.1.3.Final//io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
+2023-05-12 11:10:40,049 ERROR [stderr] (default task-1) 	at io.undertow.servlet@2.1.3.Final//io.undertow.servlet.handlers.RedirectDirHandler.handleRequest(RedirectDirHandler.java:68)
+2023-05-12 11:10:40,050 ERROR [stderr] (default task-1) 	at io.undertow.servlet@2.1.3.Final//io.undertow.servlet.handlers.security.SSLInformationAssociationHandler.handleRequest(SSLInformationAssociationHandler.java:132)
+2023-05-12 11:10:40,050 ERROR [stderr] (default task-1) 	at io.undertow.servlet@2.1.3.Final//io.undertow.servlet.handlers.security.ServletAuthenticationCallHandler.handleRequest(ServletAuthenticationCallHandler.java:57)
+2023-05-12 11:10:40,051 ERROR [stderr] (default task-1) 	at io.undertow.core@2.1.3.Final//io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
+2023-05-12 11:10:40,051 ERROR [stderr] (default task-1) 	at io.undertow.core@2.1.3.Final//io.undertow.security.handlers.AbstractConfidentialityHandler.handleRequest(AbstractConfidentialityHandler.java:46)
+2023-05-12 11:10:40,051 ERROR [stderr] (default task-1) 	at io.undertow.servlet@2.1.3.Final//io.undertow.servlet.handlers.security.ServletConfidentialityConstraintHandler.handleRequest(ServletConfidentialityConstraintHandler.java:64)
+2023-05-12 11:10:40,051 ERROR [stderr] (default task-1) 	at io.undertow.core@2.1.3.Final//io.undertow.security.handlers.AuthenticationMechanismsHandler.handleRequest(AuthenticationMechanismsHandler.java:60)
+2023-05-12 11:10:40,054 ERROR [stderr] (default task-1) 	at io.undertow.servlet@2.1.3.Final//io.undertow.servlet.handlers.security.CachedAuthenticatedSessionHandler.handleRequest(CachedAuthenticatedSessionHandler.java:77)
+2023-05-12 11:10:40,057 ERROR [stderr] (default task-1) 	at io.undertow.core@2.1.3.Final//io.undertow.security.handlers.NotificationReceiverHandler.handleRequest(NotificationReceiverHandler.java:50)
+2023-05-12 11:10:40,057 ERROR [stderr] (default task-1) 	at io.undertow.core@2.1.3.Final//io.undertow.security.handlers.AbstractSecurityContextAssociationHandler.handleRequest(AbstractSecurityContextAssociationHandler.java:43)
+2023-05-12 11:10:40,057 ERROR [stderr] (default task-1) 	at io.undertow.core@2.1.3.Final//io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
+2023-05-12 11:10:40,057 ERROR [stderr] (default task-1) 	at org.wildfly.extension.undertow@20.0.0.Final//org.wildfly.extension.undertow.security.jacc.JACCContextIdHandler.handleRequest(JACCContextIdHandler.java:61)
+2023-05-12 11:10:40,057 ERROR [stderr] (default task-1) 	at io.undertow.core@2.1.3.Final//io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
+2023-05-12 11:10:40,057 ERROR [stderr] (default task-1) 	at org.wildfly.extension.undertow@20.0.0.Final//org.wildfly.extension.undertow.deployment.GlobalRequestControllerHandler.handleRequest(GlobalRequestControllerHandler.java:68)
+2023-05-12 11:10:40,057 ERROR [stderr] (default task-1) 	at io.undertow.core@2.1.3.Final//io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
+2023-05-12 11:10:40,057 ERROR [stderr] (default task-1) 	at io.undertow.servlet@2.1.3.Final//io.undertow.servlet.handlers.ServletInitialHandler.handleFirstRequest(ServletInitialHandler.java:269)
+2023-05-12 11:10:40,057 ERROR [stderr] (default task-1) 	at io.undertow.servlet@2.1.3.Final//io.undertow.servlet.handlers.ServletInitialHandler.access$100(ServletInitialHandler.java:78)
+2023-05-12 11:10:40,057 ERROR [stderr] (default task-1) 	at io.undertow.servlet@2.1.3.Final//io.undertow.servlet.handlers.ServletInitialHandler$2.call(ServletInitialHandler.java:133)
+2023-05-12 11:10:40,061 ERROR [stderr] (default task-1) 	at io.undertow.servlet@2.1.3.Final//io.undertow.servlet.handlers.ServletInitialHandler$2.call(ServletInitialHandler.java:130)
+2023-05-12 11:10:40,062 ERROR [stderr] (default task-1) 	at io.undertow.servlet@2.1.3.Final//io.undertow.servlet.core.ServletRequestContextThreadSetupAction$1.call(ServletRequestContextThreadSetupAction.java:48)
+2023-05-12 11:10:40,063 ERROR [stderr] (default task-1) 	at io.undertow.servlet@2.1.3.Final//io.undertow.servlet.core.ContextClassLoaderSetupAction$1.call(ContextClassLoaderSetupAction.java:43)
+2023-05-12 11:10:40,063 ERROR [stderr] (default task-1) 	at org.wildfly.extension.undertow@20.0.0.Final//org.wildfly.extension.undertow.security.SecurityContextThreadSetupAction.lambda$create$0(SecurityContextThreadSetupAction.java:105)
+2023-05-12 11:10:40,063 ERROR [stderr] (default task-1) 	at org.wildfly.extension.undertow@20.0.0.Final//org.wildfly.extension.undertow.deployment.UndertowDeploymentInfoService$UndertowThreadSetupAction.lambda$create$0(UndertowDeploymentInfoService.java:1530)
+2023-05-12 11:10:40,063 ERROR [stderr] (default task-1) 	at org.wildfly.extension.undertow@20.0.0.Final//org.wildfly.extension.undertow.deployment.UndertowDeploymentInfoService$UndertowThreadSetupAction.lambda$create$0(UndertowDeploymentInfoService.java:1530)
+2023-05-12 11:10:40,064 ERROR [stderr] (default task-1) 	at org.wildfly.extension.undertow@20.0.0.Final//org.wildfly.extension.undertow.deployment.UndertowDeploymentInfoService$UndertowThreadSetupAction.lambda$create$0(UndertowDeploymentInfoService.java:1530)
+2023-05-12 11:10:40,064 ERROR [stderr] (default task-1) 	at org.wildfly.extension.undertow@20.0.0.Final//org.wildfly.extension.undertow.deployment.UndertowDeploymentInfoService$UndertowThreadSetupAction.lambda$create$0(UndertowDeploymentInfoService.java:1530)
+2023-05-12 11:10:40,064 ERROR [stderr] (default task-1) 	at io.undertow.servlet@2.1.3.Final//io.undertow.servlet.handlers.ServletInitialHandler.dispatchRequest(ServletInitialHandler.java:249)
+2023-05-12 11:10:40,064 ERROR [stderr] (default task-1) 	at io.undertow.servlet@2.1.3.Final//io.undertow.servlet.handlers.ServletInitialHandler.access$000(ServletInitialHandler.java:78)
+2023-05-12 11:10:40,064 ERROR [stderr] (default task-1) 	at io.undertow.servlet@2.1.3.Final//io.undertow.servlet.handlers.ServletInitialHandler$1.handleRequest(ServletInitialHandler.java:99)
+2023-05-12 11:10:40,065 ERROR [stderr] (default task-1) 	at io.undertow.core@2.1.3.Final//io.undertow.server.Connectors.executeRootHandler(Connectors.java:370)
+2023-05-12 11:10:40,065 ERROR [stderr] (default task-1) 	at io.undertow.core@2.1.3.Final//io.undertow.server.HttpServerExchange$1.run(HttpServerExchange.java:830)
+2023-05-12 11:10:40,065 ERROR [stderr] (default task-1) 	at org.jboss.threads@2.3.3.Final//org.jboss.threads.ContextClassLoaderSavingRunnable.run(ContextClassLoaderSavingRunnable.java:35)
+2023-05-12 11:10:40,065 ERROR [stderr] (default task-1) 	at org.jboss.threads@2.3.3.Final//org.jboss.threads.EnhancedQueueExecutor.safeRun(EnhancedQueueExecutor.java:1982)
+2023-05-12 11:10:40,065 ERROR [stderr] (default task-1) 	at org.jboss.threads@2.3.3.Final//org.jboss.threads.EnhancedQueueExecutor$ThreadBody.doRunTask(EnhancedQueueExecutor.java:1486)
+2023-05-12 11:10:40,065 ERROR [stderr] (default task-1) 	at org.jboss.threads@2.3.3.Final//org.jboss.threads.EnhancedQueueExecutor$ThreadBody.run(EnhancedQueueExecutor.java:1377)
+2023-05-12 11:10:40,066 ERROR [stderr] (default task-1) 	at java.base/java.lang.Thread.run(Thread.java:833)
+2023-05-12 11:10:40,066 ERROR [stderr] (default task-1) Caused by: com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+2023-05-12 11:10:40,066 ERROR [stderr] (default task-1) 
+2023-05-12 11:10:40,066 ERROR [stderr] (default task-1) The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+2023-05-12 11:10:40,066 ERROR [stderr] (default task-1) 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+2023-05-12 11:10:40,067 ERROR [stderr] (default task-1) 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+2023-05-12 11:10:40,067 ERROR [stderr] (default task-1) 	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+2023-05-12 11:10:40,100 ERROR [stderr] (default task-1) 	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+2023-05-12 11:10:40,100 ERROR [stderr] (default task-1) 	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+2023-05-12 11:10:40,100 ERROR [stderr] (default task-1) 	at deployment.ExoplaneServlet.war//com.mysql.jdbc.Util.handleNewInstance(Util.java:425)
+2023-05-12 11:10:40,100 ERROR [stderr] (default task-1) 	at deployment.ExoplaneServlet.war//com.mysql.jdbc.SQLError.createCommunicationsException(SQLError.java:990)
+2023-05-12 11:10:40,100 ERROR [stderr] (default task-1) 	at deployment.ExoplaneServlet.war//com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:342)
+2023-05-12 11:10:40,100 ERROR [stderr] (default task-1) 	at deployment.ExoplaneServlet.war//com.mysql.jdbc.ConnectionImpl.coreConnect(ConnectionImpl.java:2188)
+2023-05-12 11:10:40,100 ERROR [stderr] (default task-1) 	at deployment.ExoplaneServlet.war//com.mysql.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:2221)
+2023-05-12 11:10:40,100 ERROR [stderr] (default task-1) 	at deployment.ExoplaneServlet.war//com.mysql.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:2016)
+2023-05-12 11:10:40,100 ERROR [stderr] (default task-1) 	at deployment.ExoplaneServlet.war//com.mysql.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:776)
+2023-05-12 11:10:40,102 ERROR [stderr] (default task-1) 	at deployment.ExoplaneServlet.war//com.mysql.jdbc.JDBC4Connection.<init>(JDBC4Connection.java:47)
+2023-05-12 11:10:40,102 ERROR [stderr] (default task-1) 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+2023-05-12 11:10:40,102 ERROR [stderr] (default task-1) 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+2023-05-12 11:10:40,102 ERROR [stderr] (default task-1) 	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+2023-05-12 11:10:40,102 ERROR [stderr] (default task-1) 	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+2023-05-12 11:10:40,102 ERROR [stderr] (default task-1) 	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+2023-05-12 11:10:40,102 ERROR [stderr] (default task-1) 	at deployment.ExoplaneServlet.war//com.mysql.jdbc.Util.handleNewInstance(Util.java:425)
+2023-05-12 11:10:40,102 ERROR [stderr] (default task-1) 	at deployment.ExoplaneServlet.war//com.mysql.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:386)
+2023-05-12 11:10:40,102 ERROR [stderr] (default task-1) 	at deployment.ExoplaneServlet.war//com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:330)
+2023-05-12 11:10:40,102 ERROR [stderr] (default task-1) 	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:681)
+2023-05-12 11:10:40,103 ERROR [stderr] (default task-1) 	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:190)
+2023-05-12 11:10:40,103 ERROR [stderr] (default task-1) 	at deployment.ExoplaneServlet.war//org.apache.ibatis.datasource.unpooled.UnpooledDataSource.doGetConnection(UnpooledDataSource.java:224)
+2023-05-12 11:10:40,103 ERROR [stderr] (default task-1) 	at deployment.ExoplaneServlet.war//org.apache.ibatis.datasource.unpooled.UnpooledDataSource.doGetConnection(UnpooledDataSource.java:219)
+2023-05-12 11:10:40,103 ERROR [stderr] (default task-1) 	at deployment.ExoplaneServlet.war//org.apache.ibatis.datasource.unpooled.UnpooledDataSource.getConnection(UnpooledDataSource.java:95)
+2023-05-12 11:10:40,103 ERROR [stderr] (default task-1) 	at deployment.ExoplaneServlet.war//org.apache.ibatis.datasource.pooled.PooledDataSource.popConnection(PooledDataSource.java:432)
+2023-05-12 11:10:40,103 ERROR [stderr] (default task-1) 	at deployment.ExoplaneServlet.war//org.apache.ibatis.datasource.pooled.PooledDataSource.getConnection(PooledDataSource.java:89)
+2023-05-12 11:10:40,103 ERROR [stderr] (default task-1) 	at deployment.ExoplaneServlet.war//org.apache.ibatis.transaction.jdbc.JdbcTransaction.openConnection(JdbcTransaction.java:139)
+2023-05-12 11:10:40,103 ERROR [stderr] (default task-1) 	at deployment.ExoplaneServlet.war//org.apache.ibatis.transaction.jdbc.JdbcTransaction.getConnection(JdbcTransaction.java:61)
+2023-05-12 11:10:40,103 ERROR [stderr] (default task-1) 	at deployment.ExoplaneServlet.war//org.apache.ibatis.executor.BaseExecutor.getConnection(BaseExecutor.java:337)
+2023-05-12 11:10:40,130 ERROR [stderr] (default task-1) 	at deployment.ExoplaneServlet.war//org.apache.ibatis.executor.SimpleExecutor.prepareStatement(SimpleExecutor.java:86)
+2023-05-12 11:10:40,130 ERROR [stderr] (default task-1) 	at deployment.ExoplaneServlet.war//org.apache.ibatis.executor.SimpleExecutor.doQuery(SimpleExecutor.java:62)
+2023-05-12 11:10:40,130 ERROR [stderr] (default task-1) 	at deployment.ExoplaneServlet.war//org.apache.ibatis.executor.BaseExecutor.queryFromDatabase(BaseExecutor.java:325)
+2023-05-12 11:10:40,130 ERROR [stderr] (default task-1) 	at deployment.ExoplaneServlet.war//org.apache.ibatis.executor.BaseExecutor.query(BaseExecutor.java:156)
+2023-05-12 11:10:40,130 ERROR [stderr] (default task-1) 	at deployment.ExoplaneServlet.war//org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:109)
+2023-05-12 11:10:40,130 ERROR [stderr] (default task-1) 	at deployment.ExoplaneServlet.war//org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:89)
+2023-05-12 11:10:40,130 ERROR [stderr] (default task-1) 	at deployment.ExoplaneServlet.war//org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:147)
+2023-05-12 11:10:40,130 ERROR [stderr] (default task-1) 	... 54 more
+2023-05-12 11:10:40,130 ERROR [stderr] (default task-1) Caused by: java.net.ConnectException: Connection refused: connect
+2023-05-12 11:10:40,130 ERROR [stderr] (default task-1) 	at java.base/sun.nio.ch.Net.connect0(Native Method)
+2023-05-12 11:10:40,131 ERROR [stderr] (default task-1) 	at java.base/sun.nio.ch.Net.connect(Net.java:579)
+2023-05-12 11:10:40,131 ERROR [stderr] (default task-1) 	at java.base/sun.nio.ch.Net.connect(Net.java:568)
+2023-05-12 11:10:40,131 ERROR [stderr] (default task-1) 	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:588)
+2023-05-12 11:10:40,131 ERROR [stderr] (default task-1) 	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327)
+2023-05-12 11:10:40,131 ERROR [stderr] (default task-1) 	at java.base/java.net.Socket.connect(Socket.java:633)
+2023-05-12 11:10:40,131 ERROR [stderr] (default task-1) 	at deployment.ExoplaneServlet.war//com.mysql.jdbc.StandardSocketFactory.connect(StandardSocketFactory.java:211)
+2023-05-12 11:10:40,131 ERROR [stderr] (default task-1) 	at deployment.ExoplaneServlet.war//com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:301)
+2023-05-12 11:10:40,131 ERROR [stderr] (default task-1) 	... 84 more
+2023-05-12 11:14:45,666 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-2) WFLYJCA0019: Stopped Driver service with driver-name = ExoplaneServlet.war_com.mysql.jdbc.Driver_5_1
+2023-05-12 11:14:45,666 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-3) WFLYJCA0019: Stopped Driver service with driver-name = ExoplaneServlet.war
+2023-05-12 11:14:45,693 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-3) WFLYJCA0019: Stopped Driver service with driver-name = ExoplaneServlet.war_com.mysql.fabric.jdbc.FabricMySQLDriver_5_1
+2023-05-12 11:14:45,916 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 11) WFLYUT0022: Unregistered web context: '/ExoplaneServlet' from server 'default-server'
+2023-05-12 11:14:46,747 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-2) WFLYSRV0028: Stopped deployment ExoplaneServlet.war (runtime-name: ExoplaneServlet.war) in 1155ms
+2023-05-12 11:14:47,252 INFO  [org.jboss.as.server] (DeploymentScanner-threads - 1) WFLYSRV0009: Undeployed "ExoplaneServlet.war" (runtime-name: "ExoplaneServlet.war")
+2023-05-12 11:14:52,355 INFO  [org.jboss.as.server.deployment.scanner] (DeploymentScanner-threads - 2) WFLYDS0004: Found ExoplaneServlet.war in deployment directory. To trigger deployment create a file called ExoplaneServlet.war.dodeploy
+2023-05-12 11:14:52,386 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-1) WFLYSRV0027: Starting deployment of "ExoplaneServlet.war" (runtime-name: "ExoplaneServlet.war")
+2023-05-12 11:14:57,939 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-3) WFLYJCA0005: Deploying non-JDBC-compliant driver class com.mysql.jdbc.Driver (version 5.1)
+2023-05-12 11:14:57,943 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-3) WFLYJCA0005: Deploying non-JDBC-compliant driver class com.mysql.fabric.jdbc.FabricMySQLDriver (version 5.1)
+2023-05-12 11:14:57,981 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-3) WFLYJCA0018: Started Driver service with driver-name = ExoplaneServlet.war_com.mysql.fabric.jdbc.FabricMySQLDriver_5_1
+2023-05-12 11:14:57,983 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-3) WFLYJCA0018: Started Driver service with driver-name = ExoplaneServlet.war
+2023-05-12 11:14:57,985 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-4) WFLYJCA0018: Started Driver service with driver-name = ExoplaneServlet.war_com.mysql.jdbc.Driver_5_1
+2023-05-12 11:14:58,049 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 94) WFLYUT0021: Registered web context: '/ExoplaneServlet' for server 'default-server'
+2023-05-12 11:14:58,446 INFO  [org.jboss.as.server] (DeploymentScanner-threads - 1) WFLYSRV0010: Deployed "ExoplaneServlet.war" (runtime-name : "ExoplaneServlet.war")
+2023-05-12 17:40:17,699 INFO  [org.jboss.modules] (main) JBoss Modules version 1.10.1.Final
+2023-05-12 17:40:26,458 INFO  [org.jboss.msc] (main) JBoss MSC version 1.4.11.Final
+2023-05-12 17:40:26,484 INFO  [org.jboss.threads] (main) JBoss Threads version 2.3.3.Final
+2023-05-12 17:40:26,732 INFO  [org.jboss.as] (MSC service thread 1-2) WFLYSRV0049: WildFly Full 20.0.0.Final (WildFly Core 12.0.1.Final) starting
+2023-05-12 17:40:26,739 DEBUG [org.jboss.as.config] (MSC service thread 1-2) Configured system properties:
+	file.encoding = UTF-8
+	file.separator = \
+	java.awt.headless = true
+	java.class.path = C:\dev\server\wildfly-20.0.0.Final\jboss-modules.jar
+	java.class.version = 61.0
+	java.home = C:\Program Files\Java\jdk-17.0.7
+	java.io.tmpdir = C:\Users\feder\AppData\Local\Temp\
+	java.library.path = C:\Program Files\Java\jdk-17.0.7\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;native;C:/Sviluppo/Eclipse//plugins/org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_17.0.5.v20221102-0933/jre/bin/server;C:/Sviluppo/Eclipse//plugins/org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_17.0.5.v20221102-0933/jre/bin;C:\Program Files\Java\jdk-17.0.7\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Sviluppo\Git\cmd;C:\Sviluppo\Maven\bin;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Program Files\MySQL\MySQL Shell 8.0\bin\;C:\Users\feder\AppData\Local\Microsoft\WindowsApps;;C:\Sviluppo\Eclipse;;.
+	java.net.preferIPv4Stack = true
+	java.runtime.name = Java(TM) SE Runtime Environment
+	java.runtime.version = 17.0.7+8-LTS-224
+	java.specification.name = Java Platform API Specification
+	java.specification.vendor = Oracle Corporation
+	java.specification.version = 17
+	java.util.logging.manager = org.jboss.logmanager.LogManager
+	java.vendor = Oracle Corporation
+	java.vendor.url = https://java.oracle.com/
+	java.vendor.url.bug = https://bugreport.java.com/bugreport/
+	java.version = 17.0.7
+	java.version.date = 2023-04-18
+	java.vm.compressedOopsMode = 32-bit
+	java.vm.info = mixed mode, sharing
+	java.vm.name = Java HotSpot(TM) 64-Bit Server VM
+	java.vm.specification.name = Java Virtual Machine Specification
+	java.vm.specification.vendor = Oracle Corporation
+	java.vm.specification.version = 17
+	java.vm.vendor = Oracle Corporation
+	java.vm.version = 17.0.7+8-LTS-224
+	javax.management.builder.initial = org.jboss.as.jmx.PluggableMBeanServerBuilder
+	jboss.bind.address = localhost
+	jboss.bind.address.management = localhost
+	jboss.home.dir = C:\dev\server\wildfly-20.0.0.Final
+	jboss.host.name = cipollino
+	jboss.modules.dir = C:\dev\server\wildfly-20.0.0.Final\modules
+	jboss.modules.system.pkgs = org.jboss.byteman
+	jboss.node.name = cipollino
+	jboss.qualified.host.name = cipollino
+	jboss.server.base.dir = C:\dev\server\wildfly-20.0.0.Final\standalone
+	jboss.server.config.dir = C:\dev\server\wildfly-20.0.0.Final\standalone\configuration
+	jboss.server.data.dir = C:\dev\server\wildfly-20.0.0.Final\standalone\data
+	jboss.server.deploy.dir = C:\dev\server\wildfly-20.0.0.Final\standalone\data\content
+	jboss.server.log.dir = C:\dev\server\wildfly-20.0.0.Final\standalone\log
+	jboss.server.name = cipollino
+	jboss.server.persist.config = true
+	jboss.server.temp.dir = C:\dev\server\wildfly-20.0.0.Final\standalone\tmp
+	jdk.debug = release
+	line.separator = 
+
+	logging.configuration = file:C:\dev\server\wildfly-20.0.0.Final\standalone\configuration\logging.properties
+	module.path = C:\dev\server\wildfly-20.0.0.Final\modules
+	native.encoding = Cp1252
+	org.jboss.boot.log.file = C:\dev\server\wildfly-20.0.0.Final\standalone\log\boot.log
+	org.jboss.logmanager.nocolor = true
+	org.jboss.resolver.warning = true
+	os.arch = amd64
+	os.name = Windows 11
+	os.version = 10.0
+	path.separator = ;
+	program.name = JBossTools: WildFly 20
+	sun.arch.data.model = 64
+	sun.boot.library.path = C:\Program Files\Java\jdk-17.0.7\bin
+	sun.cpu.endian = little
+	sun.cpu.isalist = amd64
+	sun.io.unicode.encoding = UnicodeLittle
+	sun.java.command = org.jboss.modules.Main -mp C:\dev\server\wildfly-20.0.0.Final\modules org.jboss.as.standalone -b localhost --server-config=standalone.xml -Djboss.server.base.dir=C:\dev\server\wildfly-20.0.0.Final\standalone
+	sun.java.launcher = SUN_STANDARD
+	sun.jnu.encoding = Cp1252
+	sun.management.compiler = HotSpot 64-Bit Tiered Compilers
+	sun.os.patch.level = 
+	sun.rmi.dgc.client.gcInterval = 3600000
+	sun.rmi.dgc.server.gcInterval = 3600000
+	user.country = IT
+	user.dir = C:\dev\server\wildfly-20.0.0.Final\bin
+	user.home = C:\Users\feder
+	user.language = it
+	user.name = feder
+	user.script = 
+	user.timezone = Europe/Rome
+	user.variant = 
+2023-05-12 17:40:26,744 DEBUG [org.jboss.as.config] (MSC service thread 1-2) VM Arguments: -Dprogram.name=JBossTools: WildFly 20 -Xms64m -Xmx512m -Dorg.jboss.resolver.warning=true -Djava.net.preferIPv4Stack=true -Dsun.rmi.dgc.client.gcInterval=3600000 -Dsun.rmi.dgc.server.gcInterval=3600000 -Djboss.modules.system.pkgs=org.jboss.byteman -Djava.awt.headless=true -Dorg.jboss.boot.log.file=C:\dev\server\wildfly-20.0.0.Final\standalone\log\boot.log -Dlogging.configuration=file:C:\dev\server\wildfly-20.0.0.Final\standalone\configuration\logging.properties -Djboss.home.dir=C:\dev\server\wildfly-20.0.0.Final -Dorg.jboss.logmanager.nocolor=true --add-exports=java.desktop/sun.awt=ALL-UNNAMED --add-exports=java.naming/com.sun.jndi.ldap=ALL-UNNAMED --add-opens=java.base/java.lang=ALL-UNNAMED --add-opens=java.base/java.lang.invoke=ALL-UNNAMED --add-opens=java.base/java.lang.reflect=ALL-UNNAMED --add-opens=java.base/java.io=ALL-UNNAMED --add-opens=java.base/java.security=ALL-UNNAMED --add-opens=java.base/java.util=ALL-UNNAMED --add-opens=java.base/java.util.concurrent=ALL-UNNAMED --add-opens=java.management/javax.management=ALL-UNNAMED --add-opens=java.naming/javax.naming=ALL-UNNAMED --add-exports=java.base/sun.nio.ch=ALL-UNNAMED --add-exports=jdk.unsupported/sun.misc=ALL-UNNAMED --add-exports=jdk.unsupported/sun.reflect=ALL-UNNAMED --add-modules=java.se -Djboss.bind.address.management=localhost -Dfile.encoding=UTF-8 -XX:+ShowCodeDetailsInExceptionMessages 
+2023-05-12 17:40:33,420 INFO  [org.wildfly.security] (ServerService Thread Pool -- 28) ELY00001: WildFly Elytron version 1.12.1.Final
+2023-05-12 17:41:14,036 INFO  [org.jboss.as.controller.management-deprecated] (Controller Boot Thread) WFLYCTL0028: Attribute 'security-realm' in the resource at address '/core-service=management/management-interface=http-interface' is deprecated, and may be removed in a future version. See the attribute description in the output of the read-resource-description operation to learn more about the deprecation.
+2023-05-12 17:41:14,335 INFO  [org.jboss.as.controller.management-deprecated] (ServerService Thread Pool -- 57) WFLYCTL0028: Attribute 'security-realm' in the resource at address '/subsystem=undertow/server=default-server/https-listener=https' is deprecated, and may be removed in a future version. See the attribute description in the output of the read-resource-description operation to learn more about the deprecation.
+2023-05-12 17:41:14,532 INFO  [org.jboss.as.server.deployment.scanner] (DeploymentScanner-threads - 1) WFLYDS0004: Found ExoplaneServlet.war in deployment directory. To trigger deployment create a file called ExoplaneServlet.war.dodeploy
+2023-05-12 17:41:14,534 INFO  [org.jboss.as.server.deployment.scanner] (DeploymentScanner-threads - 1) WFLYDS0004: Found corso-servletmybaties.war in deployment directory. To trigger deployment create a file called corso-servletmybaties.war.dodeploy
+2023-05-12 17:41:14,629 INFO  [org.jboss.as.server] (Controller Boot Thread) WFLYSRV0039: Creating http management service using socket-binding (management-http)
+2023-05-12 17:41:14,679 INFO  [org.xnio] (MSC service thread 1-2) XNIO version 3.8.1.Final
+2023-05-12 17:41:14,761 INFO  [org.xnio.nio] (MSC service thread 1-2) XNIO NIO Implementation Version 3.8.1.Final
+2023-05-12 17:41:15,095 INFO  [org.jboss.as.clustering.infinispan] (ServerService Thread Pool -- 72) WFLYCLINF0001: Activating Infinispan subsystem.
+2023-05-12 17:41:15,175 WARN  [org.jboss.as.txn] (ServerService Thread Pool -- 94) WFLYTX0013: The node-identifier attribute on the /subsystem=transactions is set to the default value. This is a danger for environments running multiple servers. Please make sure the attribute value is unique.
+2023-05-12 17:41:15,416 INFO  [org.wildfly.extension.microprofile.config.smallrye._private] (ServerService Thread Pool -- 81) WFLYCONF0001: Activating WildFly MicroProfile Config Subsystem
+2023-05-12 17:41:15,439 INFO  [org.wildfly.extension.microprofile.jwt.smallrye._private] (ServerService Thread Pool -- 83) WFLYJWT0001: Activating WildFly MicroProfile JWT Subsystem
+2023-05-12 17:41:15,471 INFO  [org.jboss.as.jsf] (ServerService Thread Pool -- 79) WFLYJSF0007: Activated the following JSF Implementations: [main]
+2023-05-12 17:41:15,471 INFO  [org.wildfly.extension.microprofile.metrics.smallrye] (ServerService Thread Pool -- 84) WFLYMETRICS0001: Activating Eclipse MicroProfile Metrics Subsystem
+2023-05-12 17:41:15,477 INFO  [org.wildfly.extension.microprofile.opentracing] (ServerService Thread Pool -- 85) WFLYTRACEXT0001: Activating MicroProfile OpenTracing Subsystem
+2023-05-12 17:41:15,479 INFO  [org.wildfly.extension.microprofile.health.smallrye] (ServerService Thread Pool -- 82) WFLYHEALTH0001: Activating Eclipse MicroProfile Health Subsystem
+2023-05-12 17:41:15,492 INFO  [org.jboss.as.connector.subsystems.datasources] (ServerService Thread Pool -- 64) WFLYJCA0004: Deploying JDBC-compliant driver class org.h2.Driver (version 1.4)
+2023-05-12 17:41:15,519 INFO  [org.jboss.as.naming] (ServerService Thread Pool -- 86) WFLYNAM0001: Activating Naming Subsystem
+2023-05-12 17:41:15,545 INFO  [org.jboss.as.webservices] (ServerService Thread Pool -- 96) WFLYWS0002: Activating WebServices Extension
+2023-05-12 17:41:15,582 INFO  [org.jboss.as.security] (ServerService Thread Pool -- 92) WFLYSEC0002: Activating Security Subsystem
+2023-05-12 17:41:16,652 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 95) WFLYUT0014: Creating file handler for path 'C:\dev\server\wildfly-20.0.0.Final/welcome-content' with options [directory-listing: 'false', follow-symlink: 'false', case-sensitive: 'true', safe-symlink-paths: '[]']
+2023-05-12 17:41:16,909 INFO  [org.jboss.as.security] (MSC service thread 1-1) WFLYSEC0001: Current PicketBox version=5.0.3.Final-redhat-00005
+2023-05-12 17:41:16,941 INFO  [org.jboss.as.connector] (MSC service thread 1-1) WFLYJCA0009: Starting JCA Subsystem (WildFly/IronJacamar 1.4.22.Final)
+2023-05-12 17:41:17,091 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-1) WFLYUT0003: Undertow 2.1.3.Final starting
+2023-05-12 17:41:17,233 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-1) WFLYJCA0018: Started Driver service with driver-name = h2
+2023-05-12 17:41:17,622 INFO  [org.jboss.as.naming] (MSC service thread 1-1) WFLYNAM0003: Starting Naming Service
+2023-05-12 17:41:19,173 INFO  [org.jboss.as.jaxrs] (ServerService Thread Pool -- 74) WFLYRS0016: RESTEasy version 3.12.1.Final
+2023-05-12 17:41:19,600 INFO  [org.jboss.as.mail.extension] (MSC service thread 1-3) WFLYMAIL0001: Bound mail session [java:jboss/mail/Default]
+2023-05-12 17:41:20,193 INFO  [org.wildfly.extension.io] (ServerService Thread Pool -- 73) WFLYIO001: Worker 'default' has auto-configured to 4 IO threads with 32 max task threads based on your 2 available processors
+2023-05-12 17:41:20,451 INFO  [org.jboss.remoting] (MSC service thread 1-2) JBoss Remoting version 5.0.18.Final
+2023-05-12 17:41:20,583 INFO  [org.jboss.as.ejb3] (MSC service thread 1-4) WFLYEJB0493: EJB subsystem suspension complete
+2023-05-12 17:41:21,049 INFO  [org.jboss.as.ejb3] (MSC service thread 1-1) WFLYEJB0481: Strict pool slsb-strict-max-pool is using a max instance size of 32 (per class), which is derived from thread worker pool sizing.
+2023-05-12 17:41:21,050 INFO  [org.jboss.as.ejb3] (MSC service thread 1-1) WFLYEJB0482: Strict pool mdb-strict-max-pool is using a max instance size of 8 (per class), which is derived from the number of CPUs on this host.
+2023-05-12 17:41:21,259 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-2) WFLYUT0012: Started server default-server.
+2023-05-12 17:41:21,271 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-1) WFLYUT0018: Host default-host starting
+2023-05-12 17:41:21,500 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-2) WFLYUT0006: Undertow HTTP listener default listening on 127.0.0.1:8080
+2023-05-12 17:41:21,628 INFO  [org.jboss.as.connector.subsystems.datasources] (MSC service thread 1-2) WFLYJCA0001: Bound data source [java:jboss/datasources/ExampleDS]
+2023-05-12 17:41:28,006 INFO  [org.jboss.as.patching] (MSC service thread 1-2) WFLYPAT0050: WildFly Full cumulative patch ID is: base, one-off patches include: none
+2023-05-12 17:41:28,061 WARN  [org.jboss.as.domain.management.security] (MSC service thread 1-1) WFLYDM0111: Keystore C:\dev\server\wildfly-20.0.0.Final\standalone\configuration\application.keystore not found, it will be auto generated on first use with a self signed certificate for host localhost
+2023-05-12 17:41:28,079 INFO  [org.jboss.as.server.deployment.scanner] (MSC service thread 1-3) WFLYDS0013: Started FileSystemDeploymentService for directory C:\dev\server\wildfly-20.0.0.Final\standalone\deployments
+2023-05-12 17:41:28,161 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-1) WFLYSRV0027: Starting deployment of "ExoplaneServlet.war" (runtime-name: "ExoplaneServlet.war")
+2023-05-12 17:41:28,165 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-3) WFLYSRV0027: Starting deployment of "corso-servletmybaties.war" (runtime-name: "corso-servletmybaties.war")
+2023-05-12 17:41:28,183 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-4) WFLYSRV0027: Starting deployment of "mysql-connector-java-8.0.25" (runtime-name: "mysql-connector-java-8.0.25.jar")
+2023-05-12 17:41:29,794 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-1) WFLYUT0006: Undertow HTTPS listener https listening on 127.0.0.1:8443
+2023-05-12 17:41:39,601 INFO  [org.jboss.ws.common.management] (MSC service thread 1-1) JBWS022052: Starting JBossWS 5.4.1.Final (Apache CXF 3.3.6) 
+2023-05-12 17:41:43,800 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-4) WFLYJCA0005: Deploying non-JDBC-compliant driver class com.mysql.cj.jdbc.Driver (version 8.0)
+2023-05-12 17:41:44,072 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-4) WFLYJCA0018: Started Driver service with driver-name = mysql-connector-java-8.0.25.jar
+2023-05-12 17:41:45,264 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-1) WFLYJCA0005: Deploying non-JDBC-compliant driver class com.mysql.jdbc.Driver (version 5.1)
+2023-05-12 17:41:45,265 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-1) WFLYJCA0005: Deploying non-JDBC-compliant driver class com.mysql.fabric.jdbc.FabricMySQLDriver (version 5.1)
+2023-05-12 17:41:45,268 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-4) WFLYJCA0005: Deploying non-JDBC-compliant driver class com.mysql.jdbc.Driver (version 5.1)
+2023-05-12 17:41:45,270 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-4) WFLYJCA0005: Deploying non-JDBC-compliant driver class com.mysql.fabric.jdbc.FabricMySQLDriver (version 5.1)
+2023-05-12 17:41:45,480 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-1) WFLYJCA0018: Started Driver service with driver-name = corso-servletmybaties.war
+2023-05-12 17:41:45,481 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-1) WFLYJCA0018: Started Driver service with driver-name = corso-servletmybaties.war_com.mysql.fabric.jdbc.FabricMySQLDriver_5_1
+2023-05-12 17:41:45,483 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-1) WFLYJCA0018: Started Driver service with driver-name = corso-servletmybaties.war_com.mysql.jdbc.Driver_5_1
+2023-05-12 17:41:45,504 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-3) WFLYJCA0018: Started Driver service with driver-name = ExoplaneServlet.war
+2023-05-12 17:41:45,509 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-3) WFLYJCA0018: Started Driver service with driver-name = ExoplaneServlet.war_com.mysql.jdbc.Driver_5_1
+2023-05-12 17:41:45,510 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-3) WFLYJCA0018: Started Driver service with driver-name = ExoplaneServlet.war_com.mysql.fabric.jdbc.FabricMySQLDriver_5_1
+2023-05-12 17:41:46,036 INFO  [org.infinispan.PERSISTENCE] (MSC service thread 1-2) ISPN000556: Starting user marshaller 'org.wildfly.clustering.infinispan.marshalling.jboss.JBossMarshaller'
+2023-05-12 17:41:46,115 INFO  [org.infinispan.CONTAINER] (MSC service thread 1-2) ISPN000128: Infinispan version: Infinispan 'Turia' 10.1.8.Final
+2023-05-12 17:41:46,970 INFO  [org.jboss.as.clustering.infinispan] (ServerService Thread Pool -- 100) WFLYCLINF0002: Started client-mappings cache from ejb container
+2023-05-12 17:41:48,084 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 102) WFLYUT0021: Registered web context: '/ExoplaneServlet' for server 'default-server'
+2023-05-12 17:41:48,093 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 103) WFLYUT0021: Registered web context: '/corso-servletmybaties' for server 'default-server'
+2023-05-12 17:41:48,484 INFO  [org.jboss.as.server] (Controller Boot Thread) WFLYSRV0010: Deployed "mysql-connector-java-8.0.25" (runtime-name : "mysql-connector-java-8.0.25.jar")
+2023-05-12 17:41:48,485 INFO  [org.jboss.as.server] (ServerService Thread Pool -- 65) WFLYSRV0010: Deployed "ExoplaneServlet.war" (runtime-name : "ExoplaneServlet.war")
+2023-05-12 17:41:48,489 INFO  [org.jboss.as.server] (ServerService Thread Pool -- 65) WFLYSRV0010: Deployed "corso-servletmybaties.war" (runtime-name : "corso-servletmybaties.war")
+2023-05-12 17:41:48,732 INFO  [org.jboss.as.server] (Controller Boot Thread) WFLYSRV0212: Resuming server
+2023-05-12 17:41:48,741 INFO  [org.jboss.as] (Controller Boot Thread) WFLYSRV0025: WildFly Full 20.0.0.Final (WildFly Core 12.0.1.Final) started in 99166ms - Started 546 of 777 services (383 services are lazy, passive or on-demand)
+2023-05-12 17:41:48,763 INFO  [org.jboss.as] (Controller Boot Thread) WFLYSRV0060: Http management interface listening on http://127.0.0.1:9990/management
+2023-05-12 17:41:48,763 INFO  [org.jboss.as] (Controller Boot Thread) WFLYSRV0051: Admin console listening on http://127.0.0.1:9990
+2023-05-12 17:46:27,211 INFO  [stdout] (default task-2) pilota inserito

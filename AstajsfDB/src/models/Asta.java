@@ -15,11 +15,13 @@ public class Asta {
 	private Integer idUtentePropietario;
 	private Integer idOffertaPiuAlta;
 	private Integer idTag;
+	private Integer idStatoAsta;
 	private List<Asta> listaAste;
 	private Utente utente;
 	private Tag tag;
 	private Offerta offerta;
 	private Articolo articolo;
+	private StatoAsta statoAsta;
 	
 	public Integer getId() {
 		return id;
@@ -69,6 +71,12 @@ public class Asta {
 	public void setIdTag(Integer idTag) {
 		this.idTag = idTag;
 	}
+	public Integer getIdStatoAsta() {
+		return idStatoAsta;
+	}
+	public void setIdStatoAsta(Integer idStatoAsta) {
+		this.idStatoAsta = idStatoAsta;
+	}
 	public List<Asta> getListaAste() {
 		return listaAste;
 	}
@@ -99,10 +107,16 @@ public class Asta {
 	public void setArticolo(Articolo articolo) {
 		this.articolo = articolo;
 	}
+	public StatoAsta getStatoAsta() {
+		return statoAsta;
+	}
+	public void setStatoAsta(StatoAsta statoAsta) {
+		this.statoAsta = statoAsta;
+	}
 	@Override
 	public int hashCode() {
-		return Objects.hash(articolo, dataScadenza, id, idArticolo, idOffertaPiuAlta, idTag, idUtentePropietario,
-				listaAste, offerta, prezzoPartenza, prezzoVenduto, tag, utente);
+		return Objects.hash(articolo, dataScadenza, id, idArticolo, idOffertaPiuAlta, idStatoAsta, idTag,
+				idUtentePropietario, listaAste, offerta, prezzoPartenza, prezzoVenduto, statoAsta, tag, utente);
 	}
 	@Override
 	public boolean equals(Object obj) {
@@ -115,21 +129,26 @@ public class Asta {
 		Asta other = (Asta) obj;
 		return Objects.equals(articolo, other.articolo) && Objects.equals(dataScadenza, other.dataScadenza)
 				&& Objects.equals(id, other.id) && Objects.equals(idArticolo, other.idArticolo)
-				&& Objects.equals(idOffertaPiuAlta, other.idOffertaPiuAlta) && Objects.equals(idTag, other.idTag)
+				&& Objects.equals(idOffertaPiuAlta, other.idOffertaPiuAlta)
+				&& Objects.equals(idStatoAsta, other.idStatoAsta) && Objects.equals(idTag, other.idTag)
 				&& Objects.equals(idUtentePropietario, other.idUtentePropietario)
 				&& Objects.equals(listaAste, other.listaAste) && Objects.equals(offerta, other.offerta)
 				&& Objects.equals(prezzoPartenza, other.prezzoPartenza)
-				&& Objects.equals(prezzoVenduto, other.prezzoVenduto) && Objects.equals(tag, other.tag)
-				&& Objects.equals(utente, other.utente);
+				&& Objects.equals(prezzoVenduto, other.prezzoVenduto) && Objects.equals(statoAsta, other.statoAsta)
+				&& Objects.equals(tag, other.tag) && Objects.equals(utente, other.utente);
 	}
 	@Override
 	public String toString() {
 		return "Asta [id=" + id + ", dataScadenza=" + dataScadenza + ", prezzoPartenza=" + prezzoPartenza
 				+ ", prezzoVenduto=" + prezzoVenduto + ", idArticolo=" + idArticolo + ", idUtentePropietario="
-				+ idUtentePropietario + ", idOffertaPiuAlta=" + idOffertaPiuAlta + ", idTag=" + idTag + ", listaAste="
-				+ listaAste + ", utente=" + utente + ", tag=" + tag + ", offerta=" + offerta + ", articolo=" + articolo
-				+ "]";
+				+ idUtentePropietario + ", idOffertaPiuAlta=" + idOffertaPiuAlta + ", idTag=" + idTag + ", idStatoAsta="
+				+ idStatoAsta + ", listaAste=" + listaAste + ", utente=" + utente + ", tag=" + tag + ", offerta="
+				+ offerta + ", articolo=" + articolo + ", statoAsta=" + statoAsta + "]";
 	}
+	
+	
+	
+	
 	
 	
 }

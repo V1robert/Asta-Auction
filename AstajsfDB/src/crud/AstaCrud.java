@@ -4,6 +4,7 @@ import java.util.List;
 
 import mapping.AstaMapping;
 import models.Asta;
+import models.Utente;
 
 public class AstaCrud extends BaseCrud<Asta,AstaMapping> {
 
@@ -62,6 +63,16 @@ public class AstaCrud extends BaseCrud<Asta,AstaMapping> {
 		}
 		return null;
 	}
+	
+	public Asta chiusuraAsta(Asta asta,AstaMapping mapper) {
+		try {
+			mapper.astaFinita(asta);
+			return asta;
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+		return null;
+	}
 
 	
 	@Override
@@ -70,9 +81,9 @@ public class AstaCrud extends BaseCrud<Asta,AstaMapping> {
 		return null;
 	}
 	
-	public List<Asta> vediLeAsteVincentii(AstaMapping mapper,Asta asta){
+	public List<Asta> vediLeAsteVincentii(AstaMapping mapper,Utente utenteLoggato){
 		try {
-			List<Asta>aste=mapper.vediLeAsteVincentii(asta);
+			List<Asta>aste=mapper.vediLeAsteVincentii(utenteLoggato);
 			return aste;
 		}catch(Exception e) {
 			e.printStackTrace();

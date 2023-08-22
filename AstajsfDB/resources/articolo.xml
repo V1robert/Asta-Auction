@@ -6,6 +6,16 @@
 
 <mapper namespace="mapping.ArticoloMapping">
 
+<insert id="inserisciFoto" parameterType="byte[]" >
+INSERT INTO articolo
+VALUES(
+#{img}
+)
+
+
+</insert>
+
+
 	<insert id="insert" parameterType="models.Articolo"
 		useGeneratedKeys="true" keyProperty="id" keyColumn="ID">
 		INSERT INTO articolo 
@@ -13,7 +23,8 @@
 		#{id},
 		#{nomeArticolo},
 		#{idUtente},
-		#{desc}
+		#{desc},
+		#{img}
 		)
 	</insert>
 
@@ -22,7 +33,7 @@
 
 		SELECT *
 		FROM articolo
-		WHERE articolo.ID_UTENTE = #{id_utente}
+		WHERE articolo.ID_UTENTE = #{idUtente}
 
 	</select>
 	
@@ -43,5 +54,6 @@
 		<result property="nomeArticolo" column="NOME_ARTICOLO" />
 		<result property="idUtente" column="ID_UTENTE" />
 		<result property="desc" column="DESC" />
+		<result property="img" javaType="_byte[]" column="IMG" />
 	</resultMap>
 </mapper>

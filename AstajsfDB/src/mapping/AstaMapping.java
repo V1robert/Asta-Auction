@@ -3,6 +3,7 @@ package mapping;
 import java.util.List;
 
 import models.Asta;
+import models.Utente;
 
 public interface AstaMapping {
 
@@ -19,5 +20,7 @@ public interface AstaMapping {
 	
 	public void astaFinita(Asta asta);
 	
-	public List<Asta> vediLeAsteVincentii(Asta asta);
+	public List<Asta> vediLeAsteVincentii(Utente utenteLoggato);
+	
+	public Asta chiusuraAsta(Asta asta); 
 }

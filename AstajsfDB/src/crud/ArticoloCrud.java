@@ -19,6 +19,15 @@ public class ArticoloCrud extends BaseCrud<Articolo,ArticoloMapping>{
 	}
 
 
+	public byte[] inserisciFoto(byte[] file,ArticoloMapping mapper) {
+		try {
+			mapper.inserisciFoto(file);
+			return file;
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+		return null;
+	}
 	
 
 	@Override

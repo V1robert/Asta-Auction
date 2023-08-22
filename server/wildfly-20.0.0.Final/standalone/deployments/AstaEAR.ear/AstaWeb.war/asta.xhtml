@@ -1,0 +1,70 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:h="http://java.sun.com/jsf/html">
+
+
+
+	<p:panelGrid columns="1" layout="grid"
+		styleClass="showcase-text-align-center"
+		rendered="#{userBean.showAsta==true}">
+		<p>Cosa vuoi mettere all asta ?</p>
+		<p:panelGrid columns="1" rendered="#{userBean.showAsta==true}">
+			<p:outputPanel>
+				<div class="product card">
+					<h5>Lista Di Tutti i tuoi prodotti che puoi mettere all asta</h5>
+					<div class="ui-fluid formgrid grid">
+
+						<p:dataView var="articoli" value="#{astaBean.listaArticoli}">
+
+							<p:dataViewListItem>
+								<h:panelGrid columns="3" style="width:100%">
+									<p:outputPanel>
+										<h:panelGrid columns="2" cellpadding="5">
+											<h:outputText value="NomeArticolo:" />
+											<h:outputText value="#{articoli.nome_articolo}"
+												style="font-weight: bold" />
+
+											<h:outputText value="Descrizione:" />
+											<h:outputText value="#{articoli.desc}"
+												style="font-weight: bold" />
+
+											<p:commandButton
+												action="#{astaBean.inserisciAsta(articoli.id,articoli.id_utente)}"
+												value="Mettilo all asta" />
+
+										</h:panelGrid>
+									</p:outputPanel>
+
+
+								</h:panelGrid>
+							</p:dataViewListItem>
+						</p:dataView>
+						<h:outputLabel for="prezzo" value="Decidi un Prezzo:" />
+						<p:inputText id="prezzo" required="true" value="#{astaBean.asta.prezzoPartenza}">
+							<p:ajax event="change" update="app"
+								action="#{astaBean.controllaPrezzoInserito()}" />
+						</p:inputText>
+						
+					<h:outputLabel for="tagdelasta" value="Decidi un tag per la tua asta:" />
+						<p:inputText id="tagdelasta" required="true" value="#{astaBean.tag.descrizioneTag}">
+						</p:inputText>
+
+						
+						<p:outputLabel for="basic" value="data di scadenza Del Asta" />
+						<p:datePicker id="basic" value="#{astaBean.asta.dataScadenza}"
+							inline="true" showTime="true" timeInput="true"
+							mindate="#{astaBean.dataDiOggi}">
+						</p:datePicker>
+						
+						<p:commandButton value="Vai alla Home" update="app"
+							immediate="true" ajax="false" action="#{userBean.vaiAllaHome()}">
+						</p:commandButton>
+					</div>
+				</div>
+			</p:outputPanel>
+		</p:panelGrid>
+	</p:panelGrid>
+</ui:composition>

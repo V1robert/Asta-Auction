@@ -1,5 +1,6 @@
 package models;
 
+import java.util.Arrays;
 import java.util.Objects;
 
 public class Articolo {
@@ -8,16 +9,18 @@ public class Articolo {
 	private Integer idUtente;
 	private String desc;
 	private Integer id;
-	public String getNome_articolo() {
+	private byte[] img;
+	
+	public String getNomeArticolo() {
 		return nomeArticolo;
 	}
-	public void setNome_articolo(String nomeArticolo) {
+	public void setNomeArticolo(String nomeArticolo) {
 		this.nomeArticolo = nomeArticolo;
 	}
-	public Integer getId_utente() {
+	public Integer getIdUtente() {
 		return idUtente;
 	}
-	public void setId_utente(Integer idUtente) {
+	public void setIdUtente(Integer idUtente) {
 		this.idUtente = idUtente;
 	}
 	public String getDesc() {
@@ -32,9 +35,19 @@ public class Articolo {
 	public void setId(Integer id) {
 		this.id = id;
 	}
+	public byte[] getImg() {
+		return img;
+	}
+	public void setImg(byte[] img) {
+		this.img = img;
+	}
 	@Override
 	public int hashCode() {
-		return Objects.hash(desc, id, idUtente, nomeArticolo);
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + Arrays.hashCode(img);
+		result = prime * result + Objects.hash(desc, id, idUtente, nomeArticolo);
+		return result;
 	}
 	@Override
 	public boolean equals(Object obj) {
@@ -46,13 +59,18 @@ public class Articolo {
 			return false;
 		Articolo other = (Articolo) obj;
 		return Objects.equals(desc, other.desc) && Objects.equals(id, other.id)
-				&& Objects.equals(idUtente, other.idUtente) && Objects.equals(nomeArticolo, other.nomeArticolo);
+				&& Objects.equals(idUtente, other.idUtente) && Arrays.equals(img, other.img)
+				&& Objects.equals(nomeArticolo, other.nomeArticolo);
 	}
 	@Override
 	public String toString() {
 		return "Articolo [nomeArticolo=" + nomeArticolo + ", idUtente=" + idUtente + ", desc=" + desc + ", id=" + id
-				+ "]";
+				+ ", img=" + Arrays.toString(img) + "]";
 	}
+	
+	
+	
+	
 	
 	
 	

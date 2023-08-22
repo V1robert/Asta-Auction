@@ -1,0 +1,961 @@
+2023-05-22 14:48:22,849 INFO  [org.jboss.modules] (main) JBoss Modules version 1.10.1.Final
+2023-05-22 14:48:35,302 INFO  [org.jboss.msc] (main) JBoss MSC version 1.4.11.Final
+2023-05-22 14:48:35,331 INFO  [org.jboss.threads] (main) JBoss Threads version 2.3.3.Final
+2023-05-22 14:48:35,582 INFO  [org.jboss.as] (MSC service thread 1-3) WFLYSRV0049: WildFly Full 20.0.0.Final (WildFly Core 12.0.1.Final) starting
+2023-05-22 14:48:35,587 DEBUG [org.jboss.as.config] (MSC service thread 1-3) Configured system properties:
+	file.encoding = UTF-8
+	file.separator = \
+	java.awt.headless = true
+	java.class.path = C:\dev\server\wildfly-20.0.0.Final\jboss-modules.jar
+	java.class.version = 61.0
+	java.home = C:\Program Files\Java\jdk-17.0.7
+	java.io.tmpdir = C:\Users\feder\AppData\Local\Temp\
+	java.library.path = C:\Program Files\Java\jdk-17.0.7\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;native;C:/Sviluppo/Eclipse//plugins/org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_17.0.5.v20221102-0933/jre/bin/server;C:/Sviluppo/Eclipse//plugins/org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_17.0.5.v20221102-0933/jre/bin;C:\Program Files\Java\jdk-17.0.7\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Sviluppo\Git\cmd;C:\Sviluppo\Maven\bin;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Program Files\MySQL\MySQL Shell 8.0\bin\;C:\Users\feder\AppData\Local\Microsoft\WindowsApps;;C:\Sviluppo\Eclipse;;.
+	java.net.preferIPv4Stack = true
+	java.runtime.name = Java(TM) SE Runtime Environment
+	java.runtime.version = 17.0.7+8-LTS-224
+	java.specification.name = Java Platform API Specification
+	java.specification.vendor = Oracle Corporation
+	java.specification.version = 17
+	java.util.logging.manager = org.jboss.logmanager.LogManager
+	java.vendor = Oracle Corporation
+	java.vendor.url = https://java.oracle.com/
+	java.vendor.url.bug = https://bugreport.java.com/bugreport/
+	java.version = 17.0.7
+	java.version.date = 2023-04-18
+	java.vm.compressedOopsMode = 32-bit
+	java.vm.info = mixed mode, sharing
+	java.vm.name = Java HotSpot(TM) 64-Bit Server VM
+	java.vm.specification.name = Java Virtual Machine Specification
+	java.vm.specification.vendor = Oracle Corporation
+	java.vm.specification.version = 17
+	java.vm.vendor = Oracle Corporation
+	java.vm.version = 17.0.7+8-LTS-224
+	javax.management.builder.initial = org.jboss.as.jmx.PluggableMBeanServerBuilder
+	jboss.bind.address = localhost
+	jboss.bind.address.management = localhost
+	jboss.home.dir = C:\dev\server\wildfly-20.0.0.Final
+	jboss.host.name = cipollino
+	jboss.modules.dir = C:\dev\server\wildfly-20.0.0.Final\modules
+	jboss.modules.system.pkgs = org.jboss.byteman
+	jboss.node.name = cipollino
+	jboss.qualified.host.name = cipollino
+	jboss.server.base.dir = C:\dev\server\wildfly-20.0.0.Final\standalone
+	jboss.server.config.dir = C:\dev\server\wildfly-20.0.0.Final\standalone\configuration
+	jboss.server.data.dir = C:\dev\server\wildfly-20.0.0.Final\standalone\data
+	jboss.server.deploy.dir = C:\dev\server\wildfly-20.0.0.Final\standalone\data\content
+	jboss.server.log.dir = C:\dev\server\wildfly-20.0.0.Final\standalone\log
+	jboss.server.name = cipollino
+	jboss.server.persist.config = true
+	jboss.server.temp.dir = C:\dev\server\wildfly-20.0.0.Final\standalone\tmp
+	jdk.debug = release
+	line.separator = 
+
+	logging.configuration = file:C:\dev\server\wildfly-20.0.0.Final\standalone\configuration\logging.properties
+	module.path = C:\dev\server\wildfly-20.0.0.Final\modules
+	native.encoding = Cp1252
+	org.jboss.boot.log.file = C:\dev\server\wildfly-20.0.0.Final\standalone\log\boot.log
+	org.jboss.logmanager.nocolor = true
+	org.jboss.resolver.warning = true
+	os.arch = amd64
+	os.name = Windows 11
+	os.version = 10.0
+	path.separator = ;
+	program.name = JBossTools: WildFly 20
+	sun.arch.data.model = 64
+	sun.boot.library.path = C:\Program Files\Java\jdk-17.0.7\bin
+	sun.cpu.endian = little
+	sun.cpu.isalist = amd64
+	sun.io.unicode.encoding = UnicodeLittle
+	sun.java.command = org.jboss.modules.Main -mp C:\dev\server\wildfly-20.0.0.Final\modules org.jboss.as.standalone -b localhost --server-config=standalone.xml -Djboss.server.base.dir=C:\dev\server\wildfly-20.0.0.Final\standalone
+	sun.java.launcher = SUN_STANDARD
+	sun.jnu.encoding = Cp1252
+	sun.management.compiler = HotSpot 64-Bit Tiered Compilers
+	sun.os.patch.level = 
+	sun.rmi.dgc.client.gcInterval = 3600000
+	sun.rmi.dgc.server.gcInterval = 3600000
+	user.country = IT
+	user.dir = C:\dev\server\wildfly-20.0.0.Final\bin
+	user.home = C:\Users\feder
+	user.language = it
+	user.name = feder
+	user.script = 
+	user.timezone = Europe/Rome
+	user.variant = 
+2023-05-22 14:48:35,615 DEBUG [org.jboss.as.config] (MSC service thread 1-3) VM Arguments: -Dprogram.name=JBossTools: WildFly 20 -Xms64m -Xmx512m -Dorg.jboss.resolver.warning=true -Djava.net.preferIPv4Stack=true -Dsun.rmi.dgc.client.gcInterval=3600000 -Dsun.rmi.dgc.server.gcInterval=3600000 -Djboss.modules.system.pkgs=org.jboss.byteman -Djava.awt.headless=true -Dorg.jboss.boot.log.file=C:\dev\server\wildfly-20.0.0.Final\standalone\log\boot.log -Dlogging.configuration=file:C:\dev\server\wildfly-20.0.0.Final\standalone\configuration\logging.properties -Djboss.home.dir=C:\dev\server\wildfly-20.0.0.Final -Dorg.jboss.logmanager.nocolor=true --add-exports=java.desktop/sun.awt=ALL-UNNAMED --add-exports=java.naming/com.sun.jndi.ldap=ALL-UNNAMED --add-opens=java.base/java.lang=ALL-UNNAMED --add-opens=java.base/java.lang.invoke=ALL-UNNAMED --add-opens=java.base/java.lang.reflect=ALL-UNNAMED --add-opens=java.base/java.io=ALL-UNNAMED --add-opens=java.base/java.security=ALL-UNNAMED --add-opens=java.base/java.util=ALL-UNNAMED --add-opens=java.base/java.util.concurrent=ALL-UNNAMED --add-opens=java.management/javax.management=ALL-UNNAMED --add-opens=java.naming/javax.naming=ALL-UNNAMED --add-exports=java.base/sun.nio.ch=ALL-UNNAMED --add-exports=jdk.unsupported/sun.misc=ALL-UNNAMED --add-exports=jdk.unsupported/sun.reflect=ALL-UNNAMED --add-modules=java.se -Djboss.bind.address.management=localhost -Dfile.encoding=UTF-8 -XX:+ShowCodeDetailsInExceptionMessages 
+2023-05-22 14:48:48,252 INFO  [org.wildfly.security] (ServerService Thread Pool -- 27) ELY00001: WildFly Elytron version 1.12.1.Final
+2023-05-22 14:49:26,774 INFO  [org.jboss.as.controller.management-deprecated] (Controller Boot Thread) WFLYCTL0028: Attribute 'security-realm' in the resource at address '/core-service=management/management-interface=http-interface' is deprecated, and may be removed in a future version. See the attribute description in the output of the read-resource-description operation to learn more about the deprecation.
+2023-05-22 14:49:27,642 INFO  [org.jboss.as.controller.management-deprecated] (ServerService Thread Pool -- 49) WFLYCTL0028: Attribute 'security-realm' in the resource at address '/subsystem=undertow/server=default-server/https-listener=https' is deprecated, and may be removed in a future version. See the attribute description in the output of the read-resource-description operation to learn more about the deprecation.
+2023-05-22 14:49:28,017 INFO  [org.jboss.as.server.deployment.scanner] (DeploymentScanner-threads - 1) WFLYDS0004: Found PrimeEAR.ear in deployment directory. To trigger deployment create a file called PrimeEAR.ear.dodeploy
+2023-05-22 14:49:28,021 INFO  [org.jboss.as.server.deployment.scanner] (DeploymentScanner-threads - 1) WFLYDS0004: Found ExoplaneREEar.ear in deployment directory. To trigger deployment create a file called ExoplaneREEar.ear.dodeploy
+2023-05-22 14:49:28,959 INFO  [org.jboss.as.server] (Controller Boot Thread) WFLYSRV0039: Creating http management service using socket-binding (management-http)
+2023-05-22 14:49:29,117 INFO  [org.xnio] (MSC service thread 1-4) XNIO version 3.8.1.Final
+2023-05-22 14:49:29,144 INFO  [org.xnio.nio] (MSC service thread 1-4) XNIO NIO Implementation Version 3.8.1.Final
+2023-05-22 14:49:30,042 WARN  [org.jboss.as.txn] (ServerService Thread Pool -- 86) WFLYTX0013: The node-identifier attribute on the /subsystem=transactions is set to the default value. This is a danger for environments running multiple servers. Please make sure the attribute value is unique.
+2023-05-22 14:49:30,123 INFO  [org.wildfly.extension.microprofile.jwt.smallrye._private] (ServerService Thread Pool -- 75) WFLYJWT0001: Activating WildFly MicroProfile JWT Subsystem
+2023-05-22 14:49:30,128 INFO  [org.wildfly.extension.microprofile.config.smallrye._private] (ServerService Thread Pool -- 73) WFLYCONF0001: Activating WildFly MicroProfile Config Subsystem
+2023-05-22 14:49:30,165 INFO  [org.jboss.as.clustering.infinispan] (ServerService Thread Pool -- 64) WFLYCLINF0001: Activating Infinispan subsystem.
+2023-05-22 14:49:30,202 INFO  [org.wildfly.extension.microprofile.metrics.smallrye] (ServerService Thread Pool -- 76) WFLYMETRICS0001: Activating Eclipse MicroProfile Metrics Subsystem
+2023-05-22 14:49:30,207 INFO  [org.wildfly.extension.microprofile.health.smallrye] (ServerService Thread Pool -- 74) WFLYHEALTH0001: Activating Eclipse MicroProfile Health Subsystem
+2023-05-22 14:49:30,221 INFO  [org.wildfly.extension.microprofile.opentracing] (ServerService Thread Pool -- 77) WFLYTRACEXT0001: Activating MicroProfile OpenTracing Subsystem
+2023-05-22 14:49:30,228 INFO  [org.jboss.as.jsf] (ServerService Thread Pool -- 71) WFLYJSF0007: Activated the following JSF Implementations: [main]
+2023-05-22 14:49:30,532 INFO  [org.jboss.as.naming] (ServerService Thread Pool -- 78) WFLYNAM0001: Activating Naming Subsystem
+2023-05-22 14:49:30,870 INFO  [org.jboss.as.webservices] (ServerService Thread Pool -- 88) WFLYWS0002: Activating WebServices Extension
+2023-05-22 14:49:30,943 INFO  [org.jboss.as.connector.subsystems.datasources] (ServerService Thread Pool -- 56) WFLYJCA0004: Deploying JDBC-compliant driver class org.h2.Driver (version 1.4)
+2023-05-22 14:49:31,138 INFO  [org.jboss.as.security] (ServerService Thread Pool -- 84) WFLYSEC0002: Activating Security Subsystem
+2023-05-22 14:49:33,417 INFO  [org.jboss.as.connector] (MSC service thread 1-2) WFLYJCA0009: Starting JCA Subsystem (WildFly/IronJacamar 1.4.22.Final)
+2023-05-22 14:49:33,483 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 87) WFLYUT0014: Creating file handler for path 'C:\dev\server\wildfly-20.0.0.Final/welcome-content' with options [directory-listing: 'false', follow-symlink: 'false', case-sensitive: 'true', safe-symlink-paths: '[]']
+2023-05-22 14:49:33,579 INFO  [org.jboss.as.security] (MSC service thread 1-2) WFLYSEC0001: Current PicketBox version=5.0.3.Final-redhat-00005
+2023-05-22 14:49:33,710 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-2) WFLYUT0003: Undertow 2.1.3.Final starting
+2023-05-22 14:49:34,164 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-2) WFLYJCA0018: Started Driver service with driver-name = h2
+2023-05-22 14:49:34,224 INFO  [org.jboss.as.naming] (MSC service thread 1-2) WFLYNAM0003: Starting Naming Service
+2023-05-22 14:49:34,602 INFO  [org.jboss.as.mail.extension] (MSC service thread 1-2) WFLYMAIL0001: Bound mail session [java:jboss/mail/Default]
+2023-05-22 14:49:35,882 INFO  [org.jboss.as.jaxrs] (ServerService Thread Pool -- 66) WFLYRS0016: RESTEasy version 3.12.1.Final
+2023-05-22 14:49:37,750 INFO  [org.wildfly.extension.io] (ServerService Thread Pool -- 65) WFLYIO001: Worker 'default' has auto-configured to 4 IO threads with 32 max task threads based on your 2 available processors
+2023-05-22 14:49:37,766 INFO  [org.jboss.as.ejb3] (MSC service thread 1-1) WFLYEJB0482: Strict pool mdb-strict-max-pool is using a max instance size of 8 (per class), which is derived from the number of CPUs on this host.
+2023-05-22 14:49:37,768 INFO  [org.jboss.as.ejb3] (MSC service thread 1-1) WFLYEJB0481: Strict pool slsb-strict-max-pool is using a max instance size of 32 (per class), which is derived from thread worker pool sizing.
+2023-05-22 14:49:38,015 INFO  [org.jboss.remoting] (MSC service thread 1-1) JBoss Remoting version 5.0.18.Final
+2023-05-22 14:49:38,212 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-4) WFLYUT0012: Started server default-server.
+2023-05-22 14:49:38,216 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-4) WFLYUT0018: Host default-host starting
+2023-05-22 14:49:38,600 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-4) WFLYUT0006: Undertow HTTP listener default listening on 127.0.0.1:8080
+2023-05-22 14:49:38,830 INFO  [org.jboss.as.ejb3] (MSC service thread 1-1) WFLYEJB0493: EJB subsystem suspension complete
+2023-05-22 14:49:39,190 INFO  [org.jboss.as.connector.subsystems.datasources] (MSC service thread 1-2) WFLYJCA0001: Bound data source [java:jboss/datasources/ExampleDS]
+2023-05-22 14:49:45,609 INFO  [org.jboss.as.patching] (MSC service thread 1-1) WFLYPAT0050: WildFly Full cumulative patch ID is: base, one-off patches include: none
+2023-05-22 14:49:45,657 WARN  [org.jboss.as.domain.management.security] (MSC service thread 1-1) WFLYDM0111: Keystore C:\dev\server\wildfly-20.0.0.Final\standalone\configuration\application.keystore not found, it will be auto generated on first use with a self signed certificate for host localhost
+2023-05-22 14:49:45,761 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-1) WFLYSRV0027: Starting deployment of "PrimeEAR.ear" (runtime-name: "PrimeEAR.ear")
+2023-05-22 14:49:45,775 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-2) WFLYSRV0027: Starting deployment of "mysql-connector-java-8.0.25" (runtime-name: "mysql-connector-java-8.0.25.jar")
+2023-05-22 14:49:45,783 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-3) WFLYSRV0027: Starting deployment of "ExoplaneREEar.ear" (runtime-name: "ExoplaneREEar.ear")
+2023-05-22 14:49:45,808 INFO  [org.jboss.as.server.deployment.scanner] (MSC service thread 1-1) WFLYDS0013: Started FileSystemDeploymentService for directory C:\dev\server\wildfly-20.0.0.Final\standalone\deployments
+2023-05-22 14:49:46,449 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-2) WFLYSRV0207: Starting subdeployment (runtime-name: "PrimeWEB.war")
+2023-05-22 14:49:46,454 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-2) WFLYSRV0207: Starting subdeployment (runtime-name: "PrimeEJB.jar")
+2023-05-22 14:49:46,484 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-1) WFLYSRV0207: Starting subdeployment (runtime-name: "ExoplaneRERest.war")
+2023-05-22 14:49:46,485 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-1) WFLYSRV0207: Starting subdeployment (runtime-name: "ExoplaneREEJB.jar")
+2023-05-22 14:49:46,600 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-3) WFLYUT0006: Undertow HTTPS listener https listening on 127.0.0.1:8443
+2023-05-22 14:49:51,466 INFO  [org.jboss.ws.common.management] (MSC service thread 1-1) JBWS022052: Starting JBossWS 5.4.1.Final (Apache CXF 3.3.6) 
+2023-05-22 14:49:52,150 INFO  [org.jboss.as.jpa] (MSC service thread 1-3) WFLYJPA0002: Read persistence.xml for ExoplaneREModel
+2023-05-22 14:49:52,173 INFO  [org.jboss.as.jpa] (MSC service thread 1-1) WFLYJPA0002: Read persistence.xml for PrimeJPA
+2023-05-22 14:49:55,167 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-2) WFLYJCA0005: Deploying non-JDBC-compliant driver class com.mysql.cj.jdbc.Driver (version 8.0)
+2023-05-22 14:49:55,472 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-4) WFLYJCA0018: Started Driver service with driver-name = mysql-connector-java-8.0.25.jar
+2023-05-22 14:49:55,524 INFO  [org.jboss.weld.deployer] (MSC service thread 1-3) WFLYWELD0003: Processing weld deployment ExoplaneREEar.ear
+2023-05-22 14:49:55,545 INFO  [org.jboss.weld.deployer] (MSC service thread 1-2) WFLYWELD0003: Processing weld deployment PrimeEAR.ear
+2023-05-22 14:49:56,687 INFO  [org.jboss.as.connector.subsystems.datasources] (MSC service thread 1-4) WFLYJCA0001: Bound data source [java:/netflix]
+2023-05-22 14:49:57,495 INFO  [org.hibernate.validator.internal.util.Version] (MSC service thread 1-3) HV000001: Hibernate Validator 6.0.20.Final
+2023-05-22 14:49:58,144 INFO  [org.infinispan.PERSISTENCE] (MSC service thread 1-1) ISPN000556: Starting user marshaller 'org.wildfly.clustering.infinispan.marshalling.jboss.JBossMarshaller'
+2023-05-22 14:49:58,244 INFO  [org.infinispan.PERSISTENCE] (MSC service thread 1-4) ISPN000556: Starting user marshaller 'org.wildfly.clustering.infinispan.marshalling.jboss.JBossMarshaller'
+2023-05-22 14:49:58,280 INFO  [org.infinispan.CONTAINER] (MSC service thread 1-1) ISPN000128: Infinispan version: Infinispan 'Turia' 10.1.8.Final
+2023-05-22 14:49:58,434 INFO  [org.jboss.weld.deployer] (MSC service thread 1-3) WFLYWELD0003: Processing weld deployment ExoplaneRERest.war
+2023-05-22 14:49:58,597 INFO  [org.jboss.weld.deployer] (MSC service thread 1-2) WFLYWELD0003: Processing weld deployment ExoplaneREEJB.jar
+2023-05-22 14:49:58,609 INFO  [org.jboss.as.ejb3.deployment] (MSC service thread 1-2) WFLYEJB0473: JNDI bindings for session bean named 'VoloPrenotazioneControllerInterface' in deployment unit 'subdeployment "ExoplaneREEJB.jar" of deployment "ExoplaneREEar.ear"' are as follows:
+
+	java:global/ExoplaneREEar/ExoplaneREEJB/VoloPrenotazioneControllerInterface!it.exolab.exoplane.controller.VoloPrenotazioneController
+	java:app/ExoplaneREEJB/VoloPrenotazioneControllerInterface!it.exolab.exoplane.controller.VoloPrenotazioneController
+	java:module/VoloPrenotazioneControllerInterface!it.exolab.exoplane.controller.VoloPrenotazioneController
+	java:global/ExoplaneREEar/ExoplaneREEJB/VoloPrenotazioneControllerInterface!it.exolab.exoplane.ejbInterface.VoloPrenotazioneControllerInterface
+	java:app/ExoplaneREEJB/VoloPrenotazioneControllerInterface!it.exolab.exoplane.ejbInterface.VoloPrenotazioneControllerInterface
+	java:module/VoloPrenotazioneControllerInterface!it.exolab.exoplane.ejbInterface.VoloPrenotazioneControllerInterface
+
+2023-05-22 14:49:58,611 INFO  [org.jboss.as.ejb3.deployment] (MSC service thread 1-2) WFLYEJB0473: JNDI bindings for session bean named 'VoloControllerInterface' in deployment unit 'subdeployment "ExoplaneREEJB.jar" of deployment "ExoplaneREEar.ear"' are as follows:
+
+	java:global/ExoplaneREEar/ExoplaneREEJB/VoloControllerInterface!it.exolab.exoplane.controller.VoloController
+	java:app/ExoplaneREEJB/VoloControllerInterface!it.exolab.exoplane.controller.VoloController
+	java:module/VoloControllerInterface!it.exolab.exoplane.controller.VoloController
+	java:global/ExoplaneREEar/ExoplaneREEJB/VoloControllerInterface!it.exolab.exoplane.ejbInterface.VoloControllerInterface
+	java:app/ExoplaneREEJB/VoloControllerInterface!it.exolab.exoplane.ejbInterface.VoloControllerInterface
+	java:module/VoloControllerInterface!it.exolab.exoplane.ejbInterface.VoloControllerInterface
+
+2023-05-22 14:49:58,613 INFO  [org.jboss.as.ejb3.deployment] (MSC service thread 1-2) WFLYEJB0473: JNDI bindings for session bean named 'PasseggeroControllerInterface' in deployment unit 'subdeployment "ExoplaneREEJB.jar" of deployment "ExoplaneREEar.ear"' are as follows:
+
+	java:global/ExoplaneREEar/ExoplaneREEJB/PasseggeroControllerInterface!it.exolab.exoplane.controller.PasseggeroController
+	java:app/ExoplaneREEJB/PasseggeroControllerInterface!it.exolab.exoplane.controller.PasseggeroController
+	java:module/PasseggeroControllerInterface!it.exolab.exoplane.controller.PasseggeroController
+	java:global/ExoplaneREEar/ExoplaneREEJB/PasseggeroControllerInterface!it.exolab.exoplane.ejbInterface.PasseggeroControllerInterface
+	java:app/ExoplaneREEJB/PasseggeroControllerInterface!it.exolab.exoplane.ejbInterface.PasseggeroControllerInterface
+	java:module/PasseggeroControllerInterface!it.exolab.exoplane.ejbInterface.PasseggeroControllerInterface
+
+2023-05-22 14:49:58,615 INFO  [org.jboss.as.ejb3.deployment] (MSC service thread 1-2) WFLYEJB0473: JNDI bindings for session bean named 'AereoControllerInteface' in deployment unit 'subdeployment "ExoplaneREEJB.jar" of deployment "ExoplaneREEar.ear"' are as follows:
+
+	java:global/ExoplaneREEar/ExoplaneREEJB/AereoControllerInteface!it.exolab.exoplane.ejbInterface.AereoControllerInteface
+	java:app/ExoplaneREEJB/AereoControllerInteface!it.exolab.exoplane.ejbInterface.AereoControllerInteface
+	java:module/AereoControllerInteface!it.exolab.exoplane.ejbInterface.AereoControllerInteface
+	java:global/ExoplaneREEar/ExoplaneREEJB/AereoControllerInteface!it.exolab.exoplane.controller.AereoController
+	java:app/ExoplaneREEJB/AereoControllerInteface!it.exolab.exoplane.controller.AereoController
+	java:module/AereoControllerInteface!it.exolab.exoplane.controller.AereoController
+
+2023-05-22 14:49:58,618 INFO  [org.jboss.as.ejb3.deployment] (MSC service thread 1-2) WFLYEJB0473: JNDI bindings for session bean named 'PrenotazioneControllerInterface' in deployment unit 'subdeployment "ExoplaneREEJB.jar" of deployment "ExoplaneREEar.ear"' are as follows:
+
+	java:global/ExoplaneREEar/ExoplaneREEJB/PrenotazioneControllerInterface!it.exolab.exoplane.controller.PrenotazioneController
+	java:app/ExoplaneREEJB/PrenotazioneControllerInterface!it.exolab.exoplane.controller.PrenotazioneController
+	java:module/PrenotazioneControllerInterface!it.exolab.exoplane.controller.PrenotazioneController
+	java:global/ExoplaneREEar/ExoplaneREEJB/PrenotazioneControllerInterface!it.exolab.exoplane.ejbInterface.PrenotazioneControllerInterface
+	java:app/ExoplaneREEJB/PrenotazioneControllerInterface!it.exolab.exoplane.ejbInterface.PrenotazioneControllerInterface
+	java:module/PrenotazioneControllerInterface!it.exolab.exoplane.ejbInterface.PrenotazioneControllerInterface
+
+2023-05-22 14:49:58,762 INFO  [org.jboss.weld.deployer] (MSC service thread 1-2) WFLYWELD0003: Processing weld deployment PrimeWEB.war
+2023-05-22 14:49:59,291 INFO  [io.jaegertracing.internal.JaegerTracer] (MSC service thread 1-2) No shutdown hook registered: Please call close() manually on application shutdown.
+2023-05-22 14:49:59,321 INFO  [io.jaegertracing.internal.JaegerTracer] (MSC service thread 1-3) No shutdown hook registered: Please call close() manually on application shutdown.
+2023-05-22 14:49:59,332 INFO  [org.jboss.weld.deployer] (MSC service thread 1-2) WFLYWELD0003: Processing weld deployment PrimeEJB.jar
+2023-05-22 14:49:59,342 INFO  [org.jboss.as.ejb3.deployment] (MSC service thread 1-2) WFLYEJB0473: JNDI bindings for session bean named 'RegistaController' in deployment unit 'subdeployment "PrimeEJB.jar" of deployment "PrimeEAR.ear"' are as follows:
+
+	java:global/PrimeEAR/PrimeEJB/RegistaController!netflix.controller.RegistaController
+	java:app/PrimeEJB/RegistaController!netflix.controller.RegistaController
+	java:module/RegistaController!netflix.controller.RegistaController
+	java:global/PrimeEAR/PrimeEJB/RegistaController!netflix.interfaces.RegistaInterface
+	java:app/PrimeEJB/RegistaController!netflix.interfaces.RegistaInterface
+	java:module/RegistaController!netflix.interfaces.RegistaInterface
+
+2023-05-22 14:49:59,344 INFO  [org.jboss.as.ejb3.deployment] (MSC service thread 1-2) WFLYEJB0473: JNDI bindings for session bean named 'FilmController' in deployment unit 'subdeployment "PrimeEJB.jar" of deployment "PrimeEAR.ear"' are as follows:
+
+	java:global/PrimeEAR/PrimeEJB/FilmController!netflix.controller.FilmController
+	java:app/PrimeEJB/FilmController!netflix.controller.FilmController
+	java:module/FilmController!netflix.controller.FilmController
+	java:global/PrimeEAR/PrimeEJB/FilmController!netflix.interfaces.FilmInterface
+	java:app/PrimeEJB/FilmController!netflix.interfaces.FilmInterface
+	java:module/FilmController!netflix.interfaces.FilmInterface
+
+2023-05-22 14:49:59,350 INFO  [org.jboss.as.ejb3.deployment] (MSC service thread 1-2) WFLYEJB0473: JNDI bindings for session bean named 'UtenteController' in deployment unit 'subdeployment "PrimeEJB.jar" of deployment "PrimeEAR.ear"' are as follows:
+
+	java:global/PrimeEAR/PrimeEJB/UtenteController!netflix.controller.UtenteController
+	java:app/PrimeEJB/UtenteController!netflix.controller.UtenteController
+	java:module/UtenteController!netflix.controller.UtenteController
+	java:global/PrimeEAR/PrimeEJB/UtenteController!netflix.interfaces.UtenteInterface
+	java:app/PrimeEJB/UtenteController!netflix.interfaces.UtenteInterface
+	java:module/UtenteController!netflix.interfaces.UtenteInterface
+
+2023-05-22 14:50:00,009 INFO  [org.jboss.weld.Version] (MSC service thread 1-3) WELD-000900: 3.1.4 (Final)
+2023-05-22 14:50:00,741 INFO  [org.jboss.as.clustering.infinispan] (ServerService Thread Pool -- 92) WFLYCLINF0002: Started client-mappings cache from ejb container
+2023-05-22 14:50:01,293 INFO  [org.jboss.as.jpa] (ServerService Thread Pool -- 92) WFLYJPA0010: Starting Persistence Unit (phase 1 of 2) Service 'PrimeEAR.ear#PrimeJPA'
+2023-05-22 14:50:01,460 INFO  [org.hibernate.jpa.internal.util.LogHelper] (ServerService Thread Pool -- 92) HHH000204: Processing PersistenceUnitInfo [
+	name: PrimeJPA
+	...]
+2023-05-22 14:50:02,243 INFO  [org.hibernate.Version] (ServerService Thread Pool -- 92) HHH000412: Hibernate Core {5.3.17.Final}
+2023-05-22 14:50:02,250 INFO  [org.hibernate.cfg.Environment] (ServerService Thread Pool -- 92) HHH000206: hibernate.properties not found
+2023-05-22 14:50:02,940 INFO  [org.hibernate.annotations.common.Version] (ServerService Thread Pool -- 92) HCANN000001: Hibernate Commons Annotations {5.0.5.Final}
+2023-05-22 14:50:03,275 INFO  [org.jboss.as.jpa] (ServerService Thread Pool -- 92) WFLYJPA0010: Starting Persistence Unit (phase 2 of 2) Service 'PrimeEAR.ear#PrimeJPA'
+2023-05-22 14:50:04,390 INFO  [org.hibernate.dialect.Dialect] (ServerService Thread Pool -- 92) HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2023-05-22 14:50:05,027 INFO  [org.hibernate.envers.boot.internal.EnversServiceImpl] (ServerService Thread Pool -- 92) Envers integration enabled? : true
+2023-05-22 14:50:06,294 WARNING [org.jgroups.conf.XmlConfigurator] (ServerService Thread Pool -- 92) version is missing in the configuration file
+2023-05-22 14:50:06,301 WARNING [org.jgroups.conf.XmlConfigurator] (ServerService Thread Pool -- 92) version is missing in the configuration file
+2023-05-22 14:50:06,310 WARNING [org.jgroups.conf.XmlConfigurator] (ServerService Thread Pool -- 92) version is missing in the configuration file
+2023-05-22 14:50:06,329 WARNING [org.jgroups.conf.XmlConfigurator] (ServerService Thread Pool -- 92) version is missing in the configuration file
+2023-05-22 14:50:06,340 WARNING [org.jgroups.conf.XmlConfigurator] (ServerService Thread Pool -- 92) version is missing in the configuration file
+2023-05-22 14:50:06,345 WARNING [org.jgroups.conf.XmlConfigurator] (ServerService Thread Pool -- 92) version is missing in the configuration file
+2023-05-22 14:50:07,398 INFO  [io.smallrye.metrics] (MSC service thread 1-2) MicroProfile: Metrics activated (SmallRye Metrics version: 2.4.0)
+2023-05-22 14:50:08,849 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 95) WFLYUT0021: Registered web context: '/PrimeWEB' for server 'default-server'
+2023-05-22 14:50:09,089 ERROR [org.jboss.as.controller.management-operation] (Controller Boot Thread) WFLYCTL0013: Operation ("deploy") failed - address: ([("deployment" => "ExoplaneREEar.ear")]) - failure description: {
+    "WFLYCTL0412: Required services that are not installed:" => ["jboss.naming.context.java.aereoporto"],
+    "WFLYCTL0180: Services with missing/unavailable dependencies" => [
+        "jboss.persistenceunit.\"ExoplaneREEar.ear#ExoplaneREModel\".__FIRST_PHASE__ is missing [jboss.naming.context.java.aereoporto]",
+        "jboss.persistenceunit.\"ExoplaneREEar.ear#ExoplaneREModel\" is missing [jboss.naming.context.java.aereoporto]"
+    ]
+}
+2023-05-22 14:50:09,170 INFO  [org.jboss.as.server] (Controller Boot Thread) WFLYSRV0010: Deployed "mysql-connector-java-8.0.25" (runtime-name : "mysql-connector-java-8.0.25.jar")
+2023-05-22 14:50:09,183 INFO  [org.jboss.as.server] (ServerService Thread Pool -- 57) WFLYSRV0010: Deployed "PrimeEAR.ear" (runtime-name : "PrimeEAR.ear")
+2023-05-22 14:50:09,189 INFO  [org.jboss.as.server] (ServerService Thread Pool -- 57) WFLYSRV0010: Deployed "ExoplaneREEar.ear" (runtime-name : "ExoplaneREEar.ear")
+2023-05-22 14:50:09,201 INFO  [org.jboss.as.controller] (Controller Boot Thread) WFLYCTL0183: Service status report
+WFLYCTL0184:    New missing/unsatisfied dependencies:
+      service jboss.naming.context.java.aereoporto (missing) dependents: [service jboss.persistenceunit."ExoplaneREEar.ear#ExoplaneREModel".__FIRST_PHASE__, service jboss.persistenceunit."ExoplaneREEar.ear#ExoplaneREModel"] 
+WFLYCTL0448: 27 additional services are down due to their dependencies being missing or failed
+2023-05-22 14:50:09,423 INFO  [org.jboss.as.server] (Controller Boot Thread) WFLYSRV0212: Resuming server
+2023-05-22 14:50:09,433 ERROR [org.jboss.as] (Controller Boot Thread) WFLYSRV0026: WildFly Full 20.0.0.Final (WildFly Core 12.0.1.Final) started (with errors) in 115416ms - Started 954 of 1213 services (37 services failed or missing dependencies, 396 services are lazy, passive or on-demand)
+2023-05-22 14:50:09,448 INFO  [org.jboss.as] (Controller Boot Thread) WFLYSRV0060: Http management interface listening on http://127.0.0.1:9990/management
+2023-05-22 14:50:09,449 INFO  [org.jboss.as] (Controller Boot Thread) WFLYSRV0051: Admin console listening on http://127.0.0.1:9990
+2023-05-22 14:50:15,329 INFO  [org.jboss.as.protocol] (management I/O-1) WFLYPRT0057:  cancelled task by interrupting thread Thread[management-handler-thread - 2,5,management-handler-thread]
+2023-05-22 14:53:01,465 INFO  [org.jboss.as.connector.subsystems.datasources] (MSC service thread 1-1) WFLYJCA0001: Bound data source [java:/aereoporto]
+2023-05-22 14:53:01,465 INFO  [org.jboss.as.jpa] (ServerService Thread Pool -- 22) WFLYJPA0010: Starting Persistence Unit (phase 1 of 2) Service 'ExoplaneREEar.ear#ExoplaneREModel'
+2023-05-22 14:53:01,471 INFO  [org.hibernate.jpa.internal.util.LogHelper] (ServerService Thread Pool -- 22) HHH000204: Processing PersistenceUnitInfo [
+	name: ExoplaneREModel
+	...]
+2023-05-22 14:53:01,603 INFO  [org.jboss.as.jpa] (ServerService Thread Pool -- 96) WFLYJPA0010: Starting Persistence Unit (phase 2 of 2) Service 'ExoplaneREEar.ear#ExoplaneREModel'
+2023-05-22 14:53:01,752 INFO  [org.hibernate.dialect.Dialect] (ServerService Thread Pool -- 96) HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2023-05-22 14:53:01,776 INFO  [org.hibernate.envers.boot.internal.EnversServiceImpl] (ServerService Thread Pool -- 96) Envers integration enabled? : true
+2023-05-22 14:53:01,965 WARNING [org.jgroups.conf.XmlConfigurator] (ServerService Thread Pool -- 96) version is missing in the configuration file
+2023-05-22 14:53:01,978 WARNING [org.jgroups.conf.XmlConfigurator] (ServerService Thread Pool -- 96) version is missing in the configuration file
+2023-05-22 14:53:02,008 WARNING [org.jgroups.conf.XmlConfigurator] (ServerService Thread Pool -- 96) version is missing in the configuration file
+2023-05-22 14:53:02,016 WARNING [org.jgroups.conf.XmlConfigurator] (ServerService Thread Pool -- 96) version is missing in the configuration file
+2023-05-22 14:53:02,022 WARNING [org.jgroups.conf.XmlConfigurator] (ServerService Thread Pool -- 96) version is missing in the configuration file
+2023-05-22 14:53:02,034 WARNING [org.jgroups.conf.XmlConfigurator] (ServerService Thread Pool -- 96) version is missing in the configuration file
+2023-05-22 14:53:02,516 INFO  [io.smallrye.metrics] (MSC service thread 1-2) MicroProfile: Metrics activated (SmallRye Metrics version: 2.4.0)
+2023-05-22 14:53:05,215 INFO  [org.jboss.resteasy.resteasy_jaxrs.i18n] (ServerService Thread Pool -- 99) RESTEASY002225: Deploying javax.ws.rs.core.Application: class it.exolab.exoplane.conf.ControllerRestApplication
+2023-05-22 14:53:05,216 INFO  [org.jboss.resteasy.resteasy_jaxrs.i18n] (ServerService Thread Pool -- 99) RESTEASY002200: Adding class resource it.exolab.exoplane.rest.VoloRest from Application class it.exolab.exoplane.conf.ControllerRestApplication
+2023-05-22 14:53:05,216 INFO  [org.jboss.resteasy.resteasy_jaxrs.i18n] (ServerService Thread Pool -- 99) RESTEASY002200: Adding class resource it.exolab.exoplane.rest.PrenotazioneRest from Application class it.exolab.exoplane.conf.ControllerRestApplication
+2023-05-22 14:53:05,217 INFO  [org.jboss.resteasy.resteasy_jaxrs.i18n] (ServerService Thread Pool -- 99) RESTEASY002200: Adding class resource it.exolab.exoplane.rest.AereoRest from Application class it.exolab.exoplane.conf.ControllerRestApplication
+2023-05-22 14:53:05,218 INFO  [org.jboss.resteasy.resteasy_jaxrs.i18n] (ServerService Thread Pool -- 99) RESTEASY002200: Adding class resource it.exolab.exoplane.rest.PasseggeroRest from Application class it.exolab.exoplane.conf.ControllerRestApplication
+2023-05-22 14:53:05,552 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 99) WFLYUT0021: Registered web context: '/ExoplaneRERest' for server 'default-server'
+2023-05-22 14:53:05,810 INFO  [org.jboss.as.controller] (External Management Request Threads -- 1) WFLYCTL0183: Service status report
+WFLYCTL0185:    Newly corrected services:
+      service jboss.deployment.subunit."ExoplaneREEar.ear"."ExoplaneREEJB.jar".component.AereoControllerInteface.START (new available)
+      service jboss.deployment.subunit."ExoplaneREEar.ear"."ExoplaneREEJB.jar".component.AereoControllerInteface.WeldInstantiator (new available)
+      service jboss.deployment.subunit."ExoplaneREEar.ear"."ExoplaneREEJB.jar".component.AereoControllerInteface.WeldInterceptorBindingsService (new available)
+      service jboss.deployment.subunit."ExoplaneREEar.ear"."ExoplaneREEJB.jar".component.PasseggeroControllerInterface.START (new available)
+      service jboss.deployment.subunit."ExoplaneREEar.ear"."ExoplaneREEJB.jar".component.PasseggeroControllerInterface.WeldInstantiator (new available)
+      service jboss.deployment.subunit."ExoplaneREEar.ear"."ExoplaneREEJB.jar".component.PasseggeroControllerInterface.WeldInterceptorBindingsService (new available)
+      service jboss.deployment.subunit."ExoplaneREEar.ear"."ExoplaneREEJB.jar".component.PrenotazioneControllerInterface.START (new available)
+      service jboss.deployment.subunit."ExoplaneREEar.ear"."ExoplaneREEJB.jar".component.PrenotazioneControllerInterface.WeldInstantiator (new available)
+      service jboss.deployment.subunit."ExoplaneREEar.ear"."ExoplaneREEJB.jar".component.PrenotazioneControllerInterface.WeldInterceptorBindingsService (new available)
+      service jboss.deployment.subunit."ExoplaneREEar.ear"."ExoplaneREEJB.jar".component.VoloControllerInterface.START (new available)
+      service jboss.deployment.subunit."ExoplaneREEar.ear"."ExoplaneREEJB.jar".component.VoloControllerInterface.WeldInstantiator (new available)
+      service jboss.deployment.subunit."ExoplaneREEar.ear"."ExoplaneREEJB.jar".component.VoloControllerInterface.WeldInterceptorBindingsService (new available)
+      service jboss.deployment.subunit."ExoplaneREEar.ear"."ExoplaneREEJB.jar".component.VoloPrenotazioneControllerInterface.START (new available)
+      service jboss.deployment.subunit."ExoplaneREEar.ear"."ExoplaneREEJB.jar".component.VoloPrenotazioneControllerInterface.WeldInstantiator (new available)
+      service jboss.deployment.subunit."ExoplaneREEar.ear"."ExoplaneREEJB.jar".component.VoloPrenotazioneControllerInterface.WeldInterceptorBindingsService (new available)
+      service jboss.deployment.subunit."ExoplaneREEar.ear"."ExoplaneREEJB.jar".deploymentCompleteService (new available)
+      service jboss.deployment.subunit."ExoplaneREEar.ear"."ExoplaneREEJB.jar".weld.weldClassIntrospector (new available)
+      service jboss.deployment.subunit."ExoplaneREEar.ear"."ExoplaneRERest.war".component."javax.servlet.jsp.jstl.tlv.PermittedTaglibsTLV".START (new available)
+      service jboss.deployment.subunit."ExoplaneREEar.ear"."ExoplaneRERest.war".component."javax.servlet.jsp.jstl.tlv.ScriptFreeTLV".START (new available)
+      service jboss.deployment.subunit."ExoplaneREEar.ear"."ExoplaneRERest.war".deploymentCompleteService (new available)
+      service jboss.deployment.subunit."ExoplaneREEar.ear"."ExoplaneRERest.war".undertow-deployment (new available)
+      service jboss.deployment.subunit."ExoplaneREEar.ear"."ExoplaneRERest.war".undertow-deployment.UndertowDeploymentInfoService (new available)
+      service jboss.deployment.unit."ExoplaneREEar.ear".WeldStartService (new available)
+      service jboss.deployment.unit."ExoplaneREEar.ear".deploymentCompleteService (new available)
+      service jboss.deployment.unit."ExoplaneREEar.ear".weld.weldClassIntrospector (new available)
+      service jboss.naming.context.java.aereoporto (new available)
+      service jboss.persistenceunit."ExoplaneREEar.ear#ExoplaneREModel" (new available)
+      service jboss.persistenceunit."ExoplaneREEar.ear#ExoplaneREModel".__FIRST_PHASE__ (new available)
+
+2023-05-22 14:56:00,549 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 99) WFLYUT0022: Unregistered web context: '/ExoplaneRERest' from server 'default-server'
+2023-05-22 14:56:01,712 INFO  [org.jboss.as.jpa] (ServerService Thread Pool -- 103) WFLYJPA0011: Stopping Persistence Unit (phase 2 of 2) Service 'ExoplaneREEar.ear#ExoplaneREModel'
+2023-05-22 14:56:01,787 INFO  [org.hibernate.orm.beans] (ServerService Thread Pool -- 103) HHH10005004: Stopping BeanContainer : org.hibernate.resource.beans.container.internal.CdiBeanContainerExtendedAccessImpl@6146f9cb
+2023-05-22 14:56:01,990 INFO  [org.jboss.as.jpa] (ServerService Thread Pool -- 103) WFLYJPA0011: Stopping Persistence Unit (phase 1 of 2) Service 'ExoplaneREEar.ear#ExoplaneREModel'
+2023-05-22 14:56:02,927 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-3) WFLYSRV0208: Stopped subdeployment (runtime-name: ExoplaneRERest.war) in 4215ms
+2023-05-22 14:56:02,948 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-4) WFLYSRV0208: Stopped subdeployment (runtime-name: ExoplaneREEJB.jar) in 4239ms
+2023-05-22 14:56:03,147 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-4) WFLYSRV0028: Stopped deployment ExoplaneREEar.ear (runtime-name: ExoplaneREEar.ear) in 4427ms
+2023-05-22 14:56:03,349 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-2) WFLYSRV0027: Starting deployment of "ExoplaneREEar.ear" (runtime-name: "ExoplaneREEar.ear")
+2023-05-22 14:56:04,094 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-3) WFLYSRV0207: Starting subdeployment (runtime-name: "ExoplaneREEJB.jar")
+2023-05-22 14:56:04,094 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-4) WFLYSRV0207: Starting subdeployment (runtime-name: "ExoplaneRERest.war")
+2023-05-22 14:56:06,754 INFO  [org.jboss.as.jpa] (MSC service thread 1-3) WFLYJPA0002: Read persistence.xml for ExoplaneREModel
+2023-05-22 14:56:09,876 INFO  [org.jboss.as.jpa] (ServerService Thread Pool -- 103) WFLYJPA0010: Starting Persistence Unit (phase 1 of 2) Service 'ExoplaneREEar.ear#ExoplaneREModel'
+2023-05-22 14:56:09,912 INFO  [org.hibernate.jpa.internal.util.LogHelper] (ServerService Thread Pool -- 103) HHH000204: Processing PersistenceUnitInfo [
+	name: ExoplaneREModel
+	...]
+2023-05-22 14:56:10,557 INFO  [org.jboss.weld.deployer] (MSC service thread 1-3) WFLYWELD0003: Processing weld deployment ExoplaneREEar.ear
+2023-05-22 14:56:11,647 INFO  [org.jboss.weld.deployer] (MSC service thread 1-4) WFLYWELD0003: Processing weld deployment ExoplaneRERest.war
+2023-05-22 14:56:12,575 INFO  [org.jboss.weld.deployer] (MSC service thread 1-3) WFLYWELD0003: Processing weld deployment ExoplaneREEJB.jar
+2023-05-22 14:56:12,639 INFO  [org.jboss.as.ejb3.deployment] (MSC service thread 1-3) WFLYEJB0473: JNDI bindings for session bean named 'VoloPrenotazioneControllerInterface' in deployment unit 'subdeployment "ExoplaneREEJB.jar" of deployment "ExoplaneREEar.ear"' are as follows:
+
+	java:global/ExoplaneREEar/ExoplaneREEJB/VoloPrenotazioneControllerInterface!it.exolab.exoplane.controller.VoloPrenotazioneController
+	java:app/ExoplaneREEJB/VoloPrenotazioneControllerInterface!it.exolab.exoplane.controller.VoloPrenotazioneController
+	java:module/VoloPrenotazioneControllerInterface!it.exolab.exoplane.controller.VoloPrenotazioneController
+	java:global/ExoplaneREEar/ExoplaneREEJB/VoloPrenotazioneControllerInterface!it.exolab.exoplane.ejbInterface.VoloPrenotazioneControllerInterface
+	java:app/ExoplaneREEJB/VoloPrenotazioneControllerInterface!it.exolab.exoplane.ejbInterface.VoloPrenotazioneControllerInterface
+	java:module/VoloPrenotazioneControllerInterface!it.exolab.exoplane.ejbInterface.VoloPrenotazioneControllerInterface
+
+2023-05-22 14:56:12,648 INFO  [org.jboss.as.ejb3.deployment] (MSC service thread 1-3) WFLYEJB0473: JNDI bindings for session bean named 'VoloControllerInterface' in deployment unit 'subdeployment "ExoplaneREEJB.jar" of deployment "ExoplaneREEar.ear"' are as follows:
+
+	java:global/ExoplaneREEar/ExoplaneREEJB/VoloControllerInterface!it.exolab.exoplane.controller.VoloController
+	java:app/ExoplaneREEJB/VoloControllerInterface!it.exolab.exoplane.controller.VoloController
+	java:module/VoloControllerInterface!it.exolab.exoplane.controller.VoloController
+	java:global/ExoplaneREEar/ExoplaneREEJB/VoloControllerInterface!it.exolab.exoplane.ejbInterface.VoloControllerInterface
+	java:app/ExoplaneREEJB/VoloControllerInterface!it.exolab.exoplane.ejbInterface.VoloControllerInterface
+	java:module/VoloControllerInterface!it.exolab.exoplane.ejbInterface.VoloControllerInterface
+
+2023-05-22 14:56:12,659 INFO  [org.jboss.as.ejb3.deployment] (MSC service thread 1-3) WFLYEJB0473: JNDI bindings for session bean named 'PasseggeroControllerInterface' in deployment unit 'subdeployment "ExoplaneREEJB.jar" of deployment "ExoplaneREEar.ear"' are as follows:
+
+	java:global/ExoplaneREEar/ExoplaneREEJB/PasseggeroControllerInterface!it.exolab.exoplane.controller.PasseggeroController
+	java:app/ExoplaneREEJB/PasseggeroControllerInterface!it.exolab.exoplane.controller.PasseggeroController
+	java:module/PasseggeroControllerInterface!it.exolab.exoplane.controller.PasseggeroController
+	java:global/ExoplaneREEar/ExoplaneREEJB/PasseggeroControllerInterface!it.exolab.exoplane.ejbInterface.PasseggeroControllerInterface
+	java:app/ExoplaneREEJB/PasseggeroControllerInterface!it.exolab.exoplane.ejbInterface.PasseggeroControllerInterface
+	java:module/PasseggeroControllerInterface!it.exolab.exoplane.ejbInterface.PasseggeroControllerInterface
+
+2023-05-22 14:56:12,659 INFO  [org.jboss.as.ejb3.deployment] (MSC service thread 1-3) WFLYEJB0473: JNDI bindings for session bean named 'AereoControllerInteface' in deployment unit 'subdeployment "ExoplaneREEJB.jar" of deployment "ExoplaneREEar.ear"' are as follows:
+
+	java:global/ExoplaneREEar/ExoplaneREEJB/AereoControllerInteface!it.exolab.exoplane.ejbInterface.AereoControllerInteface
+	java:app/ExoplaneREEJB/AereoControllerInteface!it.exolab.exoplane.ejbInterface.AereoControllerInteface
+	java:module/AereoControllerInteface!it.exolab.exoplane.ejbInterface.AereoControllerInteface
+	java:global/ExoplaneREEar/ExoplaneREEJB/AereoControllerInteface!it.exolab.exoplane.controller.AereoController
+	java:app/ExoplaneREEJB/AereoControllerInteface!it.exolab.exoplane.controller.AereoController
+	java:module/AereoControllerInteface!it.exolab.exoplane.controller.AereoController
+
+2023-05-22 14:56:12,660 INFO  [org.jboss.as.ejb3.deployment] (MSC service thread 1-3) WFLYEJB0473: JNDI bindings for session bean named 'PrenotazioneControllerInterface' in deployment unit 'subdeployment "ExoplaneREEJB.jar" of deployment "ExoplaneREEar.ear"' are as follows:
+
+	java:global/ExoplaneREEar/ExoplaneREEJB/PrenotazioneControllerInterface!it.exolab.exoplane.controller.PrenotazioneController
+	java:app/ExoplaneREEJB/PrenotazioneControllerInterface!it.exolab.exoplane.controller.PrenotazioneController
+	java:module/PrenotazioneControllerInterface!it.exolab.exoplane.controller.PrenotazioneController
+	java:global/ExoplaneREEar/ExoplaneREEJB/PrenotazioneControllerInterface!it.exolab.exoplane.ejbInterface.PrenotazioneControllerInterface
+	java:app/ExoplaneREEJB/PrenotazioneControllerInterface!it.exolab.exoplane.ejbInterface.PrenotazioneControllerInterface
+	java:module/PrenotazioneControllerInterface!it.exolab.exoplane.ejbInterface.PrenotazioneControllerInterface
+
+2023-05-22 14:56:14,214 INFO  [io.jaegertracing.internal.JaegerTracer] (MSC service thread 1-4) No shutdown hook registered: Please call close() manually on application shutdown.
+2023-05-22 14:56:15,923 INFO  [org.jboss.as.jpa] (ServerService Thread Pool -- 103) WFLYJPA0010: Starting Persistence Unit (phase 2 of 2) Service 'ExoplaneREEar.ear#ExoplaneREModel'
+2023-05-22 14:56:16,089 INFO  [org.hibernate.dialect.Dialect] (ServerService Thread Pool -- 103) HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2023-05-22 14:56:16,174 INFO  [org.hibernate.envers.boot.internal.EnversServiceImpl] (ServerService Thread Pool -- 103) Envers integration enabled? : true
+2023-05-22 14:56:16,735 WARNING [org.jgroups.conf.XmlConfigurator] (ServerService Thread Pool -- 103) version is missing in the configuration file
+2023-05-22 14:56:16,744 WARNING [org.jgroups.conf.XmlConfigurator] (ServerService Thread Pool -- 103) version is missing in the configuration file
+2023-05-22 14:56:16,758 WARNING [org.jgroups.conf.XmlConfigurator] (ServerService Thread Pool -- 103) version is missing in the configuration file
+2023-05-22 14:56:16,763 WARNING [org.jgroups.conf.XmlConfigurator] (ServerService Thread Pool -- 103) version is missing in the configuration file
+2023-05-22 14:56:16,772 WARNING [org.jgroups.conf.XmlConfigurator] (ServerService Thread Pool -- 103) version is missing in the configuration file
+2023-05-22 14:56:16,788 WARNING [org.jgroups.conf.XmlConfigurator] (ServerService Thread Pool -- 103) version is missing in the configuration file
+2023-05-22 14:56:18,289 INFO  [io.smallrye.metrics] (MSC service thread 1-4) MicroProfile: Metrics activated (SmallRye Metrics version: 2.4.0)
+2023-05-22 14:56:21,184 INFO  [org.jboss.resteasy.resteasy_jaxrs.i18n] (ServerService Thread Pool -- 101) RESTEASY002225: Deploying javax.ws.rs.core.Application: class it.exolab.exoplane.conf.ControllerRestApplication
+2023-05-22 14:56:21,188 INFO  [org.jboss.resteasy.resteasy_jaxrs.i18n] (ServerService Thread Pool -- 101) RESTEASY002200: Adding class resource it.exolab.exoplane.rest.PrenotazioneRest from Application class it.exolab.exoplane.conf.ControllerRestApplication
+2023-05-22 14:56:21,189 INFO  [org.jboss.resteasy.resteasy_jaxrs.i18n] (ServerService Thread Pool -- 101) RESTEASY002200: Adding class resource it.exolab.exoplane.rest.AereoRest from Application class it.exolab.exoplane.conf.ControllerRestApplication
+2023-05-22 14:56:21,189 INFO  [org.jboss.resteasy.resteasy_jaxrs.i18n] (ServerService Thread Pool -- 101) RESTEASY002200: Adding class resource it.exolab.exoplane.rest.PasseggeroRest from Application class it.exolab.exoplane.conf.ControllerRestApplication
+2023-05-22 14:56:21,189 INFO  [org.jboss.resteasy.resteasy_jaxrs.i18n] (ServerService Thread Pool -- 101) RESTEASY002200: Adding class resource it.exolab.exoplane.rest.VoloRest from Application class it.exolab.exoplane.conf.ControllerRestApplication
+2023-05-22 14:56:21,413 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 101) WFLYUT0021: Registered web context: '/ExoplaneRERest' for server 'default-server'
+2023-05-22 14:56:22,694 INFO  [org.jboss.as.server] (DeploymentScanner-threads - 2) WFLYSRV0016: Replaced deployment "ExoplaneREEar.ear" with deployment "ExoplaneREEar.ear"
+2023-05-22 14:59:42,277 INFO  [org.hibernate.jpa.internal.util.LogHelper] (default task-2) HHH000204: Processing PersistenceUnitInfo [
+	name: PrimeJPA
+	...]
+2023-05-22 14:59:42,620 INFO  [org.hibernate.dialect.Dialect] (default task-2) HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2023-05-22 14:59:42,682 INFO  [org.hibernate.envers.boot.internal.EnversServiceImpl] (default task-2) Envers integration enabled? : true
+2023-05-22 14:59:42,762 INFO  [org.hibernate.orm.beans] (default task-2) HHH10005002: No explicit CDI BeanManager reference was passed to Hibernate, but CDI is available on the Hibernate ClassLoader.
+2023-05-22 14:59:44,000 INFO  [stdout] (default task-2) Hibernate: SELECT * FROM netflix.utente WHERE email=? AND pwd=?
+2023-05-22 15:00:10,569 INFO  [org.hibernate.jpa.internal.util.LogHelper] (default task-2) HHH000204: Processing PersistenceUnitInfo [
+	name: PrimeJPA
+	...]
+2023-05-22 15:00:10,585 INFO  [org.hibernate.dialect.Dialect] (default task-2) HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2023-05-22 15:00:10,592 INFO  [org.hibernate.envers.boot.internal.EnversServiceImpl] (default task-2) Envers integration enabled? : true
+2023-05-22 15:00:10,633 INFO  [org.hibernate.orm.beans] (default task-2) HHH10005002: No explicit CDI BeanManager reference was passed to Hibernate, but CDI is available on the Hibernate ClassLoader.
+2023-05-22 15:00:10,797 INFO  [stdout] (default task-2) Hibernate: SELECT * FROM netflix.film
+2023-05-22 15:00:11,052 INFO  [stdout] (default task-2) Hibernate: select regista0_.id as id1_1_0_, regista0_.cognome as cognome2_1_0_, regista0_.nome as nome3_1_0_ from regista regista0_ where regista0_.id=?
+2023-05-22 15:00:11,128 INFO  [stdout] (default task-2) Hibernate: select regista0_.id as id1_1_0_, regista0_.cognome as cognome2_1_0_, regista0_.nome as nome3_1_0_ from regista regista0_ where regista0_.id=?
+2023-05-22 15:00:11,140 INFO  [stdout] (default task-2) Hibernate: select regista0_.id as id1_1_0_, regista0_.cognome as cognome2_1_0_, regista0_.nome as nome3_1_0_ from regista regista0_ where regista0_.id=?
+2023-05-22 15:00:11,153 INFO  [stdout] (default task-2) Hibernate: select regista0_.id as id1_1_0_, regista0_.cognome as cognome2_1_0_, regista0_.nome as nome3_1_0_ from regista regista0_ where regista0_.id=?
+2023-05-22 15:00:11,161 INFO  [stdout] (default task-2) Hibernate: select regista0_.id as id1_1_0_, regista0_.cognome as cognome2_1_0_, regista0_.nome as nome3_1_0_ from regista regista0_ where regista0_.id=?
+2023-05-22 15:01:01,968 INFO  [org.hibernate.jpa.internal.util.LogHelper] (default task-2) HHH000204: Processing PersistenceUnitInfo [
+	name: PrimeJPA
+	...]
+2023-05-22 15:01:01,988 INFO  [org.hibernate.dialect.Dialect] (default task-2) HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2023-05-22 15:01:02,010 INFO  [org.hibernate.envers.boot.internal.EnversServiceImpl] (default task-2) Envers integration enabled? : true
+2023-05-22 15:01:02,049 INFO  [org.hibernate.orm.beans] (default task-2) HHH10005002: No explicit CDI BeanManager reference was passed to Hibernate, but CDI is available on the Hibernate ClassLoader.
+2023-05-22 15:01:02,141 INFO  [stdout] (default task-2) Hibernate: SELECT * FROM netflix.film
+2023-05-22 15:01:02,275 INFO  [stdout] (default task-2) Hibernate: select regista0_.id as id1_1_0_, regista0_.cognome as cognome2_1_0_, regista0_.nome as nome3_1_0_ from regista regista0_ where regista0_.id=?
+2023-05-22 15:01:02,280 INFO  [stdout] (default task-2) Hibernate: select regista0_.id as id1_1_0_, regista0_.cognome as cognome2_1_0_, regista0_.nome as nome3_1_0_ from regista regista0_ where regista0_.id=?
+2023-05-22 15:01:02,283 INFO  [stdout] (default task-2) Hibernate: select regista0_.id as id1_1_0_, regista0_.cognome as cognome2_1_0_, regista0_.nome as nome3_1_0_ from regista regista0_ where regista0_.id=?
+2023-05-22 15:01:02,288 INFO  [stdout] (default task-2) Hibernate: select regista0_.id as id1_1_0_, regista0_.cognome as cognome2_1_0_, regista0_.nome as nome3_1_0_ from regista regista0_ where regista0_.id=?
+2023-05-22 15:01:02,300 INFO  [stdout] (default task-2) Hibernate: select regista0_.id as id1_1_0_, regista0_.cognome as cognome2_1_0_, regista0_.nome as nome3_1_0_ from regista regista0_ where regista0_.id=?
+2023-05-22 15:03:01,678 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 109) WFLYUT0022: Unregistered web context: '/PrimeWEB' from server 'default-server'
+2023-05-22 15:03:02,002 INFO  [org.jboss.as.jpa] (ServerService Thread Pool -- 108) WFLYJPA0011: Stopping Persistence Unit (phase 2 of 2) Service 'PrimeEAR.ear#PrimeJPA'
+2023-05-22 15:03:02,602 INFO  [org.hibernate.orm.beans] (ServerService Thread Pool -- 108) HHH10005004: Stopping BeanContainer : org.hibernate.resource.beans.container.internal.CdiBeanContainerExtendedAccessImpl@52def6d8
+2023-05-22 15:03:02,883 INFO  [org.jboss.as.jpa] (ServerService Thread Pool -- 108) WFLYJPA0011: Stopping Persistence Unit (phase 1 of 2) Service 'PrimeEAR.ear#PrimeJPA'
+2023-05-22 15:03:04,562 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-2) WFLYSRV0208: Stopped subdeployment (runtime-name: PrimeWEB.war) in 3807ms
+2023-05-22 15:03:04,584 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-1) WFLYSRV0208: Stopped subdeployment (runtime-name: PrimeEJB.jar) in 3829ms
+2023-05-22 15:03:04,600 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-1) WFLYSRV0028: Stopped deployment PrimeEAR.ear (runtime-name: PrimeEAR.ear) in 3850ms
+2023-05-22 15:03:05,188 INFO  [org.jboss.as.server] (DeploymentScanner-threads - 2) WFLYSRV0009: Undeployed "PrimeEAR.ear" (runtime-name: "PrimeEAR.ear")
+2023-05-22 15:03:10,239 INFO  [org.jboss.as.server.deployment.scanner] (DeploymentScanner-threads - 1) WFLYDS0004: Found PrimeEAR.ear in deployment directory. To trigger deployment create a file called PrimeEAR.ear.dodeploy
+2023-05-22 15:03:10,277 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-3) WFLYSRV0027: Starting deployment of "PrimeEAR.ear" (runtime-name: "PrimeEAR.ear")
+2023-05-22 15:03:10,530 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-1) WFLYSRV0207: Starting subdeployment (runtime-name: "PrimeEJB.jar")
+2023-05-22 15:03:10,530 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-2) WFLYSRV0207: Starting subdeployment (runtime-name: "PrimeWEB.war")
+2023-05-22 15:03:10,788 INFO  [org.jboss.as.jpa] (MSC service thread 1-2) WFLYJPA0002: Read persistence.xml for PrimeJPA
+2023-05-22 15:03:11,581 INFO  [org.jboss.as.jpa] (ServerService Thread Pool -- 108) WFLYJPA0010: Starting Persistence Unit (phase 1 of 2) Service 'PrimeEAR.ear#PrimeJPA'
+2023-05-22 15:03:11,584 INFO  [org.hibernate.jpa.internal.util.LogHelper] (ServerService Thread Pool -- 108) HHH000204: Processing PersistenceUnitInfo [
+	name: PrimeJPA
+	...]
+2023-05-22 15:03:11,629 INFO  [org.jboss.weld.deployer] (MSC service thread 1-3) WFLYWELD0003: Processing weld deployment PrimeEAR.ear
+2023-05-22 15:03:11,997 INFO  [org.jboss.weld.deployer] (MSC service thread 1-1) WFLYWELD0003: Processing weld deployment PrimeWEB.war
+2023-05-22 15:03:12,057 INFO  [org.jboss.weld.deployer] (MSC service thread 1-2) WFLYWELD0003: Processing weld deployment PrimeEJB.jar
+2023-05-22 15:03:12,070 INFO  [org.jboss.as.ejb3.deployment] (MSC service thread 1-2) WFLYEJB0473: JNDI bindings for session bean named 'RegistaController' in deployment unit 'subdeployment "PrimeEJB.jar" of deployment "PrimeEAR.ear"' are as follows:
+
+	java:global/PrimeEAR/PrimeEJB/RegistaController!netflix.controller.RegistaController
+	java:app/PrimeEJB/RegistaController!netflix.controller.RegistaController
+	java:module/RegistaController!netflix.controller.RegistaController
+	java:global/PrimeEAR/PrimeEJB/RegistaController!netflix.interfaces.RegistaInterface
+	java:app/PrimeEJB/RegistaController!netflix.interfaces.RegistaInterface
+	java:module/RegistaController!netflix.interfaces.RegistaInterface
+
+2023-05-22 15:03:12,077 INFO  [org.jboss.as.ejb3.deployment] (MSC service thread 1-2) WFLYEJB0473: JNDI bindings for session bean named 'FilmController' in deployment unit 'subdeployment "PrimeEJB.jar" of deployment "PrimeEAR.ear"' are as follows:
+
+	java:global/PrimeEAR/PrimeEJB/FilmController!netflix.controller.FilmController
+	java:app/PrimeEJB/FilmController!netflix.controller.FilmController
+	java:module/FilmController!netflix.controller.FilmController
+	java:global/PrimeEAR/PrimeEJB/FilmController!netflix.interfaces.FilmInterface
+	java:app/PrimeEJB/FilmController!netflix.interfaces.FilmInterface
+	java:module/FilmController!netflix.interfaces.FilmInterface
+
+2023-05-22 15:03:12,077 INFO  [org.jboss.as.ejb3.deployment] (MSC service thread 1-2) WFLYEJB0473: JNDI bindings for session bean named 'UtenteController' in deployment unit 'subdeployment "PrimeEJB.jar" of deployment "PrimeEAR.ear"' are as follows:
+
+	java:global/PrimeEAR/PrimeEJB/UtenteController!netflix.controller.UtenteController
+	java:app/PrimeEJB/UtenteController!netflix.controller.UtenteController
+	java:module/UtenteController!netflix.controller.UtenteController
+	java:global/PrimeEAR/PrimeEJB/UtenteController!netflix.interfaces.UtenteInterface
+	java:app/PrimeEJB/UtenteController!netflix.interfaces.UtenteInterface
+	java:module/UtenteController!netflix.interfaces.UtenteInterface
+
+2023-05-22 15:03:12,847 INFO  [io.jaegertracing.internal.JaegerTracer] (MSC service thread 1-1) No shutdown hook registered: Please call close() manually on application shutdown.
+2023-05-22 15:03:13,203 INFO  [org.jboss.as.jpa] (ServerService Thread Pool -- 108) WFLYJPA0010: Starting Persistence Unit (phase 2 of 2) Service 'PrimeEAR.ear#PrimeJPA'
+2023-05-22 15:03:13,245 INFO  [org.hibernate.dialect.Dialect] (ServerService Thread Pool -- 108) HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2023-05-22 15:03:13,288 INFO  [org.hibernate.envers.boot.internal.EnversServiceImpl] (ServerService Thread Pool -- 108) Envers integration enabled? : true
+2023-05-22 15:03:14,338 WARNING [org.jgroups.conf.XmlConfigurator] (ServerService Thread Pool -- 108) version is missing in the configuration file
+2023-05-22 15:03:14,357 WARNING [org.jgroups.conf.XmlConfigurator] (ServerService Thread Pool -- 108) version is missing in the configuration file
+2023-05-22 15:03:14,363 WARNING [org.jgroups.conf.XmlConfigurator] (ServerService Thread Pool -- 108) version is missing in the configuration file
+2023-05-22 15:03:14,385 WARNING [org.jgroups.conf.XmlConfigurator] (ServerService Thread Pool -- 108) version is missing in the configuration file
+2023-05-22 15:03:14,393 WARNING [org.jgroups.conf.XmlConfigurator] (ServerService Thread Pool -- 108) version is missing in the configuration file
+2023-05-22 15:03:14,412 WARNING [org.jgroups.conf.XmlConfigurator] (ServerService Thread Pool -- 108) version is missing in the configuration file
+2023-05-22 15:03:14,904 INFO  [io.smallrye.metrics] (MSC service thread 1-1) MicroProfile: Metrics activated (SmallRye Metrics version: 2.4.0)
+2023-05-22 15:03:16,920 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 109) WFLYUT0021: Registered web context: '/PrimeWEB' for server 'default-server'
+2023-05-22 15:03:17,154 INFO  [org.jboss.as.server] (DeploymentScanner-threads - 2) WFLYSRV0010: Deployed "PrimeEAR.ear" (runtime-name : "PrimeEAR.ear")
+2023-05-22 15:04:12,759 INFO  [org.hibernate.jpa.internal.util.LogHelper] (default task-2) HHH000204: Processing PersistenceUnitInfo [
+	name: PrimeJPA
+	...]
+2023-05-22 15:04:12,862 INFO  [org.hibernate.dialect.Dialect] (default task-2) HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2023-05-22 15:04:12,878 INFO  [org.hibernate.envers.boot.internal.EnversServiceImpl] (default task-2) Envers integration enabled? : true
+2023-05-22 15:04:12,955 INFO  [org.hibernate.orm.beans] (default task-2) HHH10005002: No explicit CDI BeanManager reference was passed to Hibernate, but CDI is available on the Hibernate ClassLoader.
+2023-05-22 15:04:13,169 INFO  [stdout] (default task-2) Hibernate: SELECT * FROM netflix.utente WHERE email=? AND pwd=?
+2023-05-22 15:07:22,736 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 111) WFLYUT0022: Unregistered web context: '/PrimeWEB' from server 'default-server'
+2023-05-22 15:07:23,152 INFO  [org.jboss.as.jpa] (ServerService Thread Pool -- 112) WFLYJPA0011: Stopping Persistence Unit (phase 2 of 2) Service 'PrimeEAR.ear#PrimeJPA'
+2023-05-22 15:07:23,216 INFO  [org.hibernate.orm.beans] (ServerService Thread Pool -- 112) HHH10005004: Stopping BeanContainer : org.hibernate.resource.beans.container.internal.CdiBeanContainerExtendedAccessImpl@3b7e02c0
+2023-05-22 15:07:23,307 INFO  [org.jboss.as.jpa] (ServerService Thread Pool -- 112) WFLYJPA0011: Stopping Persistence Unit (phase 1 of 2) Service 'PrimeEAR.ear#PrimeJPA'
+2023-05-22 15:07:23,505 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-4) WFLYSRV0208: Stopped subdeployment (runtime-name: PrimeWEB.war) in 1219ms
+2023-05-22 15:07:23,505 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-2) WFLYSRV0208: Stopped subdeployment (runtime-name: PrimeEJB.jar) in 1219ms
+2023-05-22 15:07:23,520 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-2) WFLYSRV0028: Stopped deployment PrimeEAR.ear (runtime-name: PrimeEAR.ear) in 1630ms
+2023-05-22 15:07:24,299 INFO  [org.jboss.as.server] (DeploymentScanner-threads - 2) WFLYSRV0009: Undeployed "PrimeEAR.ear" (runtime-name: "PrimeEAR.ear")
+2023-05-22 15:07:29,334 INFO  [org.jboss.as.server.deployment.scanner] (DeploymentScanner-threads - 1) WFLYDS0004: Found PrimeEAR.ear in deployment directory. To trigger deployment create a file called PrimeEAR.ear.dodeploy
+2023-05-22 15:07:29,376 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-1) WFLYSRV0027: Starting deployment of "PrimeEAR.ear" (runtime-name: "PrimeEAR.ear")
+2023-05-22 15:07:29,611 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-1) WFLYSRV0207: Starting subdeployment (runtime-name: "PrimeWEB.war")
+2023-05-22 15:07:29,611 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-2) WFLYSRV0207: Starting subdeployment (runtime-name: "PrimeEJB.jar")
+2023-05-22 15:07:29,890 INFO  [org.jboss.as.jpa] (MSC service thread 1-2) WFLYJPA0002: Read persistence.xml for PrimeJPA
+2023-05-22 15:07:31,049 INFO  [org.jboss.as.jpa] (ServerService Thread Pool -- 112) WFLYJPA0010: Starting Persistence Unit (phase 1 of 2) Service 'PrimeEAR.ear#PrimeJPA'
+2023-05-22 15:07:31,073 INFO  [org.jboss.weld.deployer] (MSC service thread 1-2) WFLYWELD0003: Processing weld deployment PrimeEAR.ear
+2023-05-22 15:07:31,068 INFO  [org.hibernate.jpa.internal.util.LogHelper] (ServerService Thread Pool -- 112) HHH000204: Processing PersistenceUnitInfo [
+	name: PrimeJPA
+	...]
+2023-05-22 15:07:31,937 INFO  [org.jboss.weld.deployer] (MSC service thread 1-3) WFLYWELD0003: Processing weld deployment PrimeWEB.war
+2023-05-22 15:07:32,042 INFO  [org.jboss.weld.deployer] (MSC service thread 1-4) WFLYWELD0003: Processing weld deployment PrimeEJB.jar
+2023-05-22 15:07:32,100 INFO  [org.jboss.as.ejb3.deployment] (MSC service thread 1-4) WFLYEJB0473: JNDI bindings for session bean named 'RegistaController' in deployment unit 'subdeployment "PrimeEJB.jar" of deployment "PrimeEAR.ear"' are as follows:
+
+	java:global/PrimeEAR/PrimeEJB/RegistaController!netflix.controller.RegistaController
+	java:app/PrimeEJB/RegistaController!netflix.controller.RegistaController
+	java:module/RegistaController!netflix.controller.RegistaController
+	java:global/PrimeEAR/PrimeEJB/RegistaController!netflix.interfaces.RegistaInterface
+	java:app/PrimeEJB/RegistaController!netflix.interfaces.RegistaInterface
+	java:module/RegistaController!netflix.interfaces.RegistaInterface
+
+2023-05-22 15:07:32,101 INFO  [org.jboss.as.ejb3.deployment] (MSC service thread 1-4) WFLYEJB0473: JNDI bindings for session bean named 'FilmController' in deployment unit 'subdeployment "PrimeEJB.jar" of deployment "PrimeEAR.ear"' are as follows:
+
+	java:global/PrimeEAR/PrimeEJB/FilmController!netflix.controller.FilmController
+	java:app/PrimeEJB/FilmController!netflix.controller.FilmController
+	java:module/FilmController!netflix.controller.FilmController
+	java:global/PrimeEAR/PrimeEJB/FilmController!netflix.interfaces.FilmInterface
+	java:app/PrimeEJB/FilmController!netflix.interfaces.FilmInterface
+	java:module/FilmController!netflix.interfaces.FilmInterface
+
+2023-05-22 15:07:32,107 INFO  [org.jboss.as.ejb3.deployment] (MSC service thread 1-4) WFLYEJB0473: JNDI bindings for session bean named 'UtenteController' in deployment unit 'subdeployment "PrimeEJB.jar" of deployment "PrimeEAR.ear"' are as follows:
+
+	java:global/PrimeEAR/PrimeEJB/UtenteController!netflix.controller.UtenteController
+	java:app/PrimeEJB/UtenteController!netflix.controller.UtenteController
+	java:module/UtenteController!netflix.controller.UtenteController
+	java:global/PrimeEAR/PrimeEJB/UtenteController!netflix.interfaces.UtenteInterface
+	java:app/PrimeEJB/UtenteController!netflix.interfaces.UtenteInterface
+	java:module/UtenteController!netflix.interfaces.UtenteInterface
+
+2023-05-22 15:07:32,296 INFO  [io.jaegertracing.internal.JaegerTracer] (MSC service thread 1-3) No shutdown hook registered: Please call close() manually on application shutdown.
+2023-05-22 15:07:32,461 INFO  [org.jboss.as.jpa] (ServerService Thread Pool -- 112) WFLYJPA0010: Starting Persistence Unit (phase 2 of 2) Service 'PrimeEAR.ear#PrimeJPA'
+2023-05-22 15:07:32,536 INFO  [org.hibernate.dialect.Dialect] (ServerService Thread Pool -- 112) HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2023-05-22 15:07:32,553 INFO  [org.hibernate.envers.boot.internal.EnversServiceImpl] (ServerService Thread Pool -- 112) Envers integration enabled? : true
+2023-05-22 15:07:32,870 WARNING [org.jgroups.conf.XmlConfigurator] (ServerService Thread Pool -- 112) version is missing in the configuration file
+2023-05-22 15:07:32,882 WARNING [org.jgroups.conf.XmlConfigurator] (ServerService Thread Pool -- 112) version is missing in the configuration file
+2023-05-22 15:07:32,887 WARNING [org.jgroups.conf.XmlConfigurator] (ServerService Thread Pool -- 112) version is missing in the configuration file
+2023-05-22 15:07:32,893 WARNING [org.jgroups.conf.XmlConfigurator] (ServerService Thread Pool -- 112) version is missing in the configuration file
+2023-05-22 15:07:32,897 WARNING [org.jgroups.conf.XmlConfigurator] (ServerService Thread Pool -- 112) version is missing in the configuration file
+2023-05-22 15:07:32,906 WARNING [org.jgroups.conf.XmlConfigurator] (ServerService Thread Pool -- 112) version is missing in the configuration file
+2023-05-22 15:07:33,371 INFO  [io.smallrye.metrics] (MSC service thread 1-1) MicroProfile: Metrics activated (SmallRye Metrics version: 2.4.0)
+2023-05-22 15:07:33,839 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 110) WFLYUT0021: Registered web context: '/PrimeWEB' for server 'default-server'
+2023-05-22 15:07:33,892 INFO  [org.jboss.as.server] (DeploymentScanner-threads - 2) WFLYSRV0010: Deployed "PrimeEAR.ear" (runtime-name : "PrimeEAR.ear")
+2023-05-22 15:09:04,112 INFO  [org.hibernate.jpa.internal.util.LogHelper] (default task-2) HHH000204: Processing PersistenceUnitInfo [
+	name: PrimeJPA
+	...]
+2023-05-22 15:09:04,141 INFO  [org.hibernate.dialect.Dialect] (default task-2) HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2023-05-22 15:09:04,156 INFO  [org.hibernate.envers.boot.internal.EnversServiceImpl] (default task-2) Envers integration enabled? : true
+2023-05-22 15:09:04,200 INFO  [org.hibernate.orm.beans] (default task-2) HHH10005002: No explicit CDI BeanManager reference was passed to Hibernate, but CDI is available on the Hibernate ClassLoader.
+2023-05-22 15:09:04,275 INFO  [stdout] (default task-2) Hibernate: SELECT * FROM netflix.utente WHERE email=? AND pwd=?
+2023-05-22 15:14:05,752 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 113) WFLYUT0022: Unregistered web context: '/PrimeWEB' from server 'default-server'
+2023-05-22 15:14:08,028 INFO  [org.jboss.as.jpa] (ServerService Thread Pool -- 115) WFLYJPA0011: Stopping Persistence Unit (phase 2 of 2) Service 'PrimeEAR.ear#PrimeJPA'
+2023-05-22 15:14:08,495 INFO  [org.hibernate.orm.beans] (ServerService Thread Pool -- 115) HHH10005004: Stopping BeanContainer : org.hibernate.resource.beans.container.internal.CdiBeanContainerExtendedAccessImpl@5700e276
+2023-05-22 15:14:08,547 INFO  [org.jboss.as.jpa] (ServerService Thread Pool -- 115) WFLYJPA0011: Stopping Persistence Unit (phase 1 of 2) Service 'PrimeEAR.ear#PrimeJPA'
+2023-05-22 15:14:08,652 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-2) WFLYSRV0208: Stopped subdeployment (runtime-name: PrimeWEB.war) in 3344ms
+2023-05-22 15:14:08,658 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-1) WFLYSRV0208: Stopped subdeployment (runtime-name: PrimeEJB.jar) in 3350ms
+2023-05-22 15:14:08,662 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-1) WFLYSRV0028: Stopped deployment PrimeEAR.ear (runtime-name: PrimeEAR.ear) in 3369ms
+2023-05-22 15:14:09,035 INFO  [org.jboss.as.server] (DeploymentScanner-threads - 1) WFLYSRV0009: Undeployed "PrimeEAR.ear" (runtime-name: "PrimeEAR.ear")
+2023-05-22 15:14:14,072 INFO  [org.jboss.as.server.deployment.scanner] (DeploymentScanner-threads - 2) WFLYDS0004: Found PrimeEAR.ear in deployment directory. To trigger deployment create a file called PrimeEAR.ear.dodeploy
+2023-05-22 15:14:14,103 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-4) WFLYSRV0027: Starting deployment of "PrimeEAR.ear" (runtime-name: "PrimeEAR.ear")
+2023-05-22 15:14:14,317 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-4) WFLYSRV0207: Starting subdeployment (runtime-name: "PrimeEJB.jar")
+2023-05-22 15:14:14,316 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-2) WFLYSRV0207: Starting subdeployment (runtime-name: "PrimeWEB.war")
+2023-05-22 15:14:14,659 INFO  [org.jboss.as.jpa] (MSC service thread 1-4) WFLYJPA0002: Read persistence.xml for PrimeJPA
+2023-05-22 15:14:15,910 INFO  [org.jboss.as.jpa] (ServerService Thread Pool -- 115) WFLYJPA0010: Starting Persistence Unit (phase 1 of 2) Service 'PrimeEAR.ear#PrimeJPA'
+2023-05-22 15:14:15,913 INFO  [org.hibernate.jpa.internal.util.LogHelper] (ServerService Thread Pool -- 115) HHH000204: Processing PersistenceUnitInfo [
+	name: PrimeJPA
+	...]
+2023-05-22 15:14:15,929 INFO  [org.jboss.weld.deployer] (MSC service thread 1-3) WFLYWELD0003: Processing weld deployment PrimeEAR.ear
+2023-05-22 15:14:19,901 INFO  [org.jboss.weld.deployer] (MSC service thread 1-3) WFLYWELD0003: Processing weld deployment PrimeWEB.war
+2023-05-22 15:14:20,378 INFO  [org.jboss.weld.deployer] (MSC service thread 1-4) WFLYWELD0003: Processing weld deployment PrimeEJB.jar
+2023-05-22 15:14:20,414 INFO  [org.jboss.as.ejb3.deployment] (MSC service thread 1-4) WFLYEJB0473: JNDI bindings for session bean named 'RegistaController' in deployment unit 'subdeployment "PrimeEJB.jar" of deployment "PrimeEAR.ear"' are as follows:
+
+	java:global/PrimeEAR/PrimeEJB/RegistaController!netflix.controller.RegistaController
+	java:app/PrimeEJB/RegistaController!netflix.controller.RegistaController
+	java:module/RegistaController!netflix.controller.RegistaController
+	java:global/PrimeEAR/PrimeEJB/RegistaController!netflix.interfaces.RegistaInterface
+	java:app/PrimeEJB/RegistaController!netflix.interfaces.RegistaInterface
+	java:module/RegistaController!netflix.interfaces.RegistaInterface
+
+2023-05-22 15:14:20,423 INFO  [org.jboss.as.ejb3.deployment] (MSC service thread 1-4) WFLYEJB0473: JNDI bindings for session bean named 'FilmController' in deployment unit 'subdeployment "PrimeEJB.jar" of deployment "PrimeEAR.ear"' are as follows:
+
+	java:global/PrimeEAR/PrimeEJB/FilmController!netflix.controller.FilmController
+	java:app/PrimeEJB/FilmController!netflix.controller.FilmController
+	java:module/FilmController!netflix.controller.FilmController
+	java:global/PrimeEAR/PrimeEJB/FilmController!netflix.interfaces.FilmInterface
+	java:app/PrimeEJB/FilmController!netflix.interfaces.FilmInterface
+	java:module/FilmController!netflix.interfaces.FilmInterface
+
+2023-05-22 15:14:20,424 INFO  [org.jboss.as.ejb3.deployment] (MSC service thread 1-4) WFLYEJB0473: JNDI bindings for session bean named 'UtenteController' in deployment unit 'subdeployment "PrimeEJB.jar" of deployment "PrimeEAR.ear"' are as follows:
+
+	java:global/PrimeEAR/PrimeEJB/UtenteController!netflix.controller.UtenteController
+	java:app/PrimeEJB/UtenteController!netflix.controller.UtenteController
+	java:module/UtenteController!netflix.controller.UtenteController
+	java:global/PrimeEAR/PrimeEJB/UtenteController!netflix.interfaces.UtenteInterface
+	java:app/PrimeEJB/UtenteController!netflix.interfaces.UtenteInterface
+	java:module/UtenteController!netflix.interfaces.UtenteInterface
+
+2023-05-22 15:14:20,823 INFO  [io.jaegertracing.internal.JaegerTracer] (MSC service thread 1-3) No shutdown hook registered: Please call close() manually on application shutdown.
+2023-05-22 15:14:21,208 INFO  [org.jboss.as.jpa] (ServerService Thread Pool -- 115) WFLYJPA0010: Starting Persistence Unit (phase 2 of 2) Service 'PrimeEAR.ear#PrimeJPA'
+2023-05-22 15:14:21,273 INFO  [org.hibernate.dialect.Dialect] (ServerService Thread Pool -- 115) HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2023-05-22 15:14:21,321 INFO  [org.hibernate.envers.boot.internal.EnversServiceImpl] (ServerService Thread Pool -- 115) Envers integration enabled? : true
+2023-05-22 15:14:21,471 WARNING [org.jgroups.conf.XmlConfigurator] (ServerService Thread Pool -- 115) version is missing in the configuration file
+2023-05-22 15:14:21,508 WARNING [org.jgroups.conf.XmlConfigurator] (ServerService Thread Pool -- 115) version is missing in the configuration file
+2023-05-22 15:14:21,519 WARNING [org.jgroups.conf.XmlConfigurator] (ServerService Thread Pool -- 115) version is missing in the configuration file
+2023-05-22 15:14:21,534 WARNING [org.jgroups.conf.XmlConfigurator] (ServerService Thread Pool -- 115) version is missing in the configuration file
+2023-05-22 15:14:21,546 WARNING [org.jgroups.conf.XmlConfigurator] (ServerService Thread Pool -- 115) version is missing in the configuration file
+2023-05-22 15:14:21,552 WARNING [org.jgroups.conf.XmlConfigurator] (ServerService Thread Pool -- 115) version is missing in the configuration file
+2023-05-22 15:14:22,127 INFO  [io.smallrye.metrics] (MSC service thread 1-3) MicroProfile: Metrics activated (SmallRye Metrics version: 2.4.0)
+2023-05-22 15:14:22,685 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 115) WFLYUT0021: Registered web context: '/PrimeWEB' for server 'default-server'
+2023-05-22 15:14:22,891 INFO  [org.jboss.as.server] (DeploymentScanner-threads - 1) WFLYSRV0010: Deployed "PrimeEAR.ear" (runtime-name : "PrimeEAR.ear")
+2023-05-22 15:14:38,095 INFO  [org.hibernate.jpa.internal.util.LogHelper] (default task-2) HHH000204: Processing PersistenceUnitInfo [
+	name: PrimeJPA
+	...]
+2023-05-22 15:14:38,223 INFO  [org.hibernate.dialect.Dialect] (default task-2) HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2023-05-22 15:14:38,246 INFO  [org.hibernate.envers.boot.internal.EnversServiceImpl] (default task-2) Envers integration enabled? : true
+2023-05-22 15:14:38,270 INFO  [org.hibernate.orm.beans] (default task-2) HHH10005002: No explicit CDI BeanManager reference was passed to Hibernate, but CDI is available on the Hibernate ClassLoader.
+2023-05-22 15:14:38,348 INFO  [stdout] (default task-2) Hibernate: SELECT * FROM netflix.utente WHERE email=? AND pwd=?
+2023-05-22 15:14:46,592 INFO  [org.hibernate.jpa.internal.util.LogHelper] (default task-2) HHH000204: Processing PersistenceUnitInfo [
+	name: PrimeJPA
+	...]
+2023-05-22 15:14:46,631 INFO  [org.hibernate.dialect.Dialect] (default task-2) HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2023-05-22 15:14:46,638 INFO  [org.hibernate.envers.boot.internal.EnversServiceImpl] (default task-2) Envers integration enabled? : true
+2023-05-22 15:14:46,671 INFO  [org.hibernate.orm.beans] (default task-2) HHH10005002: No explicit CDI BeanManager reference was passed to Hibernate, but CDI is available on the Hibernate ClassLoader.
+2023-05-22 15:14:46,799 INFO  [stdout] (default task-2) Hibernate: select film0_.id as id1_0_0_, film0_.categoria as categori2_0_0_, film0_.idregista as idregist3_0_0_, film0_.titolo as titolo4_0_0_ from film film0_ where film0_.id=?
+2023-05-22 15:14:46,839 INFO  [stdout] (default task-2) Hibernate: select regista0_.id as id1_1_0_, regista0_.cognome as cognome2_1_0_, regista0_.nome as nome3_1_0_ from regista regista0_ where regista0_.id=?
+2023-05-22 15:14:46,943 INFO  [stdout] (default task-2) Hibernate: update film set categoria=?, idregista=?, titolo=? where id=?
+2023-05-22 15:15:41,775 INFO  [org.hibernate.jpa.internal.util.LogHelper] (default task-2) HHH000204: Processing PersistenceUnitInfo [
+	name: PrimeJPA
+	...]
+2023-05-22 15:15:41,793 INFO  [org.hibernate.dialect.Dialect] (default task-2) HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2023-05-22 15:15:41,796 INFO  [org.hibernate.envers.boot.internal.EnversServiceImpl] (default task-2) Envers integration enabled? : true
+2023-05-22 15:15:41,843 INFO  [org.hibernate.orm.beans] (default task-2) HHH10005002: No explicit CDI BeanManager reference was passed to Hibernate, but CDI is available on the Hibernate ClassLoader.
+2023-05-22 15:15:41,880 INFO  [stdout] (default task-2) Hibernate: select regista0_.id as id1_1_0_, regista0_.cognome as cognome2_1_0_, regista0_.nome as nome3_1_0_ from regista regista0_ where regista0_.id=?
+2023-05-22 15:15:41,895 INFO  [stdout] (default task-2) Hibernate: update regista set cognome=?, nome=? where id=?
+2023-05-22 15:17:14,259 INFO  [org.jboss.as.server] (management-handler-thread - 3) WFLYSRV0272: Suspending server
+2023-05-22 15:17:14,594 INFO  [org.jboss.as.ejb3] (management-handler-thread - 3) WFLYEJB0493: EJB subsystem suspension complete
+2023-05-22 15:17:14,625 INFO  [org.jboss.as.server] (Management Triggered Shutdown) WFLYSRV0241: Shutting down in response to management operation 'shutdown'
+2023-05-22 15:17:15,875 INFO  [org.jboss.as.mail.extension] (MSC service thread 1-4) WFLYMAIL0002: Unbound mail session [java:jboss/mail/Default]
+2023-05-22 15:17:15,905 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 115) WFLYUT0022: Unregistered web context: '/ExoplaneRERest' from server 'default-server'
+2023-05-22 15:17:16,111 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 121) WFLYUT0022: Unregistered web context: '/PrimeWEB' from server 'default-server'
+2023-05-22 15:17:16,436 INFO  [org.jboss.as.jpa] (ServerService Thread Pool -- 123) WFLYJPA0011: Stopping Persistence Unit (phase 2 of 2) Service 'ExoplaneREEar.ear#ExoplaneREModel'
+2023-05-22 15:17:16,512 INFO  [org.hibernate.orm.beans] (ServerService Thread Pool -- 123) HHH10005004: Stopping BeanContainer : org.hibernate.resource.beans.container.internal.CdiBeanContainerExtendedAccessImpl@d77a784
+2023-05-22 15:17:16,533 INFO  [org.jboss.as.jpa] (ServerService Thread Pool -- 123) WFLYJPA0011: Stopping Persistence Unit (phase 1 of 2) Service 'ExoplaneREEar.ear#ExoplaneREModel'
+2023-05-22 15:17:16,539 INFO  [org.jboss.as.connector.subsystems.datasources] (MSC service thread 1-2) WFLYJCA0010: Unbound data source [java:/aereoporto]
+2023-05-22 15:17:16,628 INFO  [org.jboss.as.jpa] (ServerService Thread Pool -- 126) WFLYJPA0011: Stopping Persistence Unit (phase 2 of 2) Service 'PrimeEAR.ear#PrimeJPA'
+2023-05-22 15:17:16,640 INFO  [org.hibernate.orm.beans] (ServerService Thread Pool -- 126) HHH10005004: Stopping BeanContainer : org.hibernate.resource.beans.container.internal.CdiBeanContainerExtendedAccessImpl@1538d653
+2023-05-22 15:17:16,644 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-4) WFLYUT0019: Host default-host stopping
+2023-05-22 15:17:16,647 INFO  [org.jboss.as.connector.subsystems.datasources] (MSC service thread 1-4) WFLYJCA0010: Unbound data source [java:jboss/datasources/ExampleDS]
+2023-05-22 15:17:16,660 INFO  [org.jboss.as.jpa] (ServerService Thread Pool -- 126) WFLYJPA0011: Stopping Persistence Unit (phase 1 of 2) Service 'PrimeEAR.ear#PrimeJPA'
+2023-05-22 15:17:16,709 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-2) WFLYJCA0019: Stopped Driver service with driver-name = h2
+2023-05-22 15:17:16,760 INFO  [org.jboss.as.connector.subsystems.datasources] (MSC service thread 1-3) WFLYJCA0010: Unbound data source [java:/netflix]
+2023-05-22 15:17:16,849 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-2) WFLYSRV0208: Stopped subdeployment (runtime-name: ExoplaneREEJB.jar) in 2129ms
+2023-05-22 15:17:16,851 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-2) WFLYSRV0208: Stopped subdeployment (runtime-name: ExoplaneRERest.war) in 2080ms
+2023-05-22 15:17:16,852 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-2) WFLYSRV0028: Stopped deployment ExoplaneREEar.ear (runtime-name: ExoplaneREEar.ear) in 2081ms
+2023-05-22 15:17:16,866 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-2) WFLYJCA0019: Stopped Driver service with driver-name = mysql-connector-java-8.0.25.jar
+2023-05-22 15:17:16,875 INFO  [org.infinispan.manager.DefaultCacheManager] (MSC service thread 1-2) Stopping cache manager null on null
+2023-05-22 15:17:16,896 INFO  [org.jboss.as.clustering.infinispan] (ServerService Thread Pool -- 129) WFLYCLINF0003: Stopped client-mappings cache from ejb container
+2023-05-22 15:17:16,898 INFO  [org.infinispan.manager.DefaultCacheManager] (MSC service thread 1-2) Stopping cache manager null on null
+2023-05-22 15:17:16,933 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-2) WFLYSRV0208: Stopped subdeployment (runtime-name: PrimeEJB.jar) in 2171ms
+2023-05-22 15:17:16,933 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-2) WFLYSRV0208: Stopped subdeployment (runtime-name: PrimeWEB.war) in 2201ms
+2023-05-22 15:17:16,934 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-2) WFLYSRV0028: Stopped deployment PrimeEAR.ear (runtime-name: PrimeEAR.ear) in 2213ms
+2023-05-22 15:17:16,951 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-4) WFLYSRV0028: Stopped deployment mysql-connector-java-8.0.25 (runtime-name: mysql-connector-java-8.0.25.jar) in 2220ms
+2023-05-22 15:17:16,964 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-3) WFLYUT0008: Undertow HTTPS listener https suspending
+2023-05-22 15:17:16,973 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-3) WFLYUT0007: Undertow HTTPS listener https stopped, was bound to 127.0.0.1:8443
+2023-05-22 15:17:17,034 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-1) WFLYUT0008: Undertow HTTP listener default suspending
+2023-05-22 15:17:17,036 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-1) WFLYUT0007: Undertow HTTP listener default stopped, was bound to 127.0.0.1:8080
+2023-05-22 15:17:17,045 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-2) WFLYUT0004: Undertow 2.1.3.Final stopping
+2023-05-22 15:17:17,124 INFO  [org.jboss.as] (MSC service thread 1-3) WFLYSRV0050: WildFly Full 20.0.0.Final (WildFly Core 12.0.1.Final) stopped in 2397ms
+2023-05-22 15:44:31,615 INFO  [org.jboss.modules] (main) JBoss Modules version 1.10.1.Final
+2023-05-22 15:44:33,960 INFO  [org.jboss.msc] (main) JBoss MSC version 1.4.11.Final
+2023-05-22 15:44:33,998 INFO  [org.jboss.threads] (main) JBoss Threads version 2.3.3.Final
+2023-05-22 15:44:34,488 INFO  [org.jboss.as] (MSC service thread 1-1) WFLYSRV0049: WildFly Full 20.0.0.Final (WildFly Core 12.0.1.Final) starting
+2023-05-22 15:44:34,495 DEBUG [org.jboss.as.config] (MSC service thread 1-1) Configured system properties:
+	file.encoding = UTF-8
+	file.separator = \
+	java.awt.headless = true
+	java.class.path = C:\dev\server\wildfly-20.0.0.Final\jboss-modules.jar
+	java.class.version = 61.0
+	java.home = C:\Program Files\Java\jdk-17.0.7
+	java.io.tmpdir = C:\Users\feder\AppData\Local\Temp\
+	java.library.path = C:\Program Files\Java\jdk-17.0.7\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;native;C:/Sviluppo/Eclipse//plugins/org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_17.0.5.v20221102-0933/jre/bin/server;C:/Sviluppo/Eclipse//plugins/org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_17.0.5.v20221102-0933/jre/bin;C:\Program Files\Java\jdk-17.0.7\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Sviluppo\Git\cmd;C:\Sviluppo\Maven\bin;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Program Files\MySQL\MySQL Shell 8.0\bin\;C:\Users\feder\AppData\Local\Microsoft\WindowsApps;;C:\Sviluppo\Eclipse;;.
+	java.net.preferIPv4Stack = true
+	java.runtime.name = Java(TM) SE Runtime Environment
+	java.runtime.version = 17.0.7+8-LTS-224
+	java.specification.name = Java Platform API Specification
+	java.specification.vendor = Oracle Corporation
+	java.specification.version = 17
+	java.util.logging.manager = org.jboss.logmanager.LogManager
+	java.vendor = Oracle Corporation
+	java.vendor.url = https://java.oracle.com/
+	java.vendor.url.bug = https://bugreport.java.com/bugreport/
+	java.version = 17.0.7
+	java.version.date = 2023-04-18
+	java.vm.compressedOopsMode = 32-bit
+	java.vm.info = mixed mode, sharing
+	java.vm.name = Java HotSpot(TM) 64-Bit Server VM
+	java.vm.specification.name = Java Virtual Machine Specification
+	java.vm.specification.vendor = Oracle Corporation
+	java.vm.specification.version = 17
+	java.vm.vendor = Oracle Corporation
+	java.vm.version = 17.0.7+8-LTS-224
+	javax.management.builder.initial = org.jboss.as.jmx.PluggableMBeanServerBuilder
+	jboss.bind.address = localhost
+	jboss.bind.address.management = localhost
+	jboss.home.dir = C:\dev\server\wildfly-20.0.0.Final
+	jboss.host.name = cipollino
+	jboss.modules.dir = C:\dev\server\wildfly-20.0.0.Final\modules
+	jboss.modules.system.pkgs = org.jboss.byteman
+	jboss.node.name = cipollino
+	jboss.qualified.host.name = cipollino
+	jboss.server.base.dir = C:\dev\server\wildfly-20.0.0.Final\standalone
+	jboss.server.config.dir = C:\dev\server\wildfly-20.0.0.Final\standalone\configuration
+	jboss.server.data.dir = C:\dev\server\wildfly-20.0.0.Final\standalone\data
+	jboss.server.deploy.dir = C:\dev\server\wildfly-20.0.0.Final\standalone\data\content
+	jboss.server.log.dir = C:\dev\server\wildfly-20.0.0.Final\standalone\log
+	jboss.server.name = cipollino
+	jboss.server.persist.config = true
+	jboss.server.temp.dir = C:\dev\server\wildfly-20.0.0.Final\standalone\tmp
+	jdk.debug = release
+	line.separator = 
+
+	logging.configuration = file:C:\dev\server\wildfly-20.0.0.Final\standalone\configuration\logging.properties
+	module.path = C:\dev\server\wildfly-20.0.0.Final\modules
+	native.encoding = Cp1252
+	org.jboss.boot.log.file = C:\dev\server\wildfly-20.0.0.Final\standalone\log\boot.log
+	org.jboss.logmanager.nocolor = true
+	org.jboss.resolver.warning = true
+	os.arch = amd64
+	os.name = Windows 11
+	os.version = 10.0
+	path.separator = ;
+	program.name = JBossTools: WildFly 20
+	sun.arch.data.model = 64
+	sun.boot.library.path = C:\Program Files\Java\jdk-17.0.7\bin
+	sun.cpu.endian = little
+	sun.cpu.isalist = amd64
+	sun.io.unicode.encoding = UnicodeLittle
+	sun.java.command = org.jboss.modules.Main -mp C:\dev\server\wildfly-20.0.0.Final\modules org.jboss.as.standalone -b localhost --server-config=standalone.xml -Djboss.server.base.dir=C:\dev\server\wildfly-20.0.0.Final\standalone
+	sun.java.launcher = SUN_STANDARD
+	sun.jnu.encoding = Cp1252
+	sun.management.compiler = HotSpot 64-Bit Tiered Compilers
+	sun.os.patch.level = 
+	sun.rmi.dgc.client.gcInterval = 3600000
+	sun.rmi.dgc.server.gcInterval = 3600000
+	user.country = IT
+	user.dir = C:\dev\server\wildfly-20.0.0.Final\bin
+	user.home = C:\Users\feder
+	user.language = it
+	user.name = feder
+	user.script = 
+	user.timezone = Europe/Rome
+	user.variant = 
+2023-05-22 15:44:34,500 DEBUG [org.jboss.as.config] (MSC service thread 1-1) VM Arguments: -Dprogram.name=JBossTools: WildFly 20 -Xms64m -Xmx512m -Dorg.jboss.resolver.warning=true -Djava.net.preferIPv4Stack=true -Dsun.rmi.dgc.client.gcInterval=3600000 -Dsun.rmi.dgc.server.gcInterval=3600000 -Djboss.modules.system.pkgs=org.jboss.byteman -Djava.awt.headless=true -Dorg.jboss.boot.log.file=C:\dev\server\wildfly-20.0.0.Final\standalone\log\boot.log -Dlogging.configuration=file:C:\dev\server\wildfly-20.0.0.Final\standalone\configuration\logging.properties -Djboss.home.dir=C:\dev\server\wildfly-20.0.0.Final -Dorg.jboss.logmanager.nocolor=true --add-exports=java.desktop/sun.awt=ALL-UNNAMED --add-exports=java.naming/com.sun.jndi.ldap=ALL-UNNAMED --add-opens=java.base/java.lang=ALL-UNNAMED --add-opens=java.base/java.lang.invoke=ALL-UNNAMED --add-opens=java.base/java.lang.reflect=ALL-UNNAMED --add-opens=java.base/java.io=ALL-UNNAMED --add-opens=java.base/java.security=ALL-UNNAMED --add-opens=java.base/java.util=ALL-UNNAMED --add-opens=java.base/java.util.concurrent=ALL-UNNAMED --add-opens=java.management/javax.management=ALL-UNNAMED --add-opens=java.naming/javax.naming=ALL-UNNAMED --add-exports=java.base/sun.nio.ch=ALL-UNNAMED --add-exports=jdk.unsupported/sun.misc=ALL-UNNAMED --add-exports=jdk.unsupported/sun.reflect=ALL-UNNAMED --add-modules=java.se -Djboss.bind.address.management=localhost -Dfile.encoding=UTF-8 -XX:+ShowCodeDetailsInExceptionMessages 
+2023-05-22 15:44:40,308 INFO  [org.wildfly.security] (ServerService Thread Pool -- 28) ELY00001: WildFly Elytron version 1.12.1.Final
+2023-05-22 15:44:43,337 INFO  [org.jboss.as.controller.management-deprecated] (Controller Boot Thread) WFLYCTL0028: Attribute 'security-realm' in the resource at address '/core-service=management/management-interface=http-interface' is deprecated, and may be removed in a future version. See the attribute description in the output of the read-resource-description operation to learn more about the deprecation.
+2023-05-22 15:44:43,410 INFO  [org.jboss.as.controller.management-deprecated] (ServerService Thread Pool -- 32) WFLYCTL0028: Attribute 'security-realm' in the resource at address '/subsystem=undertow/server=default-server/https-listener=https' is deprecated, and may be removed in a future version. See the attribute description in the output of the read-resource-description operation to learn more about the deprecation.
+2023-05-22 15:44:43,858 INFO  [org.jboss.as.server.deployment.scanner] (DeploymentScanner-threads - 1) WFLYDS0004: Found PrimeEAR.ear in deployment directory. To trigger deployment create a file called PrimeEAR.ear.dodeploy
+2023-05-22 15:44:43,861 INFO  [org.jboss.as.server.deployment.scanner] (DeploymentScanner-threads - 1) WFLYDS0004: Found ExoplaneREEar.ear in deployment directory. To trigger deployment create a file called ExoplaneREEar.ear.dodeploy
+2023-05-22 15:44:43,977 INFO  [org.jboss.as.server] (Controller Boot Thread) WFLYSRV0039: Creating http management service using socket-binding (management-http)
+2023-05-22 15:44:44,076 INFO  [org.xnio] (MSC service thread 1-2) XNIO version 3.8.1.Final
+2023-05-22 15:44:44,145 INFO  [org.xnio.nio] (MSC service thread 1-2) XNIO NIO Implementation Version 3.8.1.Final
+2023-05-22 15:44:44,384 INFO  [org.jboss.as.connector.subsystems.datasources] (ServerService Thread Pool -- 44) WFLYJCA0004: Deploying JDBC-compliant driver class org.h2.Driver (version 1.4)
+2023-05-22 15:44:44,430 INFO  [org.jboss.as.clustering.infinispan] (ServerService Thread Pool -- 52) WFLYCLINF0001: Activating Infinispan subsystem.
+2023-05-22 15:44:44,627 INFO  [org.jboss.as.jsf] (ServerService Thread Pool -- 59) WFLYJSF0007: Activated the following JSF Implementations: [main]
+2023-05-22 15:44:44,647 INFO  [org.jboss.as.jaxrs] (ServerService Thread Pool -- 54) WFLYRS0016: RESTEasy version 3.12.1.Final
+2023-05-22 15:44:44,655 INFO  [org.wildfly.extension.microprofile.config.smallrye._private] (ServerService Thread Pool -- 61) WFLYCONF0001: Activating WildFly MicroProfile Config Subsystem
+2023-05-22 15:44:44,666 INFO  [org.wildfly.extension.microprofile.jwt.smallrye._private] (ServerService Thread Pool -- 63) WFLYJWT0001: Activating WildFly MicroProfile JWT Subsystem
+2023-05-22 15:44:44,694 INFO  [org.jboss.as.naming] (ServerService Thread Pool -- 66) WFLYNAM0001: Activating Naming Subsystem
+2023-05-22 15:44:44,696 INFO  [org.wildfly.extension.microprofile.opentracing] (ServerService Thread Pool -- 65) WFLYTRACEXT0001: Activating MicroProfile OpenTracing Subsystem
+2023-05-22 15:44:44,777 INFO  [org.jboss.as.security] (ServerService Thread Pool -- 72) WFLYSEC0002: Activating Security Subsystem
+2023-05-22 15:44:44,779 WARN  [org.jboss.as.txn] (ServerService Thread Pool -- 74) WFLYTX0013: The node-identifier attribute on the /subsystem=transactions is set to the default value. This is a danger for environments running multiple servers. Please make sure the attribute value is unique.
+2023-05-22 15:44:44,840 INFO  [org.jboss.as.webservices] (ServerService Thread Pool -- 76) WFLYWS0002: Activating WebServices Extension
+2023-05-22 15:44:44,943 INFO  [org.wildfly.extension.microprofile.health.smallrye] (ServerService Thread Pool -- 62) WFLYHEALTH0001: Activating Eclipse MicroProfile Health Subsystem
+2023-05-22 15:44:45,011 INFO  [org.wildfly.extension.microprofile.metrics.smallrye] (ServerService Thread Pool -- 64) WFLYMETRICS0001: Activating Eclipse MicroProfile Metrics Subsystem
+2023-05-22 15:44:45,930 INFO  [org.jboss.as.security] (MSC service thread 1-4) WFLYSEC0001: Current PicketBox version=5.0.3.Final-redhat-00005
+2023-05-22 15:44:46,058 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 75) WFLYUT0014: Creating file handler for path 'C:\dev\server\wildfly-20.0.0.Final/welcome-content' with options [directory-listing: 'false', follow-symlink: 'false', case-sensitive: 'true', safe-symlink-paths: '[]']
+2023-05-22 15:44:47,528 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-4) WFLYUT0003: Undertow 2.1.3.Final starting
+2023-05-22 15:44:47,643 INFO  [org.jboss.as.connector] (MSC service thread 1-4) WFLYJCA0009: Starting JCA Subsystem (WildFly/IronJacamar 1.4.22.Final)
+2023-05-22 15:44:47,827 INFO  [org.jboss.as.naming] (MSC service thread 1-4) WFLYNAM0003: Starting Naming Service
+2023-05-22 15:44:47,899 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-4) WFLYJCA0018: Started Driver service with driver-name = h2
+2023-05-22 15:44:47,936 INFO  [org.jboss.as.mail.extension] (MSC service thread 1-4) WFLYMAIL0001: Bound mail session [java:jboss/mail/Default]
+2023-05-22 15:44:48,823 INFO  [org.wildfly.extension.io] (ServerService Thread Pool -- 53) WFLYIO001: Worker 'default' has auto-configured to 4 IO threads with 32 max task threads based on your 2 available processors
+2023-05-22 15:44:48,835 INFO  [org.jboss.as.ejb3] (MSC service thread 1-3) WFLYEJB0481: Strict pool slsb-strict-max-pool is using a max instance size of 32 (per class), which is derived from thread worker pool sizing.
+2023-05-22 15:44:48,836 INFO  [org.jboss.as.ejb3] (MSC service thread 1-3) WFLYEJB0482: Strict pool mdb-strict-max-pool is using a max instance size of 8 (per class), which is derived from the number of CPUs on this host.
+2023-05-22 15:44:49,017 INFO  [org.jboss.remoting] (MSC service thread 1-3) JBoss Remoting version 5.0.18.Final
+2023-05-22 15:44:49,090 INFO  [org.jboss.as.patching] (MSC service thread 1-2) WFLYPAT0050: WildFly Full cumulative patch ID is: base, one-off patches include: none
+2023-05-22 15:44:49,095 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-3) WFLYUT0012: Started server default-server.
+2023-05-22 15:44:49,131 WARN  [org.jboss.as.domain.management.security] (MSC service thread 1-1) WFLYDM0111: Keystore C:\dev\server\wildfly-20.0.0.Final\standalone\configuration\application.keystore not found, it will be auto generated on first use with a self signed certificate for host localhost
+2023-05-22 15:44:49,137 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-3) WFLYUT0018: Host default-host starting
+2023-05-22 15:44:49,209 INFO  [org.jboss.as.server.deployment.scanner] (MSC service thread 1-2) WFLYDS0013: Started FileSystemDeploymentService for directory C:\dev\server\wildfly-20.0.0.Final\standalone\deployments
+2023-05-22 15:44:49,238 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-2) WFLYSRV0027: Starting deployment of "mysql-connector-java-8.0.25" (runtime-name: "mysql-connector-java-8.0.25.jar")
+2023-05-22 15:44:49,242 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-2) WFLYSRV0027: Starting deployment of "PrimeEAR.ear" (runtime-name: "PrimeEAR.ear")
+2023-05-22 15:44:49,243 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-2) WFLYSRV0027: Starting deployment of "ExoplaneREEar.ear" (runtime-name: "ExoplaneREEar.ear")
+2023-05-22 15:44:49,274 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-3) WFLYUT0006: Undertow HTTP listener default listening on 127.0.0.1:8080
+2023-05-22 15:44:50,418 INFO  [org.jboss.as.ejb3] (MSC service thread 1-2) WFLYEJB0493: EJB subsystem suspension complete
+2023-05-22 15:44:50,419 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-2) WFLYSRV0207: Starting subdeployment (runtime-name: "ExoplaneRERest.war")
+2023-05-22 15:44:50,420 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-2) WFLYSRV0207: Starting subdeployment (runtime-name: "ExoplaneREEJB.jar")
+2023-05-22 15:44:50,420 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-2) WFLYSRV0207: Starting subdeployment (runtime-name: "PrimeWEB.war")
+2023-05-22 15:44:50,421 INFO  [org.jboss.as.server.deployment] (MSC service thread 1-2) WFLYSRV0207: Starting subdeployment (runtime-name: "PrimeEJB.jar")
+2023-05-22 15:44:50,487 INFO  [org.wildfly.extension.undertow] (MSC service thread 1-1) WFLYUT0006: Undertow HTTPS listener https listening on 127.0.0.1:8443
+2023-05-22 15:44:51,067 INFO  [org.jboss.as.connector.subsystems.datasources] (MSC service thread 1-3) WFLYJCA0001: Bound data source [java:jboss/datasources/ExampleDS]
+2023-05-22 15:44:51,448 INFO  [org.jboss.ws.common.management] (MSC service thread 1-2) JBWS022052: Starting JBossWS 5.4.1.Final (Apache CXF 3.3.6) 
+2023-05-22 15:44:53,535 INFO  [org.jboss.as.jpa] (MSC service thread 1-2) WFLYJPA0002: Read persistence.xml for ExoplaneREModel
+2023-05-22 15:44:53,582 INFO  [org.jboss.as.jpa] (MSC service thread 1-3) WFLYJPA0002: Read persistence.xml for PrimeJPA
+2023-05-22 15:44:55,382 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-4) WFLYJCA0005: Deploying non-JDBC-compliant driver class com.mysql.cj.jdbc.Driver (version 8.0)
+2023-05-22 15:44:55,543 INFO  [org.jboss.weld.deployer] (MSC service thread 1-1) WFLYWELD0003: Processing weld deployment ExoplaneREEar.ear
+2023-05-22 15:44:55,770 INFO  [org.jboss.as.connector.deployers.jdbc] (MSC service thread 1-2) WFLYJCA0018: Started Driver service with driver-name = mysql-connector-java-8.0.25.jar
+2023-05-22 15:44:55,983 INFO  [org.jboss.weld.deployer] (MSC service thread 1-2) WFLYWELD0003: Processing weld deployment PrimeEAR.ear
+2023-05-22 15:44:56,499 INFO  [org.hibernate.validator.internal.util.Version] (MSC service thread 1-2) HV000001: Hibernate Validator 6.0.20.Final
+2023-05-22 15:44:57,640 INFO  [org.infinispan.PERSISTENCE] (MSC service thread 1-3) ISPN000556: Starting user marshaller 'org.wildfly.clustering.infinispan.marshalling.jboss.JBossMarshaller'
+2023-05-22 15:44:57,696 INFO  [org.jboss.as.connector.subsystems.datasources] (MSC service thread 1-1) WFLYJCA0001: Bound data source [java:/netflix]
+2023-05-22 15:44:57,698 INFO  [org.jboss.as.connector.subsystems.datasources] (MSC service thread 1-1) WFLYJCA0001: Bound data source [java:/aereoporto]
+2023-05-22 15:44:57,723 INFO  [org.infinispan.PERSISTENCE] (MSC service thread 1-4) ISPN000556: Starting user marshaller 'org.wildfly.clustering.infinispan.marshalling.jboss.JBossMarshaller'
+2023-05-22 15:44:57,759 INFO  [org.infinispan.CONTAINER] (MSC service thread 1-4) ISPN000128: Infinispan version: Infinispan 'Turia' 10.1.8.Final
+2023-05-22 15:44:57,824 INFO  [org.jboss.weld.deployer] (MSC service thread 1-1) WFLYWELD0003: Processing weld deployment ExoplaneRERest.war
+2023-05-22 15:44:58,078 INFO  [org.jboss.weld.deployer] (MSC service thread 1-2) WFLYWELD0003: Processing weld deployment ExoplaneREEJB.jar
+2023-05-22 15:44:58,089 INFO  [org.jboss.as.ejb3.deployment] (MSC service thread 1-2) WFLYEJB0473: JNDI bindings for session bean named 'VoloPrenotazioneControllerInterface' in deployment unit 'subdeployment "ExoplaneREEJB.jar" of deployment "ExoplaneREEar.ear"' are as follows:
+
+	java:global/ExoplaneREEar/ExoplaneREEJB/VoloPrenotazioneControllerInterface!it.exolab.exoplane.ejbInterface.VoloPrenotazioneControllerInterface
+	java:app/ExoplaneREEJB/VoloPrenotazioneControllerInterface!it.exolab.exoplane.ejbInterface.VoloPrenotazioneControllerInterface
+	java:module/VoloPrenotazioneControllerInterface!it.exolab.exoplane.ejbInterface.VoloPrenotazioneControllerInterface
+	java:global/ExoplaneREEar/ExoplaneREEJB/VoloPrenotazioneControllerInterface!it.exolab.exoplane.controller.VoloPrenotazioneController
+	java:app/ExoplaneREEJB/VoloPrenotazioneControllerInterface!it.exolab.exoplane.controller.VoloPrenotazioneController
+	java:module/VoloPrenotazioneControllerInterface!it.exolab.exoplane.controller.VoloPrenotazioneController
+
+2023-05-22 15:44:58,091 INFO  [org.jboss.as.ejb3.deployment] (MSC service thread 1-2) WFLYEJB0473: JNDI bindings for session bean named 'VoloControllerInterface' in deployment unit 'subdeployment "ExoplaneREEJB.jar" of deployment "ExoplaneREEar.ear"' are as follows:
+
+	java:global/ExoplaneREEar/ExoplaneREEJB/VoloControllerInterface!it.exolab.exoplane.ejbInterface.VoloControllerInterface
+	java:app/ExoplaneREEJB/VoloControllerInterface!it.exolab.exoplane.ejbInterface.VoloControllerInterface
+	java:module/VoloControllerInterface!it.exolab.exoplane.ejbInterface.VoloControllerInterface
+	java:global/ExoplaneREEar/ExoplaneREEJB/VoloControllerInterface!it.exolab.exoplane.controller.VoloController
+	java:app/ExoplaneREEJB/VoloControllerInterface!it.exolab.exoplane.controller.VoloController
+	java:module/VoloControllerInterface!it.exolab.exoplane.controller.VoloController
+
+2023-05-22 15:44:58,093 INFO  [org.jboss.as.ejb3.deployment] (MSC service thread 1-2) WFLYEJB0473: JNDI bindings for session bean named 'PasseggeroControllerInterface' in deployment unit 'subdeployment "ExoplaneREEJB.jar" of deployment "ExoplaneREEar.ear"' are as follows:
+
+	java:global/ExoplaneREEar/ExoplaneREEJB/PasseggeroControllerInterface!it.exolab.exoplane.controller.PasseggeroController
+	java:app/ExoplaneREEJB/PasseggeroControllerInterface!it.exolab.exoplane.controller.PasseggeroController
+	java:module/PasseggeroControllerInterface!it.exolab.exoplane.controller.PasseggeroController
+	java:global/ExoplaneREEar/ExoplaneREEJB/PasseggeroControllerInterface!it.exolab.exoplane.ejbInterface.PasseggeroControllerInterface
+	java:app/ExoplaneREEJB/PasseggeroControllerInterface!it.exolab.exoplane.ejbInterface.PasseggeroControllerInterface
+	java:module/PasseggeroControllerInterface!it.exolab.exoplane.ejbInterface.PasseggeroControllerInterface
+
+2023-05-22 15:44:58,093 INFO  [org.jboss.as.ejb3.deployment] (MSC service thread 1-2) WFLYEJB0473: JNDI bindings for session bean named 'AereoControllerInteface' in deployment unit 'subdeployment "ExoplaneREEJB.jar" of deployment "ExoplaneREEar.ear"' are as follows:
+
+	java:global/ExoplaneREEar/ExoplaneREEJB/AereoControllerInteface!it.exolab.exoplane.ejbInterface.AereoControllerInteface
+	java:app/ExoplaneREEJB/AereoControllerInteface!it.exolab.exoplane.ejbInterface.AereoControllerInteface
+	java:module/AereoControllerInteface!it.exolab.exoplane.ejbInterface.AereoControllerInteface
+	java:global/ExoplaneREEar/ExoplaneREEJB/AereoControllerInteface!it.exolab.exoplane.controller.AereoController
+	java:app/ExoplaneREEJB/AereoControllerInteface!it.exolab.exoplane.controller.AereoController
+	java:module/AereoControllerInteface!it.exolab.exoplane.controller.AereoController
+
+2023-05-22 15:44:58,692 INFO  [io.jaegertracing.internal.JaegerTracer] (MSC service thread 1-1) No shutdown hook registered: Please call close() manually on application shutdown.
+2023-05-22 15:44:58,909 INFO  [org.jboss.weld.deployer] (MSC service thread 1-3) WFLYWELD0003: Processing weld deployment PrimeEJB.jar
+2023-05-22 15:44:59,049 INFO  [org.jboss.weld.deployer] (MSC service thread 1-4) WFLYWELD0003: Processing weld deployment PrimeWEB.war
+2023-05-22 15:44:59,563 INFO  [org.jboss.as.ejb3.deployment] (MSC service thread 1-2) WFLYEJB0473: JNDI bindings for session bean named 'PrenotazioneControllerInterface' in deployment unit 'subdeployment "ExoplaneREEJB.jar" of deployment "ExoplaneREEar.ear"' are as follows:
+
+	java:global/ExoplaneREEar/ExoplaneREEJB/PrenotazioneControllerInterface!it.exolab.exoplane.ejbInterface.PrenotazioneControllerInterface
+	java:app/ExoplaneREEJB/PrenotazioneControllerInterface!it.exolab.exoplane.ejbInterface.PrenotazioneControllerInterface
+	java:module/PrenotazioneControllerInterface!it.exolab.exoplane.ejbInterface.PrenotazioneControllerInterface
+	java:global/ExoplaneREEar/ExoplaneREEJB/PrenotazioneControllerInterface!it.exolab.exoplane.controller.PrenotazioneController
+	java:app/ExoplaneREEJB/PrenotazioneControllerInterface!it.exolab.exoplane.controller.PrenotazioneController
+	java:module/PrenotazioneControllerInterface!it.exolab.exoplane.controller.PrenotazioneController
+
+2023-05-22 15:44:59,751 INFO  [org.jboss.as.jpa] (ServerService Thread Pool -- 79) WFLYJPA0010: Starting Persistence Unit (phase 1 of 2) Service 'PrimeEAR.ear#PrimeJPA'
+2023-05-22 15:44:59,740 INFO  [org.jboss.as.jpa] (ServerService Thread Pool -- 80) WFLYJPA0010: Starting Persistence Unit (phase 1 of 2) Service 'ExoplaneREEar.ear#ExoplaneREModel'
+2023-05-22 15:44:59,763 INFO  [org.jboss.as.ejb3.deployment] (MSC service thread 1-3) WFLYEJB0473: JNDI bindings for session bean named 'RegistaController' in deployment unit 'subdeployment "PrimeEJB.jar" of deployment "PrimeEAR.ear"' are as follows:
+
+	java:global/PrimeEAR/PrimeEJB/RegistaController!netflix.controller.RegistaController
+	java:app/PrimeEJB/RegistaController!netflix.controller.RegistaController
+	java:module/RegistaController!netflix.controller.RegistaController
+	java:global/PrimeEAR/PrimeEJB/RegistaController!netflix.interfaces.RegistaInterface
+	java:app/PrimeEJB/RegistaController!netflix.interfaces.RegistaInterface
+	java:module/RegistaController!netflix.interfaces.RegistaInterface
+
+2023-05-22 15:44:59,763 INFO  [org.jboss.as.ejb3.deployment] (MSC service thread 1-3) WFLYEJB0473: JNDI bindings for session bean named 'FilmController' in deployment unit 'subdeployment "PrimeEJB.jar" of deployment "PrimeEAR.ear"' are as follows:
+
+	java:global/PrimeEAR/PrimeEJB/FilmController!netflix.controller.FilmController
+	java:app/PrimeEJB/FilmController!netflix.controller.FilmController
+	java:module/FilmController!netflix.controller.FilmController
+	java:global/PrimeEAR/PrimeEJB/FilmController!netflix.interfaces.FilmInterface
+	java:app/PrimeEJB/FilmController!netflix.interfaces.FilmInterface
+	java:module/FilmController!netflix.interfaces.FilmInterface
+
+2023-05-22 15:44:59,884 INFO  [org.jboss.as.ejb3.deployment] (MSC service thread 1-3) WFLYEJB0473: JNDI bindings for session bean named 'UtenteController' in deployment unit 'subdeployment "PrimeEJB.jar" of deployment "PrimeEAR.ear"' are as follows:
+
+	java:global/PrimeEAR/PrimeEJB/UtenteController!netflix.controller.UtenteController
+	java:app/PrimeEJB/UtenteController!netflix.controller.UtenteController
+	java:module/UtenteController!netflix.controller.UtenteController
+	java:global/PrimeEAR/PrimeEJB/UtenteController!netflix.interfaces.UtenteInterface
+	java:app/PrimeEJB/UtenteController!netflix.interfaces.UtenteInterface
+	java:module/UtenteController!netflix.interfaces.UtenteInterface
+
+2023-05-22 15:44:59,999 INFO  [io.jaegertracing.internal.JaegerTracer] (MSC service thread 1-4) No shutdown hook registered: Please call close() manually on application shutdown.
+2023-05-22 15:45:00,090 INFO  [org.jboss.as.clustering.infinispan] (ServerService Thread Pool -- 81) WFLYCLINF0002: Started client-mappings cache from ejb container
+2023-05-22 15:45:00,180 INFO  [org.hibernate.jpa.internal.util.LogHelper] (ServerService Thread Pool -- 79) HHH000204: Processing PersistenceUnitInfo [
+	name: PrimeJPA
+	...]
+2023-05-22 15:45:00,197 INFO  [org.hibernate.jpa.internal.util.LogHelper] (ServerService Thread Pool -- 80) HHH000204: Processing PersistenceUnitInfo [
+	name: ExoplaneREModel
+	...]
+2023-05-22 15:45:00,375 INFO  [org.jboss.weld.Version] (MSC service thread 1-1) WELD-000900: 3.1.4 (Final)
+2023-05-22 15:45:01,445 INFO  [org.hibernate.Version] (ServerService Thread Pool -- 80) HHH000412: Hibernate Core {5.3.17.Final}
+2023-05-22 15:45:01,449 INFO  [org.hibernate.cfg.Environment] (ServerService Thread Pool -- 80) HHH000206: hibernate.properties not found
+2023-05-22 15:45:02,445 INFO  [org.hibernate.annotations.common.Version] (ServerService Thread Pool -- 80) HCANN000001: Hibernate Commons Annotations {5.0.5.Final}
+2023-05-22 15:45:02,996 INFO  [org.jboss.as.jpa] (ServerService Thread Pool -- 79) WFLYJPA0010: Starting Persistence Unit (phase 2 of 2) Service 'PrimeEAR.ear#PrimeJPA'
+2023-05-22 15:45:03,036 INFO  [org.jboss.as.jpa] (ServerService Thread Pool -- 81) WFLYJPA0010: Starting Persistence Unit (phase 2 of 2) Service 'ExoplaneREEar.ear#ExoplaneREModel'
+2023-05-22 15:45:04,290 INFO  [org.hibernate.dialect.Dialect] (ServerService Thread Pool -- 81) HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2023-05-22 15:45:04,290 INFO  [org.hibernate.dialect.Dialect] (ServerService Thread Pool -- 79) HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2023-05-22 15:45:04,624 INFO  [org.hibernate.envers.boot.internal.EnversServiceImpl] (ServerService Thread Pool -- 79) Envers integration enabled? : true
+2023-05-22 15:45:04,628 INFO  [org.hibernate.envers.boot.internal.EnversServiceImpl] (ServerService Thread Pool -- 81) Envers integration enabled? : true
+2023-05-22 15:45:06,640 WARNING [org.jgroups.conf.XmlConfigurator] (ServerService Thread Pool -- 81) version is missing in the configuration file
+2023-05-22 15:45:06,640 WARNING [org.jgroups.conf.XmlConfigurator] (ServerService Thread Pool -- 79) version is missing in the configuration file
+2023-05-22 15:45:06,656 WARNING [org.jgroups.conf.XmlConfigurator] (ServerService Thread Pool -- 81) version is missing in the configuration file
+2023-05-22 15:45:06,670 WARNING [org.jgroups.conf.XmlConfigurator] (ServerService Thread Pool -- 81) version is missing in the configuration file
+2023-05-22 15:45:06,677 WARNING [org.jgroups.conf.XmlConfigurator] (ServerService Thread Pool -- 81) version is missing in the configuration file
+2023-05-22 15:45:06,705 WARNING [org.jgroups.conf.XmlConfigurator] (ServerService Thread Pool -- 81) version is missing in the configuration file
+2023-05-22 15:45:06,775 WARNING [org.jgroups.conf.XmlConfigurator] (ServerService Thread Pool -- 81) version is missing in the configuration file
+2023-05-22 15:45:06,837 WARNING [org.jgroups.conf.XmlConfigurator] (ServerService Thread Pool -- 79) version is missing in the configuration file
+2023-05-22 15:45:06,845 WARNING [org.jgroups.conf.XmlConfigurator] (ServerService Thread Pool -- 79) version is missing in the configuration file
+2023-05-22 15:45:06,894 WARNING [org.jgroups.conf.XmlConfigurator] (ServerService Thread Pool -- 79) version is missing in the configuration file
+2023-05-22 15:45:06,918 WARNING [org.jgroups.conf.XmlConfigurator] (ServerService Thread Pool -- 79) version is missing in the configuration file
+2023-05-22 15:45:06,922 WARNING [org.jgroups.conf.XmlConfigurator] (ServerService Thread Pool -- 79) version is missing in the configuration file
+2023-05-22 15:45:09,351 INFO  [io.smallrye.metrics] (MSC service thread 1-1) MicroProfile: Metrics activated (SmallRye Metrics version: 2.4.0)
+2023-05-22 15:45:09,486 INFO  [io.smallrye.metrics] (MSC service thread 1-2) MicroProfile: Metrics activated (SmallRye Metrics version: 2.4.0)
+2023-05-22 15:45:13,170 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 85) WFLYUT0021: Registered web context: '/PrimeWEB' for server 'default-server'
+2023-05-22 15:45:14,453 INFO  [org.jboss.resteasy.resteasy_jaxrs.i18n] (ServerService Thread Pool -- 84) RESTEASY002225: Deploying javax.ws.rs.core.Application: class it.exolab.exoplane.conf.ControllerRestApplication
+2023-05-22 15:45:14,454 INFO  [org.jboss.resteasy.resteasy_jaxrs.i18n] (ServerService Thread Pool -- 84) RESTEASY002200: Adding class resource it.exolab.exoplane.rest.VoloRest from Application class it.exolab.exoplane.conf.ControllerRestApplication
+2023-05-22 15:45:14,455 INFO  [org.jboss.resteasy.resteasy_jaxrs.i18n] (ServerService Thread Pool -- 84) RESTEASY002200: Adding class resource it.exolab.exoplane.rest.PrenotazioneRest from Application class it.exolab.exoplane.conf.ControllerRestApplication
+2023-05-22 15:45:14,456 INFO  [org.jboss.resteasy.resteasy_jaxrs.i18n] (ServerService Thread Pool -- 84) RESTEASY002200: Adding class resource it.exolab.exoplane.rest.AereoRest from Application class it.exolab.exoplane.conf.ControllerRestApplication
+2023-05-22 15:45:14,456 INFO  [org.jboss.resteasy.resteasy_jaxrs.i18n] (ServerService Thread Pool -- 84) RESTEASY002200: Adding class resource it.exolab.exoplane.rest.PasseggeroRest from Application class it.exolab.exoplane.conf.ControllerRestApplication
+2023-05-22 15:45:14,759 INFO  [org.wildfly.extension.undertow] (ServerService Thread Pool -- 84) WFLYUT0021: Registered web context: '/ExoplaneRERest' for server 'default-server'
+2023-05-22 15:45:15,064 INFO  [org.jboss.as.server] (Controller Boot Thread) WFLYSRV0010: Deployed "mysql-connector-java-8.0.25" (runtime-name : "mysql-connector-java-8.0.25.jar")
+2023-05-22 15:45:15,066 INFO  [org.jboss.as.server] (ServerService Thread Pool -- 45) WFLYSRV0010: Deployed "PrimeEAR.ear" (runtime-name : "PrimeEAR.ear")
+2023-05-22 15:45:15,067 INFO  [org.jboss.as.server] (ServerService Thread Pool -- 45) WFLYSRV0010: Deployed "ExoplaneREEar.ear" (runtime-name : "ExoplaneREEar.ear")
+2023-05-22 15:45:15,288 INFO  [org.jboss.as.server] (Controller Boot Thread) WFLYSRV0212: Resuming server
+2023-05-22 15:45:15,306 INFO  [org.jboss.as] (Controller Boot Thread) WFLYSRV0025: WildFly Full 20.0.0.Final (WildFly Core 12.0.1.Final) started in 45705ms - Started 999 of 1220 services (397 services are lazy, passive or on-demand)
+2023-05-22 15:45:15,320 INFO  [org.jboss.as] (Controller Boot Thread) WFLYSRV0060: Http management interface listening on http://127.0.0.1:9990/management
+2023-05-22 15:45:15,321 INFO  [org.jboss.as] (Controller Boot Thread) WFLYSRV0051: Admin console listening on http://127.0.0.1:9990
+2023-05-22 15:45:28,922 INFO  [stdout] (default task-1) sei dentro class it.exolab.exoplane.rest.AereoRest nel servizio - findPathParam - input -> 1
+2023-05-22 15:45:29,010 INFO  [stdout] (default task-1) Dentro AereoController -- findById -- 1
+2023-05-22 15:45:29,204 INFO  [org.hibernate.jpa.internal.util.LogHelper] (default task-1) HHH000204: Processing PersistenceUnitInfo [
+	name: ExoplaneREModel
+	...]
+2023-05-22 15:45:29,257 INFO  [org.hibernate.dialect.Dialect] (default task-1) HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2023-05-22 15:45:29,269 INFO  [org.hibernate.envers.boot.internal.EnversServiceImpl] (default task-1) Envers integration enabled? : true
+2023-05-22 15:45:29,337 INFO  [org.hibernate.orm.beans] (default task-1) HHH10005002: No explicit CDI BeanManager reference was passed to Hibernate, but CDI is available on the Hibernate ClassLoader.
+2023-05-22 15:45:29,633 INFO  [stdout] (default task-1) dentro il crud  -- findById -- 1
+2023-05-22 15:45:29,653 INFO  [stdout] (default task-1) Hibernate: select aereo0_.ID as ID1_0_0_, aereo0_.CAPIENZA as CAPIENZA2_0_0_, aereo0_.COMPAGNIA as COMPAGNI3_0_0_, aereo0_.MODELLO as MODELLO4_0_0_ from aereo aereo0_ where aereo0_.ID=?
+2023-05-22 15:45:30,222 INFO  [stdout] (default task-1) Hibernate: select listavoli0_.ID_AEREO as ID_AEREO4_3_0_, listavoli0_.ID as ID1_3_0_, listavoli0_.ID as ID1_3_1_, listavoli0_.ID_AEREO as ID_AEREO4_3_1_, listavoli0_.CITTA_ARRIVO as CITTA_AR2_3_1_, listavoli0_.CITTA_PARTENZA as CITTA_PA3_3_1_, listavoli0_.PREZZO as PREZZO5_3_1_ from volo listavoli0_ where listavoli0_.ID_AEREO=?
+2023-05-22 15:45:30,423 INFO  [stdout] (default task-1) Hibernate: select aereo0_.ID as ID1_0_0_, aereo0_.CAPIENZA as CAPIENZA2_0_0_, aereo0_.COMPAGNIA as COMPAGNI3_0_0_, aereo0_.MODELLO as MODELLO4_0_0_ from aereo aereo0_ where aereo0_.ID=?
