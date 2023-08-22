@@ -49,32 +49,14 @@ public class OffertaBean implements Serializable {
 	}
 
 	public void inserisciOfferta() {
-		offerta.setIdUtente(userBean.getLoggedUtente().getIdUtente());
-
-		
-
 		try {
-			if (null == astaInSessione.getOfferta() 
-					|| astaInSessione.getOfferta().getSoldiOfferti() < offerta.getSoldiOfferti()
-							&&astaInSessione.getPrezzoPartenza()<=offerta.getSoldiOfferti()) {
-				
-				offertaInterface.insert(offerta);
-				
-				System.out.println(astaInSessione.getPrezzoPartenza()+"soldi in partenza");
-				
-				offerta = offertaInterface.trovaOffertaDelUtente(offerta);
-				astaInSessione.setIdOffertaPiuAlta(offerta.getId());
-				astaInterface.update(astaInSessione);
-				
-				userBean.vediTutteAste();
-			} else {
-				System.out.println("errore , soldi inseriti sono minori del prezzo partenza");
-			}
+			astaInterface.update(offertaInterface.inserimentoOfferta(offerta,astaInSessione,userBean.getLoggedUtente()));
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+		
+		userBean.vediTutteAste();
 	}
-
 	public OffertaInterface getOffertaInterface() {
 		return offertaInterface;
 	}

@@ -6,12 +6,10 @@ import javax.ejb.LocalBean;
 import javax.ejb.Stateless;
 
 import crud.TagCrud;
-import crud.TagCrud;
 import interfaces.TagInterface;
 import mapping.TagMapping;
-import mapping.TagMapping;
 import models.Tag;
-import models.Tag;
+
 import sqlfactory.SqlMapFactory;
 
 

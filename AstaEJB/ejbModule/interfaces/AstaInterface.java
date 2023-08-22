@@ -5,6 +5,7 @@ import java.util.List;
 import javax.ejb.Local;
 
 import models.Asta;
+import models.Utente;
 
 @Local
 public interface AstaInterface {
@@ -22,6 +23,7 @@ public interface AstaInterface {
 	
 	public Asta astaFinita (Asta asta);
 
-	public List<Asta> vediLeAsteVincentii(Asta astaa);
+	public List<Asta> vediLeAsteVincentii(Asta astaa,Utente utenteLoggato);
+
 	
 }

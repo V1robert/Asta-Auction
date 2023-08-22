@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
+        
+    <wb-module deploy-name="BancaEAR">
+                
+        <wb-resource deploy-path="/" source-path="/EarContent" tag="defaultRootSource"/>
+                
+        <dependent-module archiveName="BancaEJB.jar" deploy-path="/" handle="module:/resource/BancaEJB/BancaEJB">
+                        
+            <dependent-object/>
+                        
+            <dependency-type>uses</dependency-type>
+                    
+        </dependent-module>
+                
+        <dependent-module archiveName="mysql-connector-java-5.1.46.jar" deploy-path="/lib" handle="module:/classpath/lib/C:/dev/jars/mysql-connector-java-5.1.46.jar">
+                        
+            <dependency-type>uses</dependency-type>
+                    
+        </dependent-module>
+                
+        <dependent-module archiveName="mybatis-3.5.5.jar" deploy-path="/lib" handle="module:/classpath/lib/C:/dev/jars/mybatis-3.5.5.jar">
+                        
+            <dependency-type>uses</dependency-type>
+                    
+        </dependent-module>
+                
+        <dependent-module archiveName="javax.json.bind-api-1.0.0-M2.jar" deploy-path="/lib" handle="module:/classpath/lib/C:/dev/jars/javax.json.bind-api-1.0.0-M2.jar">
+                        
+            <dependency-type>uses</dependency-type>
+                    
+        </dependent-module>
+                
+        <dependent-module archiveName="BancaREST.war" deploy-path="/" handle="module:/resource/BancaREST/BancaREST">
+                        
+            <dependent-object/>
+                        
+            <dependency-type>uses</dependency-type>
+                    
+        </dependent-module>
+        <dependent-module archiveName="BancaDB.jar" deploy-path="/lib" handle="module:/resource/BancaDB/BancaDB">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+            
+    </wb-module>
+    
+</project-modules>

@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="banca.mapper.TransazioneMapper">
+
+
+
+<insert id="insertTransazione" parameterType="banca.models.Transazione" useGeneratedKeys="true" keyProperty="id" keyColumn="id">
+INSERT INTO banca.transazioni VALUES (#{id},  #{conto.nConto}, #{tipologia.id}, #{statoTransazione.id},  #{importo}, #{data} );
+
+</insert>
+
+<update id="rifiutaTransazione" parameterType="banca.models.Transazione">
+UPDATE transazioni
+SET
+stato = 3
+WHERE id = #{id}
+
+</update>
+<update id="accettaTransazione" parameterType="banca.models.Transazione">
+UPDATE transazioni
+SET
+stato = 2
+WHERE id = #{id}
+
+</update>
+
+<select id="findByStatoTransazione" resultMap="TransazioneMap">
+ 	
+ 		SELECT t.id as TRANSAZIONE_id,
+		 t.importo as TRANSAZIONE_importo,
+		 t.data as TRANSAZIONE_data,
+		 t.id_conto as TRANSAZIONE_id_conto,
+		 t.stato as TRANSAZIONE_stato,
+		 t.tipologia as TRANSAZIONE_tipologia, 
+		 c.saldo as CONTO_saldo, 
+		 c.cf_utente as CONTO_cf_utente
+		FROM transazioni as t
+		LEFT JOIN conti as c 
+		ON t.id_conto = c.id_conto
+		WHERE t.stato = #{idStato};
+ 	
+ 	</select>
+ 	
+ 	<select id="findByConto" resultMap="TransazioneMap">
+ 	
+ 		SELECT t.id as TRANSAZIONE_id,
+		 t.importo as TRANSAZIONE_importo,
+		 t.data as TRANSAZIONE_data,
+		 t.id_conto as TRANSAZIONE_id_conto,
+		 t.stato as TRANSAZIONE_stato,
+		 t.tipologia as TRANSAZIONE_tipologia, 
+		 c.saldo as CONTO_saldo, 
+		 c.cf_utente as CONTO_cf_utente,
+		 st.id as STATO_TRANSAZIONE_id,
+		 st.descrizione as STATO_TRANSAZIONE_descrizione,
+		 tt.id AS TIPO_TRANSAZIONE_id,
+		 tt.descrizione AS TIPO_TRANSAZIONE_descrizione
+		FROM transazioni as t
+		LEFT JOIN conti as c 
+		ON t.id_conto = c.id_conto
+		LEFT JOIN stato_transazioni AS st
+		ON t.stato = st.id
+		LEFT JOIN tipo_transazioni as tt 
+		ON t.tipologia =  tt.id
+		WHERE t.id_conto = #{nConto};
+ 	
+ 	</select>
+
+
+
+<resultMap id="TransazioneMap" type="banca.models.Transazione">
+  		
+  			<result property="id" column="TRANSAZIONE_id"/>
+  			<result property="importo" column="TRANSAZIONE_importo"/>
+  			<result property="data" column="TRANSAZIONE_data"/>
+  			<result property="statoTransazione.id" column="TRANSAZIONE_stato"/>
+  			<result property="tipologia.id" column="TRANSAZIONE_tipologia"/>
+  			
+  			<association property="conto" javaType="banca.models.Conto">
+				<result property="nConto" column="TRANSAZIONE_id_conto"/>
+				<result property="saldo" column="CONTO_saldo"/>
+				<result property="utente.cf" column="CONTO_cf_utente"/>
+			</association>
+			
+	<association property="statoTransazione" javaType="banca.models.StatoTransazione">
+				<result property="id" column="STATO_TRANSAZIONE_id"/>
+				<result property="descrizione" column="STATO_TRANSAZIONE_descrizione"/>
+			</association>
+			
+	<association property="tipologia" javaType="banca.models.TipoTransazione">
+				<result property="id" column="TIPO_TRANSAZIONE_id"/>
+				<result property="descrizione" column="TIPO_TRANSAZIONE_descrizione"/>
+			</association>
+
+			
+				
+					
+  		</resultMap>
+
+</mapper>

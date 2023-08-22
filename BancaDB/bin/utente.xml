@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="banca.mapper.UtenteMapper">
+
+<update id="updateUtente" parameterType="banca.models.Utente">
+UPDATE utenti
+		SET
+
+			mail=#{mail},
+			pwd=#{pwd}
+			WHERE id = #{id}
+</update>
+
+<update id="updateUtenteByAdmin" parameterType="banca.models.Utente">
+UPDATE utenti
+		SET
+
+			id_ruolo= 1
+			WHERE cf = #{cf}
+</update>
+
+	<insert id="registrazioneUtente"
+		parameterType="banca.models.Utente" useGeneratedKeys="true" keyProperty="id" keyColumn="id">
+
+		INSERT INTO utenti
+		VALUES (#{id}, #{cf}, #{nome}, #{cognome},
+		#{mail}, #{pwd}, #{cellulare}, #{idRuolo})
+
+	</insert>
+	
+	
+	<select id="findByMailAndPwd" resultMap="UtenteMap">
+  		
+  SELECT u.id AS UTENTE_id,
+			u.cf AS UTENTE_cf,
+			u.nome AS UTENTE_nome,
+			u.cognome AS UTENTE_cognome,
+			u.mail AS UTENTE_mail,
+			u.pwd AS UTENTE_pwd,
+			u.cellulare AS UTENTE_cellulare,
+			r.id AS RUOLO_id,
+		    r.descrizione AS RUOLO_descrizione,
+			c.id_conto AS CONTO_id_conto,
+			c.saldo AS CONTO_saldo,
+			c.id_stato AS CONTO_id_stato
+			FROM utenti AS u
+			LEFT JOIN conti AS c
+			ON u.cf=c.cf_utente
+			LEFT JOIN ruoli AS r
+			ON u.id_ruolo=r.id
+			WHERE u.mail=#{mail} AND u.pwd=#{pwd};
+  			
+  		</select>
+  		
+  		  		<select id="findAllUtenti" resultMap="UtenteMap">
+  		
+  			SELECT u.id AS UTENTE_id,
+			u.cf AS UTENTE_cf,
+			u.nome AS UTENTE_nome,
+			u.cognome AS UTENTE_cognome,
+			u.mail AS UTENTE_mail,
+			u.pwd AS UTENTE_pwd,
+			u.cellulare AS UTENTE_cellulare,
+			r.id AS RUOLO_id,
+		    r.descrizione AS RUOLO_descrizione,
+			c.id_conto AS CONTO_id_conto,
+			c.saldo AS CONTO_saldo,
+			c.id_stato AS CONTO_id_stato
+			FROM utenti AS u
+			LEFT JOIN conti AS c
+			ON u.cf=c.cf_utente
+			LEFT JOIN ruoli AS r
+			ON u.id_ruolo=r.id
+			WHERE u.id_ruolo = 2
+			
+  		</select>
+  		  		<select id="findAllStaff" resultMap="UtenteMap">
+  		
+  			SELECT u.id AS UTENTE_id,
+			u.cf AS UTENTE_cf,
+			u.nome AS UTENTE_nome,
+			u.cognome AS UTENTE_cognome,
+			u.mail AS UTENTE_mail,
+			u.pwd AS UTENTE_pwd,
+			u.cellulare AS UTENTE_cellulare,
+			r.id AS RUOLO_id,
+		    r.descrizione AS RUOLO_descrizione,
+			c.id_conto AS CONTO_id_conto,
+			c.saldo AS CONTO_saldo,
+			c.id_stato AS CONTO_id_stato
+			FROM utenti AS u
+			LEFT JOIN conti AS c
+			ON u.cf=c.cf_utente
+			LEFT JOIN ruoli AS r
+			ON u.id_ruolo=r.id
+			WHERE u.id_ruolo = 3
+			
+  		</select>
+	<select id="findByCf" resultMap="UtenteMap">
+		
+		SELECT u.id AS UTENTE_id,
+		u.cf AS UTENTE_cf,
+		u.nome AS UTENTE_nome,
+		u.cognome AS UTENTE_cognome,
+		u.mail AS UTENTE_mail,
+		u.pwd AS UTENTE_pwd,
+		u.cellulare AS UTENTE_cellulare,
+		u.id_ruolo AS UTENTE_id_ruolo,
+		c.id_conto AS CONTO_id_conto,
+		c.saldo AS CONTO_saldo,
+		c.id_stato AS CONTO_id_stato
+		FROM utenti AS u
+		LEFT JOIN conti AS c
+		ON u.cf=c.cf_utente
+		WHERE u.cf =  #{cf};
+	    
+		</select>
+		
+		<select id="findById" resultMap="UtenteMap">
+		
+		SELECT u.id AS UTENTE_id,
+		u.cf AS UTENTE_cf,
+		u.nome AS UTENTE_nome,
+		u.cognome AS UTENTE_cognome,
+		u.mail AS UTENTE_mail,
+		u.pwd AS UTENTE_pwd,
+		u.cellulare AS UTENTE_cellulare,
+		u.id_ruolo AS UTENTE_id_ruolo,
+		c.id_conto AS CONTO_id_conto,
+		c.saldo AS CONTO_saldo,
+		c.id_stato AS CONTO_id_stato
+		FROM utenti AS u
+		LEFT JOIN conti AS c
+		ON u.cf=c.cf_utente
+		WHERE u.id =  #{id}
+	    
+		</select>
+		
+		
+  		
+  		<resultMap id="UtenteMap" type="banca.models.Utente">
+  		
+  			<result property="id" column="UTENTE_id"/>
+  			<result property="cf" column="UTENTE_cf"/>
+  			<result property="nome" column="UTENTE_nome"/>
+  			<result property="cognome" column="UTENTE_cognome"/>
+  			<result property="mail" column="UTENTE_mail"/>
+  			<result property="pwd" column="UTENTE_pwd"/>
+  			<result property="cellulare" column="UTENTE_cellulare"/> 
+  			
+  			
+  			
+  			<association property="ruolo" javaType="banca.models.Ruolo">
+  			<result property="id" column="RUOLO_id"/>
+  			<result property="descrizione" column="RUOLO_descrizione"/>
+  			</association>
+  				
+			<collection property="listaConti" ofType="banca.models.Conto">
+			<result property="nConto" column="CONTO_id_conto"/>
+			<result property="saldo" column="CONTO_saldo"/>
+			<result property="statoConto.id" column="CONTO_id_stato"/>		
+			</collection>	
+					
+  		</resultMap>
+
+
+
+
+</mapper>

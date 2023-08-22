@@ -6,46 +6,55 @@
 	xmlns:h="http://java.sun.com/jsf/html">
 
 
+	<p:panelGrid rendered="#{userBean.vediHome==true}">
+		<div class="product card">
+		<h:outputText
+				value=" Benvenuto Nel nostro sito d'aste #{userBean.utente.nome}" />
 
-	<p:panelGrid columns="1" layout="grid"
-		styleClass="ui-panelgrid-blank ui-fluid"
-		rendered="#{userBean.vediHome==true}">
-<h:outputText styleClass="ui-panelgrid-blank ui-fluid" value=" Benvenuto Nel nostro sito d'aste #{userBean.utente.nome}" />
 
-
-		<p:commandButton value="Vai al Register" update="app" immediate="true"
- 			ajax="false" action="#{userBean.vaiAlRegister()}">
-		</p:commandButton>
-
-		<p:commandButton value="vaialLogin" update="app" immediate="true"
-			ajax="false" action="#{userBean.vaiAlLogin()}">
-		</p:commandButton>
-
-		<p:commandButton value="Crea un Articolo" update="app"
-			immediate="true" ajax="false"
-			action="#{userBean.vaiAlCreaArticolo()}"
-			rendered="#{userBean.loggato==true}">
-		</p:commandButton>
-		<p:commandButton value="Crea un Asta" update="app" immediate="true"
-			ajax="false" action="#{userBean.vediAsta()}"
-			rendered="#{userBean.loggato==true}">
-		</p:commandButton>
-		<p:commandButton value="Vedi tutte le aste" update="app"
-			immediate="true" ajax="false" action="#{userBean.vediTutteAste()}"
-			rendered="#{userBean.loggato==true}">
-		</p:commandButton>
-		<p:commandButton value="Logout" update="app" immediate="true"
-			ajax="false" action="#{userBean.logOut()}"
-			rendered="#{userBean.loggato==true}">
-		</p:commandButton>
-		<p:commandButton value="vedi tutte le tue aste vinte" update="app" immediate="true"
-		ajax="false" action="#{userBean.vediTutteLeTueAsteVinte}"
-		rendered="#{userBean.loggato==true}">
-		</p:commandButton>
-			<p:commandButton value="vai alla pagina admin" update="app" immediate="true"
-		ajax="false" action="#{userBean.vaiAllaPaginaAdmin()}"
-		rendered="#{userBean.loggato==true}">
-		</p:commandButton>
+			<h5>Aste disponibili</h5>
+			
+			<p:row>
+				<p:dataList value="#{userBean.listaAste}" var="product"
+					type="definition">
+            Propietario Asta: #{product.utente.nome}
+            <f:facet name="description">
+						<div class="product-list-item">
+							<p:graphicImage value="#{product.articolo.img}" stream="false" />
+							<div class="margin-left: 10">
+								<div class="product-name">#{product.articolo.nomeArticolo}</div>
+								<div class="product-description">#{product.articolo.desc}</div>
+								<i class="pi pi-tag product-category-icon" /><span
+									class="product-category">#{product.tag.descrizioneTag}</span>
+							</div>
+							<div class="product-list-action">
+								<h:outputLabel for="prezzopartenza" value="Prezzo iniziale:" />
+								<h:outputText id="prezzopartenza"
+									value="#{product.prezzoPartenza}" styleClass="product-price">
+									<f:convertNumber currencySymbol="$" type="currency" />
+								</h:outputText>
+								<h:outputLabel for="offertavincente" value="Offerta vincente:" />
+								<h:outputText id="offertavincente"
+									value="#{product.offerta.soldiOfferti}"
+									styleClass="product-price">
+									<f:convertNumber currencySymbol="$" type="currency" />
+								</h:outputText>
+								<p:commandButton update=":form:productDetail"
+									action="#{offertaBean.vediAsta(product)}"
+									value="Entra nel asta" icon="pi pi-shopping-cart"
+									immediate="true" ajax="false"
+									disabled="#{userBean.loggato == false}">
+								</p:commandButton>
+								<h:outputLabel for="datascadenza" value="Data scadenza:" />
+								<span id="datascadenza"
+									class="product-badge status-#{product.dataScadenza}">#{product.dataScadenza}</span>
+							</div>
+						</div>
+					</f:facet>
+				</p:dataList>
+			</p:row>
+		</div>
 	</p:panelGrid>
 
 </ui:composition>
+

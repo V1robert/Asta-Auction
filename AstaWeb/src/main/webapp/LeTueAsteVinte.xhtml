@@ -5,9 +5,13 @@
 	xmlns:p="http://primefaces.org/ui"
 	xmlns:h="http://java.sun.com/jsf/html">
 
-	<p:panelGrid columns="1"  layout="grid"  rendered="#{userBean.vediLeTueAsteVinte==true}" >
-	<p>Le tue aste vinte</p>
-		<p:outputPanel >
+	<p:panelGrid columns="1" layout="grid"
+		rendered="#{userBean.vediLeTueAsteVinte==true}">
+		<p:messages>
+			<p:autoUpdate />
+		</p:messages>
+		<p>Le tue aste vinte</p>
+		<p:outputPanel>
 			<div class="">
 				<h5>Lista Di Tutte le aste</h5>
 				<p:dataList value="#{astaBean.listaDelleAsteVinte}" var="product"
@@ -21,7 +25,7 @@
 							<p>Prezzo partenza::</p>
 							<div class="product-description">#{product.prezzoPartenza}</div>
 							<p>Nome Articolo::</p>
-							<div class="product-description">#{product.articolo.nome_articolo}</div>
+							<div class="product-description">#{product.articolo.nomeArticolo}</div>
 							<p>Descrizione Articolo::</p>
 							<div class="product-description">#{product.articolo.desc}</div>
 							<p>Prezzo Piu Alto:</p>
@@ -30,16 +34,45 @@
 							<div class="product-description">#{product.prezzoVenduto}</div>
 							<p>Tag dell asta:</p>
 							<div class="product-description">#{product.tag.descrizioneTag}</div>
-							<p:commandButton value="Inviami una email con le mie aste" update="app" immediate="true"
-					ajax="false" action="#{astaBean.inviaEmailPdf(product)}">
-				</p:commandButton>
+							<p:commandButton value="Inviami una email con le mie aste"
+								update="app" immediate="true" ajax="false"
+								action="#{astaBean.inviaEmailPdf(product)}">
+								<p:commandButton value="paga asta" type="button" ajax="false"
+									onclick="PF('dlg3').show();" />
+							</p:commandButton>
+							<p:dialog header="Riepilogo pagamento" widgetVar="dlg3"
+								hideEffect="bounce" minHeight="40" width="350">
+								<h:outputLabel for="riepilogo" value="importo da pagare" />
+								<br/>
+								<h:outputText id="riepilogo" value="#{product.prezzoVenduto}">
+									<f:convertNumber currencySymbol="$" type="currency" />
+									<br/>
+								</h:outputText>
+								<br/>
+								<h:outputLabel for="prodottovinto"
+									value="Prodotto che hai vinto:" />
+									<br/>
+								<h:outputText id="prodottovinto"
+									value="#{product.articolo.nomeArticolo}" />
+									<br/>
+								<h:outputLabel for="cf"
+									value="Inserire codice fiscale associato al conto bancario" />
+									<br/>
+								<p:inputText id="cf" value="#{userBean.codiceFiscale}">
+								<p:ajax/>
+								</p:inputText>
+								<p:commandButton value="Effettua pagamento" immediate="true"
+									ajax="false" icon="pi pi-shopping-cart"  id="faipagamento"
+									action="#{userBean.pagaAsta(product)}"  />
+							</p:dialog>
+<!--  oninput="updateBottoneStato()" -->
 						</div>
-					</div> 
+					</div>
 				</p:dataList>
 				<p:commandButton value="Vai alla Home" update="app" immediate="true"
 					ajax="false" action="#{userBean.vaiAllaHome()}">
 				</p:commandButton>
-				
+
 			</div>
 		</p:outputPanel>
 	</p:panelGrid>

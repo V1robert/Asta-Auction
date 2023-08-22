@@ -1,43 +1,48 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:ui="http://java.sun.com/jsf/facelets"
-      xmlns:f="http://java.sun.com/jsf/core"
-      xmlns:h="http://java.sun.com/jsf/html"
-      xmlns:p="http://primefaces.org/ui">
-     <h:head></h:head> 
-      <h:body>
-      <h:form id="app" >
-      <p:outputPanel>
-      <ui:include src="navbar.xhtml" />
-      </p:outputPanel>
-      <p:outputPanel>
-      <ui:include src="/Login.xhtml" />
-      </p:outputPanel>
-      <p:outputPanel >
-      <ui:include src="prova.xhtml"/>
-      </p:outputPanel>
-      <p:outputPanel  >
-      <ui:include src="articolo.xhtml"/>
-      </p:outputPanel>
-      <p:outputPanel >
-      <ui:include src="asta.xhtml" />
-      </p:outputPanel>
-      <p:outputPanel >
-      <ui:include src="AsteDisponibili.xhtml"/>
-      </p:outputPanel>
-      <p:outputPanel >
-      <ui:include src="Home.xhtml"/>
-      </p:outputPanel>
-      <p:outputPanel >
-      <ui:include src="inserisciOfferta.xhtml"/>
-      </p:outputPanel>
-      <p:outputPanel>
-       <ui:include src="LeTueAsteVinte.xhtml"/>
-      </p:outputPanel>
-      <p:outputPanel>
-      <ui:include src="paginaAdmin.xhtml" />
-      </p:outputPanel>
-        </h:form>
-      </h:body>
-    
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+	<h:outputScript name="http://localhost:8080/AstaWeb/resources/*" library="js" target="head"></h:outputScript>
+</h:head>
+<h:body>
+	<h:outputStylesheet name="styles.css" />
+	<h:form id="app" enctype="multipart/form-data">
+	
+		<p:outputPanel>
+			<ui:include src="navbar.xhtml" />
+		</p:outputPanel>
+		<p:outputPanel>
+			<ui:include src="/Login.xhtml" />
+		</p:outputPanel>
+		<p:outputPanel>
+			<ui:include src="prova.xhtml" />
+		</p:outputPanel>
+		<p:outputPanel>
+			<ui:include src="articolo.xhtml" />
+		</p:outputPanel>
+		<p:outputPanel>
+			<ui:include src="asta.xhtml" />
+		</p:outputPanel>
+		<p:outputPanel>
+			<ui:include src="AsteDisponibili.xhtml" />
+		</p:outputPanel>
+		<p:outputPanel>
+			<ui:include src="Home.xhtml" />
+		</p:outputPanel>
+		<p:outputPanel>
+			<ui:include src="inserisciOfferta.xhtml" />
+		</p:outputPanel>
+		<p:outputPanel>
+			<ui:include src="LeTueAsteVinte.xhtml" />
+		</p:outputPanel>
+		<p:outputPanel>
+			<ui:include src="paginaAdmin.xhtml" />
+		</p:outputPanel>
+	</h:form>
+</h:body>
+
 </html>

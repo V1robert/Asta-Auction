@@ -10,7 +10,7 @@
 	<p:panelGrid columns="1" styleClass="showcase-text-align-center"
 		layout="grid" rendered="#{userBean.showArticolo==true}">
 		<h:outputLabel for="art" value="NOME PRODOTTO:" />
-		<p:inputText id="art" value="#{articoloBean.articolo.nome_articolo}">
+		<p:inputText id="art" value="#{articoloBean.articolo.nomeArticolo}">
 		</p:inputText>
 		<h:outputLabel for="desc" value="desc:" />
 		<p:inputText id="desc" value="#{articoloBean.articolo.desc}">
@@ -32,7 +32,17 @@
 
 				</p:selectManyButton>
 			</h:form>
+
+
+			<p:growl id="aaa" showDetail="true" />
+				
+				<p:fileUpload mode="simple" value="#{articoloBean.file}" skinSimple="true" />
+				
+				
+
+
 		</div>
+
 		<p:commandButton value="Inserisci l articolo dopo aver creato il tag"
 			onclick="PF('dlg2').show();" action="#{userBean.creaArticoloo()}">
 		</p:commandButton>
@@ -53,7 +63,7 @@
 					<div class="product-list-item">
 						<div class="product-list-detail">
 							<p>Nome del prodotto::</p>
-							<div class="product-name">#{product.nome_articolo}</div>
+							<div class="product-name">#{product.nomeArticolo}</div>
 							<p>Descrizione del prodotto::</p>
 							<div class="product-description">#{product.desc}</div>
 						</div>

@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="banca.mapper.ContoMapper">
+
+	<update id="bloccaConto" parameterType="banca.models.Conto">
+		UPDATE conti
+		SET
+		id_stato = 2
+		WHERE id_conto = #{id}
+
+	</update>
+	<update id="attivaConto" parameterType="banca.models.Conto">
+		UPDATE conti
+		SET
+		id_stato = 1
+		WHERE id_conto = #{id}
+	</update>
+
+	<update id="modificaSaldo" parameterType="banca.models.Conto">
+		UPDATE conti
+		SET
+		saldo = #{saldo}
+		WHERE id_conto = #{id}
+
+	</update>
+
+	<insert id="inserisciConto" parameterType="banca.models.Conto"
+		useGeneratedKeys="true" keyProperty="nConto" keyColumn="id_conto">
+
+		INSERT INTO
+		conti
+		VALUES (#{nConto}, #{utente.cf}, #{saldo}, #{statoConto.id})
+
+	</insert>
+
+	<select id="findContoByCf" resultMap="ContoMap">
+		SELECT c.id_conto AS CONTO_id,
+		c.cf_utente AS CONTO_cf_utente,
+		c.saldo AS CONTO_saldo,
+		s.id AS STATO_id,
+		s.descrizione AS STATO_descrizione
+		FROM conti AS c
+		LEFT JOIN stato_conti AS s
+		ON c.id_stato=s.id
+		WHERE c.cf_utente=#{cf};
+
+	</select>
+
+	<select id="findContiByStato" resultMap="ContoMap">
+
+		SELECT
+		c.id_conto AS CONTO_id,
+		c.cf_utente AS CONTO_cf_utente,
+		c.saldo AS CONTO_saldo,
+		s.id AS STATO_id,
+		s.descrizione AS STATO_descrizione
+
+		FROM conti AS c
+
+		LEFT JOIN stato_conti AS s
+		ON c.id_stato=s.id
+		WHERE c.id_stato= #{id};
+
+
+
+	</select>
+
+
+
+	<resultMap id="ContoMap" type="banca.models.Conto">
+
+		<result property="nConto" column="CONTO_id" />
+		<result property="saldo" column="CONTO_saldo" />
+		<result property="utente.cf" column="CONTO_cf_utente" />
+
+		<association property="statoConto"
+			javaType="banca.models.StatoConto">
+			<result property="id" column="STATO_id" />
+			<result property="descrizione" column="STATO_descrizione" />
+		</association>
+
+	</resultMap>
+
+
+</mapper>

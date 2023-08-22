@@ -24,15 +24,17 @@
 									<p:outputPanel>
 										<h:panelGrid columns="2" cellpadding="5">
 											<h:outputText value="NomeArticolo:" />
-											<h:outputText value="#{articoli.nome_articolo}"
+											<h:outputText value="#{articoli.nomeArticolo}"
 												style="font-weight: bold" />
 
 											<h:outputText value="Descrizione:" />
 											<h:outputText value="#{articoli.desc}"
 												style="font-weight: bold" />
+												
+											<p:graphicImage value="#{articoli.img}"  stream="false" />
 
 											<p:commandButton
-												action="#{astaBean.inserisciAsta(articoli.id,articoli.id_utente)}"
+												action="#{astaBean.inserisciAsta(articoli.id,articoli.idUtente)}"
 												value="Mettilo all asta" />
 
 										</h:panelGrid>

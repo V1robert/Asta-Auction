@@ -29,4 +29,12 @@ public interface UtenteInterface {
     public Utente updateEmailAndPassword(Utente Utente);
     
     public Utente updateUtenteAdmin(Utente Utente);
+    
+    public Utente loggate(Utente utenteLoggato,Utente utente) throws Exception;
+		
+	public Boolean controllaRuolo(Utente utenteLoggato);
+	
+	public void pagaAsta(Utente utente,Integer prezzoVenduto,String codiceFiscale);
+	
+	public Utente loginSpring(Utente utenteLoggato,Utente utente) throws Exception;
 }

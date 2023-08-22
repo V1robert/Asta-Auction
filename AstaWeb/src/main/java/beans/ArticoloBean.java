@@ -1,5 +1,6 @@
 package beans;
 
+import java.io.InputStream;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
@@ -8,6 +9,9 @@ import javax.annotation.PostConstruct;
 import javax.ejb.EJB;
 import javax.enterprise.context.SessionScoped;
 import javax.inject.Named;
+
+import org.primefaces.model.file.UploadedFile;
+import org.primefaces.shaded.commons.io.IOUtils;
 
 import interfaces.ArticoloInterface;
 import interfaces.ArticoloTagInterface;
@@ -43,10 +47,10 @@ public class ArticoloBean implements Serializable {
 	private ArrayList<Tag> listaDeiTagArticolo;
 
 	private Articolo articoloTrovato;
-	
+
 	private List<Tag> listaDiTuttiITag;
-	
-	
+
+	private UploadedFile file;
 
 	@PostConstruct
 	public void init() {
@@ -54,7 +58,7 @@ public class ArticoloBean implements Serializable {
 		tag = new Tag();
 		articoloTag = new ArticoloTag();
 		articoloTrovato = new Articolo();
-		listaDeiTagArticolo=new ArrayList<Tag>();
+		listaDeiTagArticolo = new ArrayList<Tag>();
 		trovaTag();
 	}
 
@@ -62,48 +66,29 @@ public class ArticoloBean implements Serializable {
 		tagInterface.insert(tag);
 		listaDeiTagArticolo.add(tag);
 	}
-	
+
 	public void trovaTag() {
-		listaDiTuttiITag=tagInterface.findAll();
+		listaDiTuttiITag = tagInterface.findAll();
 	}
 
 	public void creaArticolo(Integer idUtente) {
-	
-		articolo.setId_utente(idUtente);
-		articoloInterface.insert(articolo);
-
-		// select per trovare il id del articolo generato da mybatis
-
-		Integer idArticoloTrovato = articoloInterface.findArticoloByNome(articolo).getId();
-
-		System.out.println("sono qui");
 		try {
-			// setto l'id del articolo nella bridge articolo_tag
-
-			articoloTag.setIdArticolo(idArticoloTrovato);
-			if (listaDeiTagArticolo.size() > 1) {
-				for (int x = 0; x < listaDeiTagArticolo.size(); x++) {
-
-					System.out.println("esploso"+listaDeiTagArticolo.size());
-					// trovo ogni id dei tag creati dal utente contenuti nell arrayList
-
-					Integer idDelTagTrovato = tagInterface.findByDescrizione(listaDeiTagArticolo.get(x)).getId();
-					// setto l'id trovato
-					articoloTag.setIdTag(idDelTagTrovato);
-
-					articoloTagInterface.insert(articoloTag);
-				}
-			} else {
-				Integer idDelTag = tagInterface.findByDescrizione(listaDeiTagArticolo.get(0)).getId();
-
-				articoloTag.setIdTag(idDelTag);
-
-				articoloTagInterface.insert(articoloTag);
-			}
-
+		Integer idArticoloTrovato ;
+		InputStream inputStream=file.getInputStream();
+		System.out.println(inputStream);
+		byte[] foto=IOUtils.toByteArray(inputStream);
+		System.out.println(foto);
+		articolo.setImg(foto);
+			idArticoloTrovato = articoloInterface.inserisciArticolo(articolo, idUtente);
+			
+			articoloInterface.creaBridgeArticoloTag(articoloTag, idArticoloTrovato, listaDeiTagArticolo,
+					articoloTagInterface, tagInterface);
 		} catch (Exception e) {
+			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+
+		
 	}
 
 	public ArticoloInterface getArticoloInterface() {
@@ -133,8 +118,6 @@ public class ArticoloBean implements Serializable {
 	public void setTagInterface(TagInterface tagInterface) {
 		this.tagInterface = tagInterface;
 	}
-
-	
 
 	public ArrayList<Tag> getListaDeiTagArticolo() {
 		return listaDeiTagArticolo;
@@ -178,6 +161,14 @@ public class ArticoloBean implements Serializable {
 
 	public void setListaDiTuttiITag(List<Tag> listaDiTuttiITag) {
 		this.listaDiTuttiITag = listaDiTuttiITag;
+	}
+
+	public UploadedFile getFile() {
+		return file;
+	}
+
+	public void setFile(UploadedFile file) {
+		this.file = file;
 	}
 
 }

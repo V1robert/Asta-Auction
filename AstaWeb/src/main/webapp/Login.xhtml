@@ -13,7 +13,7 @@
         <h:outputLabel for="pass" value="Pass:"  />
         <p:inputText id="pass" value="#{userBean.utente.pass}" >
         </p:inputText>
-        <p:commandButton value="Loggati"  onclick="PF('dlg3').show();" action="#{userBean.login()}" >
+        <p:commandButton value="Loggati"  onclick="PF('dlg3').show();" action="#{userBean.login()}" update="app"  >
         </p:commandButton>
         <p:dialog header="Effects" widgetVar="dlg3" showEffect="explode" hideEffect="bounce" height="100">
     <h:outputText value="Sei Loggato  con successo" />
@@ -21,6 +21,8 @@
         <p:commandButton value="vai alla register" update="app" immediate="true" ajax="false" action="#{userBean.vaiAlRegister()}" >
         </p:commandButton>
            <p:commandButton value="Vai alla Home" update="app" immediate="true" ajax="false" action="#{userBean.vaiAllaHome()}">
+           </p:commandButton>
+           <p:commandButton value="logga spring"  ajax="false" action="#{userBean.loginASpring()}" >
            </p:commandButton>
     </p:panelGrid>
   

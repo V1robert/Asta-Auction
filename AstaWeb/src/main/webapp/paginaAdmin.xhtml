@@ -4,30 +4,47 @@
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:p="http://primefaces.org/ui"
 	xmlns:h="http://java.sun.com/jsf/html">
+	<script>
+    //<![CDATA[
+    function start() {
+        PF('statusDialog').show();
+    }
 
+    function stop() {
+        PF('statusDialog').hide();
+    }
+    //]]>
+</script>
+
+	 <p:dialog modal="true" widgetVar="statusDialog" header="Status" draggable="false" closable="false"
+              resizable="false">
+              <i class="pi pi-spinner pi-spin" style="font-size:3rem"></i>
+    </p:dialog>
 	<p:panelGrid columns="1" layout="grid"
 		rendered="#{userBean.vediPaginaAdmin==true}">
 
-			<h2>Quali dati vuoi ricevere nel tuo pdf?</h2>
-			
-					<p:selectManyButton value="#{astaBean.listaPDFscelti}">
-						<f:selectItem itemLabel="Tutte le Aste" itemValue="TutteAste"/>
-						<f:selectItem itemLabel="Tutti gli articoli" itemValue="TuttiArticoli"/>
-						<f:selectItem itemLabel="Tutti gli utenti" itemValue="TuttiUtenti"/>
-						<f:selectItem itemLabel="Tutti i tag" itemValue="TuttiTag"/>
-					</p:selectManyButton>
-			
+		<h2>Quali dati vuoi ricevere nel tuo pdf?</h2>
 
 
 
-				<p:commandButton value="Inviami il pdf" 
-					 action="#{astaBean.inviaEmailPdfAdmin()}">
-				</p:commandButton>
-				<p:commandButton value="Vai alla Home" update="app" immediate="true"
-					ajax="false" action="#{userBean.vaiAllaHome()}">
-				</p:commandButton>
-		
-		
+		<p:selectManyButton value="#{astaBean.listaPDFscelti}" class="h1">
+			<f:selectItem itemLabel="Tutte le Aste" id="header" itemValue="asta" />
+			<f:selectItem itemLabel="Tutti gli articoli" itemValue="articolo" />
+			<f:selectItem itemLabel="Tutti gli utenti" itemValue="utente" />
+			<f:selectItem itemLabel="Tutti i tag" itemValue="tag" />
+		</p:selectManyButton>
+
+
+
+
+		<p:commandButton value="Inviami il pdf"
+			action="#{astaBean.inviaEmailPdf(true)}">
+		</p:commandButton>
+		<p:commandButton value="salva il pdf nel pc localmente"
+			action="#{astaBean.salvaPdfLocale(false)}" icon="pi pi-arrow-down" styleClass="ui-button-outlined"></p:commandButton>
+		<p:commandButton value="Vai alla Home" update="app" immediate="true"
+			ajax="false" action="#{userBean.vaiAllaHome()}">
+		</p:commandButton>
 
 	</p:panelGrid>
 

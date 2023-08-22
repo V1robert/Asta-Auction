@@ -11,10 +11,11 @@ import javax.enterprise.context.SessionScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
 
+
 import interfaces.ArticoloInterface;
 import interfaces.AstaInterface;
+import interfaces.InviaEmailInterface;
 import interfaces.TagInterface;
-import inviapdf.SendEmailPDF;
 import models.Articolo;
 import models.Asta;
 import models.Tag;
@@ -31,6 +32,9 @@ public class AstaBean implements Serializable {
 
 	@EJB
 	private AstaInterface astaInterface;
+
+	@EJB
+	private InviaEmailInterface inviaEmailInterface;
 
 	@EJB
 	private ArticoloInterface articoloInterface;
@@ -76,10 +80,15 @@ public class AstaBean implements Serializable {
 
 	private Boolean buttonDisabled = true;
 
+	private Boolean salvaPdf = false;
+	
+	
+
 	@PostConstruct
 	public void init() {
 
 		tag = new Tag();
+
 		listaTuttiArticoli = new ArrayList<Articolo>();
 		listaDelleAste = new ArrayList<Asta>();
 		listaArticoli = new ArrayList<Articolo>();
@@ -94,41 +103,25 @@ public class AstaBean implements Serializable {
 		trovaLeAsteVincenti();
 	}
 
-	public void inviaEmailPdf(Asta asta) {
-		SendEmailPDF mail = new SendEmailPDF();
-		System.out.println(asta);
-		mail.inviaEmailProva(asta);
+	public void inviaEmailPdf(Boolean sceltaPdf) {
 
+		inviaEmailInterface.inviaListePdf(listaPDFscelti, userBean.getLoggedUtente(), sceltaPdf);
+	}
+	
+	public void inviaEmailPdf(Asta asta,Boolean sceltaPdf) {
+
+		inviaEmailInterface.inviaListePdf(listaPDFscelti, userBean.getLoggedUtente(), sceltaPdf);
 	}
 
-	public void inviaEmailPdfAdmin() {
-		SendEmailPDF mail = new SendEmailPDF();
-		listaTuttiArticoli.clear();
-		listaDelleAste.clear();
-		listaTuttiTag.clear();
-		listaTuttiUtenti.clear();
-		for (int x = 0; x < listaPDFscelti.size(); x++) {
+	public void salvaPdfLocale(Boolean sceltaPdf) {
 
-			if (listaPDFscelti.get(x).equalsIgnoreCase("TuttiArticoli")) {
-				listaTuttiArticoli = articoloInterface.findAll();
-				System.out.println(listaPDFscelti.get(x));
-
-			} else if (listaPDFscelti.get(x).equalsIgnoreCase("TutteAste")) {
-				listaDelleAste = astaInterface.findAllAste();
-				System.out.println(listaPDFscelti.get(x));
-			} else if (listaPDFscelti.get(x).equalsIgnoreCase("TuttiTag")) {
-				listaTuttiTag = tagInterface.findAll();
-				System.out.println(listaPDFscelti.get(x));
-			} else if (listaPDFscelti.get(x).equalsIgnoreCase("TuttiUtenti")) {
-				listaTuttiUtenti = userBean.getUtenteInterface().findAll();
-				System.out.println(listaPDFscelti.get(x));
-
-			} else {
-				System.out.println("non hai selezionato altro");
-			}
-
+		try {
+			inviaEmailInterface.salvaInLocal(listaPDFscelti, userBean.getLoggedUtente(), sceltaPdf);
+		
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
-		mail.inviaEmailAdmin(listaTuttiArticoli, listaDelleAste, listaTuttiTag, listaTuttiUtenti);
 	}
 
 	public void controllaPrezzoInserito() {
@@ -136,11 +129,11 @@ public class AstaBean implements Serializable {
 			buttonDisabled = false;
 		}
 	}
+	
 
 	public void trovaArticoli() {
 		try {
-
-			articolo.setId_utente(userBean.getLoggedUtente().getIdUtente());
+			articolo.setIdUtente(userBean.getLoggedUtente().getIdUtente());
 
 			listaArticoli = articoloInterface.findArticoliUtente(articolo);
 
@@ -150,57 +143,33 @@ public class AstaBean implements Serializable {
 
 	}
 
+	/*
+	 * public DefaultStreamedContent creaFoto(byte[] foto) {
+	 * 
+	 * for(int x=0;x<listaArticoli.size();x++) { if(null != listaArticoli.get(x)) {
+	 * DefaultStreamedContent streamedContent = DefaultStreamedContent.builder()
+	 * .name("panda") .contentType("application/octet-stream") .stream(() -> new
+	 * ByteArrayInputStream(listaArticoli.get(x).getImg())).build();
+	 * 
+	 * return streamedContent; } } return null;
+	 * 
+	 * 
+	 * 
+	 * 
+	 * 
+	 * 
+	 * 
+	 * }
+	 */
+
 	public void trovaLeAsteVincenti() {
 		Asta astaa = new Asta();
-		astaa.setIdUtentePropietario(userBean.getLoggedUtente().getIdUtente());
-		listaDelleAsteVinte = astaInterface.vediLeAsteVincentii(astaa);
-
-		for (int x = 0; x < listaDelleAsteVinte.size(); x++) {
-			if (null == listaDelleAsteVinte.get(x).getPrezzoVenduto()) {
-				listaDelleAsteVinte.remove(x);
-			}
-		}
+		listaDelleAsteVinte = astaInterface.vediLeAsteVincentii(astaa,userBean.getLoggedUtente());
 	}
-
-	// il compare to confronta 2 date , se sono uguali torna 0 , se la data 1 verra
-	// dopo la data 2 torna piu di 0 , se la data 1 e minore della data 2 torna meno
-	// di 0
 
 	public void trovaTutteLeAste() {
 		try {
 			listaDelleAste = astaInterface.findAllAste();
-
-			for (int x = 0; x < listaDelleAste.size(); x++) {
-
-				if (listaDelleAste.get(x).getDataScadenza().compareTo(dataDiOggi) == 0) {
-					System.out.println("l'asta scade oggi");
-				} else if (listaDelleAste.get(x).getDataScadenza().compareTo(dataDiOggi) > 0) {
-					System.out.println("l'asta è ancora valida");
-
-				} else if (listaDelleAste.get(x).getDataScadenza().compareTo(dataDiOggi) < 0) {
-					System.out.println("l'asta non è piu valida");
-
-					if (null == listaDelleAste.get(x).getPrezzoVenduto()
-							&& null != listaDelleAste.get(x).getIdOffertaPiuAlta()) {
-						listaDelleAste.get(x).setPrezzoVenduto(listaDelleAste.get(x).getOfferta().getSoldiOfferti());
-						Asta astaDaTerminare = listaDelleAste.get(x);
-
-						System.out.println(astaDaTerminare);
-						astaInterface.astaFinita(astaDaTerminare);
-
-					} else if (null == listaDelleAste.get(x).getIdOffertaPiuAlta()) {
-						System.out.println("nessuno ha mai fatto un offerta che superi il prezzo minimo di" + " "
-								+ listaDelleAste.get(x).getPrezzoPartenza());
-
-					} else {
-						System.out.println(
-								"l'offerta vincente è " + " " + listaDelleAste.get(x).getOfferta().getSoldiOfferti());
-					}
-
-					listaDelleAste.remove(x);
-				}
-
-			}
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -241,6 +210,14 @@ public class AstaBean implements Serializable {
 
 	public void setArticolo(Articolo articolo) {
 		this.articolo = articolo;
+	}
+
+	public Boolean getSalvaPdf() {
+		return salvaPdf;
+	}
+
+	public void setSalvaPdf(Boolean salvaPdf) {
+		this.salvaPdf = salvaPdf;
 	}
 
 	public UserBean getUserBean() {
@@ -387,4 +364,15 @@ public class AstaBean implements Serializable {
 		this.buttonDisabled = buttonDisabled;
 	}
 
+	public InviaEmailInterface getInviaEmailInterface() {
+		return inviaEmailInterface;
+	}
+
+	public void setInviaEmailInterface(InviaEmailInterface inviaEmailInterface) {
+		this.inviaEmailInterface = inviaEmailInterface;
+	}
+
+	
+
+	
 }

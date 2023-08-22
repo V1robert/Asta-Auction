@@ -2,7 +2,9 @@ package controller;
 
 import interfaces.OffertaInterface;
 import mapping.OffertaMapping;
+import models.Asta;
 import models.Offerta;
+import models.Utente;
 import sqlfactory.SqlMapFactory;
 
 import java.util.Date;
@@ -79,5 +81,30 @@ public class OffertaController implements OffertaInterface{
 		}
 		return null;
 	}
+
+	@Override
+	public Asta inserimentoOfferta(Offerta offerta,Asta astaInSessione,Utente utenteLoggato) throws Exception {
+ offerta.setIdUtente(utenteLoggato.getIdUtente());
+		try {
+			if (null == astaInSessione.getOfferta() 
+					|| astaInSessione.getOfferta().getSoldiOfferti() < offerta.getSoldiOfferti()
+							&&astaInSessione.getPrezzoPartenza()<=offerta.getSoldiOfferti()) {
+				
+				insert(offerta);
+				
+				offerta = trovaOffertaDelUtente(offerta);
+				astaInSessione.setIdOffertaPiuAlta(offerta.getId());
+				return astaInSessione;
+				
+				
+			} else {
+				System.out.println("errore , soldi inseriti sono minori del prezzo partenza");
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		throw new Exception();
+	}
+	
 
 }

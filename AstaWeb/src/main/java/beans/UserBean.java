@@ -1,6 +1,7 @@
 package beans;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.annotation.PostConstruct;
@@ -9,9 +10,13 @@ import javax.enterprise.context.SessionScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
 
+import org.primefaces.model.StreamedContent;
+
 import interfaces.ArticoloInterface;
+import interfaces.AstaInterface;
 import interfaces.UtenteInterface;
 import models.Articolo;
+import models.Asta;
 import models.Utente;
 import regex.RegEx;
 
@@ -37,6 +42,11 @@ public class UserBean implements Serializable {
 	@EJB
 	private ArticoloInterface articoloInterface;
 	
+	@EJB
+	private AstaInterface astaInterface;
+	
+	
+	
 	private RegEx regEx;
 	private Utente utente;
 	private Utente nuovoUser;
@@ -53,18 +63,39 @@ public class UserBean implements Serializable {
 	private Boolean vediLeTueAsteVinte=false;
 	private Boolean admin=false;
 	private Boolean vediPaginaAdmin=false;
+	private Boolean provabutton=false;
 	
 	private List<Articolo> listaDegliArticoli;
+	
+	private List<Asta> listaAste;
+	
+	private String codiceFiscale;
 
+	public void cambiabutton() {
+		provabutton=true;
+	}
 	@PostConstruct
 	public void init() {
 		utente = new Utente();
+		codiceFiscale = new String();
+		trovaTutteLeAste();
+	}
+	
+	
+	public void pagaAsta(Asta astaDaPagare) {
+		utenteInterface.pagaAsta(loggedUtente,astaDaPagare.getPrezzoVenduto(),codiceFiscale);
+		System.out.println(codiceFiscale);
+	}
+	public StreamedContent scaricaPdf() {
+		//corrotto
+		StreamedContent a = null;
+		return a;
 	}
 	
 	public void trovaITuoiArticoli() {
 		try {
 			articolo=new Articolo();
-			articolo.setId_utente(loggedUtente.getIdUtente());
+			articolo.setIdUtente(loggedUtente.getIdUtente());
 			
 			listaDegliArticoli=articoloInterface.findArticoliUtente(articolo);
 		}catch(Exception e) {
@@ -72,14 +103,14 @@ public class UserBean implements Serializable {
 		}
 	}
 	
+	public void trovaTutteLeAste() {
+		listaAste= new ArrayList<Asta>();
+		listaAste=astaInterface.findAllAste();
+	}
 	
-
-	public void login() {
+	public void loginASpring() {
 		try {
-			System.out.println(utente.getEmail());
-
-			loggedUtente = utenteInterface.findByEmailPass(utente);
-			System.out.println("sei loggato come" + loggedUtente.toString());
+			loggedUtente=utenteInterface.loginSpring(loggedUtente, utente);
 			loggato = true;
 			showLogin = false;
 			showArticolo = false;
@@ -87,16 +118,42 @@ public class UserBean implements Serializable {
 			vediHome = true;
 			vediTutteLeAste = false;
 			showAsta = false;
-			if(utente.getPass().equalsIgnoreCase("admin")) {
-				System.out.println(utente+"è admin");
+			showOfferta=false;
+		    vediPaginaAdmin=false;
+			vediLeTueAsteVinte=false;
+			
+
+			trovaITuoiArticoli();
+		} catch (Exception e) {
+			e.printStackTrace();
+			
+		}
+	}
+
+	public void login() {
+		try {
+			loggedUtente=utenteInterface.loginSpring(loggedUtente, utente);
+			loggato = true;
+			showLogin = false;
+			showArticolo = false;
+			showRegister = false;
+			vediHome = true;
+			vediTutteLeAste = false;
+			showAsta = false;
+			showOfferta=false;
+		    vediPaginaAdmin=false;
+			vediLeTueAsteVinte=false;
+			if(utenteInterface.controllaRuolo(loggedUtente)) {
 				admin=true;
 			}
 
 			trovaITuoiArticoli();
 		} catch (Exception e) {
 			e.printStackTrace();
+			
 		}
 	}
+	
 
 	public void register() {
 
@@ -104,13 +161,16 @@ public class UserBean implements Serializable {
 		utenteInterface.insert(utente);
 		System.out.println("sto nel metodo register");
 		utente = new Utente();
-		loggato = false;
+		loggato = true;
 		showLogin = false;
-		showRegister = false;
 		showArticolo = false;
-		showAsta = false;
-		vediTutteLeAste = false;
+		showRegister = false;
 		vediHome = true;
+		vediTutteLeAste = false;
+		showAsta = false;
+		showOfferta=false;
+	    vediPaginaAdmin=false;
+	    vediLeTueAsteVinte=false;
 		System.out.println(showRegister + "register boolean");
 		System.out.println(showLogin + "login boolean");
 
@@ -131,22 +191,28 @@ public class UserBean implements Serializable {
 
 	public void vaiAlLogin() {
 		loggato = false;
+		admin=false;
 		showLogin = true;
-		showRegister = false;
 		showArticolo = false;
-		showAsta = false;
-		vediTutteLeAste = false;
+		showRegister = false;
 		vediHome = false;
+		vediTutteLeAste = false;
+		showAsta = false;
+		showOfferta=false;
+	    vediPaginaAdmin=false;
+	    vediLeTueAsteVinte=false;
 	}
 	
 	public void vediTutteLeTueAsteVinte() {
 		showLogin = false;
-		showRegister = false;
 		showArticolo = false;
-		showAsta = false;
-		vediTutteLeAste = false;
+		showRegister = false;
 		vediHome = false;
-		vediLeTueAsteVinte=true;
+		vediTutteLeAste = false;
+		showAsta = false;
+		showOfferta=false;
+	    vediPaginaAdmin=false;
+	    vediLeTueAsteVinte=true;
 	}
 	
 	public void logOut() {
@@ -164,51 +230,61 @@ public class UserBean implements Serializable {
 	}
 
 	public void vaiAlRegister() {
-		loggato = false;
+		admin=false;
+		loggato=false;
 		showLogin = false;
-		showRegister = true;
 		showArticolo = false;
-		showAsta = false;
-		vediTutteLeAste = false;
+		showRegister = true;
 		vediHome = false;
+		vediTutteLeAste = false;
+		showAsta = false;
+		showOfferta=false;
+	    vediPaginaAdmin=false;
+	    vediLeTueAsteVinte=false;
 	}
 
 	public void vaiAlCreaArticolo() {
 		loggato = true;
 		showLogin = false;
-		showRegister = false;
 		showArticolo = true;
-		showAsta = false;
-		vediTutteLeAste = false;
+		showRegister = false;
 		vediHome = false;
+		vediTutteLeAste = false;
+		showAsta = false;
+		showOfferta=false;
+	    vediPaginaAdmin=false;
+	    vediLeTueAsteVinte=false;
 	}
 
 	public void vediAsta() {
 		loggato = true;
 		showLogin = false;
-		showRegister = false;
 		showArticolo = false;
-		showAsta = true;
-		vediTutteLeAste = false;
+		showRegister = false;
 		vediHome = false;
+		vediTutteLeAste = false;
+		showAsta = true;
+		showOfferta=false;
+	    vediPaginaAdmin=false;
+	    vediLeTueAsteVinte=false;
 	}
 	public void vediOfferta() {
-		showOfferta=true;
 		showLogin = false;
-		showRegister = false;
 		showArticolo = false;
-		showAsta = false;
-		vediTutteLeAste = false;
+		showRegister = false;
 		vediHome = false;
+		vediTutteLeAste = false;
+		showAsta = false;
+		showOfferta=true;
+	    vediPaginaAdmin=false;
+	    vediLeTueAsteVinte=false;
 	}
 
 	public void creaArticoloo() {
-		System.out.println(loggedUtente.toString());
 		articoloBean.creaArticolo(loggedUtente.getIdUtente());
 	}
 
 	public void vediTutteAste() {
-		loggato = true;
 		showLogin = false;
 		showRegister = false;
 		showArticolo = false;
@@ -221,14 +297,14 @@ public class UserBean implements Serializable {
 
 	public void vaiAllaHome() {
 		showLogin = false;
-		showRegister = false;
 		showArticolo = false;
-		showAsta = false;
-		vediTutteLeAste = false;
+		showRegister = false;
 		vediHome = true;
+		vediTutteLeAste = false;
+		showAsta = false;
 		showOfferta=false;
-		vediLeTueAsteVinte=false;
-		vediPaginaAdmin=false;
+	    vediPaginaAdmin=false;
+	    vediLeTueAsteVinte=false;
 	}
 
 	public UtenteInterface getUtenteInterface() {
@@ -407,6 +483,33 @@ public class UserBean implements Serializable {
 	public void setShowOfferta(Boolean showOfferta) {
 		this.showOfferta = showOfferta;
 	}
-
+	
+	public AstaInterface getAstaInterface() {
+		return astaInterface;
+	}
+	public void setAstaInterface(AstaInterface astaInterface) {
+		this.astaInterface = astaInterface;
+	}
+	public List<Asta> getListaAste() {
+		return listaAste;
+	}
+	public void setListaAste(List<Asta> listaAste) {
+		this.listaAste = listaAste;
+	}
+	
+	public String getCodiceFiscale() {
+		return codiceFiscale;
+	}
+	public void setCodiceFiscale(String codiceFiscale) {
+		this.codiceFiscale = codiceFiscale;
+	}
+	public Boolean getProvabutton() {
+		return provabutton;
+	}
+	public void setProvabutton(Boolean provabutton) {
+		this.provabutton = provabutton;
+	}
+	
+  
 	
 }
