@@ -4,8 +4,7 @@ public final class CostantiEmail {
 
 	
 	public final static String HOST="smtp.gmail.com";
-	public final static String USER="provajavaemailexolab@gmail.com";
-	public final static String PASSWORD="megbtzwvgqsqlnyk";
+	
 	public final static String EMAILDESTINATARIO="provajavaemailexolab@gmail.com";
 	
 	public final static String SMTPHOST="mail.smtp.host";
