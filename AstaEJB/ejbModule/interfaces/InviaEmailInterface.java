@@ -27,4 +27,6 @@ public interface InviaEmailInterface {
 	public void inviaAstaVintaPdf(Asta asta, Utente utenteLoggato,Boolean sceltaPdf);
 	
 	public StreamedContent salvaInLocal(List<String> pdfScelti, Utente utenteLoggato,Boolean sceltaPdf) ;
+	
+	public void creaPdfAstaConPdfLib();
 }

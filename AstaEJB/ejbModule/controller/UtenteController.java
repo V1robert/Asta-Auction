@@ -5,7 +5,7 @@ import java.util.List;
 import javax.ejb.LocalBean;
 import javax.ejb.Stateless;
 
-import client.ServiceDelClient;
+import clientUtils.ServiceDelClient;
 import costanti.CostantiUtenteController;
 import crud.UtenteCrud;
 import dto.UtenteDto;
@@ -185,6 +185,8 @@ public class UtenteController implements UtenteInterface {
 		utente.setCodiceFiscale(cf);
 		return utente;
 	}
+	
+	
 
 	
 	

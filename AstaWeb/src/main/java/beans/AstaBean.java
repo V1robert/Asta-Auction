@@ -142,6 +142,10 @@ public class AstaBean implements Serializable {
 		}
 
 	}
+	
+	public void scaricaAstaPdfLib() {
+		inviaEmailInterface.creaPdfAstaConPdfLib();
+	}
 
 	/*
 	 * public DefaultStreamedContent creaFoto(byte[] foto) {

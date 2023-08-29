@@ -1,0 +1,16 @@
+#file per poter cambiare valori all interno del programma 
+#utilizzare # per aggiungere commenti che java non legga 
+#commento di prova 
+
+#Titolo del pdf :
+gran bel pdf
+#Posizione della table x
+500
+#Posizione della table y
+700
+
+
+
+
+
+

@@ -4,6 +4,7 @@ import java.util.Date;
 import java.util.List;
 
 import javax.ejb.LocalBean;
+import javax.ejb.Schedule;
 import javax.ejb.Stateless;
 
 import crud.AstaCrud;
@@ -66,10 +67,9 @@ public class AstaController implements AstaInterface {
 		// TODO Auto-generated method stub
 		return null;
 	}
-
-	@Override
-	public List<Asta> findAllAste() {
-		System.out.println("findAllLista aste --> ");
+	//@Schedule(second= "", minute = "/1", hour = "*", persistent = false)
+	public void controllaChiusuraAste() {
+		System.out.println("chiusura aste --> ");
 		try {
 			SqlMapFactory.instance().openSession();
 			AstaMapping mapper = SqlMapFactory.instance().getMapper(AstaMapping.class);
@@ -113,6 +113,25 @@ public class AstaController implements AstaInterface {
 				}
 
 			}
+
+		} catch (Exception e) {
+			e.printStackTrace();
+			SqlMapFactory.instance().rollbackSession();
+		} finally {
+			SqlMapFactory.instance().closeSession();
+		}
+	}
+	
+
+	@Override
+	public List<Asta> findAllAste() {
+		System.out.println("findAllLista aste --> ");
+		try {
+			SqlMapFactory.instance().openSession();
+			AstaMapping mapper = SqlMapFactory.instance().getMapper(AstaMapping.class);
+			AstaCrud astaCrud = new AstaCrud();
+			List<Asta> aste = astaCrud.findAllAste(mapper);
+			SqlMapFactory.instance().commitSession();
 
 			return aste;
 		} catch (Exception e) {

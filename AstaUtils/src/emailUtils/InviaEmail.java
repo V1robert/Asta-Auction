@@ -1,4 +1,4 @@
-package inviaEmail;
+package emailUtils;
 
 import java.util.HashMap;
 import java.util.Properties;
@@ -17,8 +17,8 @@ import javax.mail.util.ByteArrayDataSource;
 
 import models.Asta;
 import models.Utente;
+import pdfUtils.SendPDF;
 import costanti.CostantiEmail;
-import inviapdf.SendPDF;
 
 public class InviaEmail {
 

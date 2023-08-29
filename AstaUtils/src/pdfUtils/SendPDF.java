@@ -1,4 +1,4 @@
-package inviapdf;
+package pdfUtils;
 
 import java.awt.Color;
 import java.io.ByteArrayOutputStream;

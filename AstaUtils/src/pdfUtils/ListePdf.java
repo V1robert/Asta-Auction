@@ -1,4 +1,4 @@
-package inviapdf;
+package pdfUtils;
 
 import java.util.List;
 

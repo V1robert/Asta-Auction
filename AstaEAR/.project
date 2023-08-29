@@ -6,6 +6,7 @@
 		<project>AstaWeb</project>
 		<project>AstajsfDB</project>
 		<project>AstaEJB</project>
+		<project>AstaUtils</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>

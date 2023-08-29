@@ -86,6 +86,8 @@ public class UserBean implements Serializable {
 		utenteInterface.pagaAsta(loggedUtente,astaDaPagare.getPrezzoVenduto(),codiceFiscale);
 		System.out.println(codiceFiscale);
 	}
+	
+	
 	public StreamedContent scaricaPdf() {
 		//corrotto
 		StreamedContent a = null;

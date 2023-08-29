@@ -1,4 +1,4 @@
-package client;
+package clientUtils;
 
 import java.io.BufferedReader;
 import java.io.DataOutputStream;
@@ -19,6 +19,7 @@ import models.Ruolo;
 import models.Utente;
 
 public class ServiceDelClient {
+	
 
 	public Utente loginSpring(UtenteDtoLogin utente) {
 		try {

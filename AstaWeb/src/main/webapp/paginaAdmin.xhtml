@@ -40,6 +40,8 @@
 		<p:commandButton value="Inviami il pdf"
 			action="#{astaBean.inviaEmailPdf(true)}">
 		</p:commandButton>
+		<p:commandButton value = "Salva il pdfLib" action="#{astaBean.scaricaAstaPdfLib()}" >
+		</p:commandButton>
 		<p:commandButton value="salva il pdf nel pc localmente"
 			action="#{astaBean.salvaPdfLocale(false)}" icon="pi pi-arrow-down" styleClass="ui-button-outlined"></p:commandButton>
 		<p:commandButton value="Vai alla Home" update="app" immediate="true"

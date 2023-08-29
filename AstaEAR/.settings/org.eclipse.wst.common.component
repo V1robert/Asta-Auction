@@ -1,128 +1,276 @@
 <?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
-                
+                                
+    
+    
+    
+    
     
     
     <wb-module deploy-name="AstaEAR">
-                                
+                                                                
+        
+        
+        
+        
         
         
         <wb-resource deploy-path="/" source-path="/EarContent" tag="defaultRootSource"/>
-                                
+                                                                
+        
+        
+        
+        
         
         
         <dependent-module archiveName="AstaWeb.war" deploy-path="/" handle="module:/resource/AstaWeb/AstaWeb">
-                                                
+                                                                                                
+            
+            
+            
+            
             
             
             <dependency-type>uses</dependency-type>
-                                            
+                                                                                            
+        
+        
+        
+        
         
         
         </dependent-module>
-                                
+                                                                
+        
+        
+        
+        
         
         
         <dependent-module archiveName="AstajsfDB.jar" deploy-path="/lib" handle="module:/resource/AstajsfDB/AstajsfDB">
-                                                
+                                                                                                
+            
+            
+            
+            
             
             
             <dependency-type>uses</dependency-type>
-                                            
+                                                                                            
+        
+        
+        
+        
         
         
         </dependent-module>
-                                
+                                                                
+        
+        
+        
+        
         
         
         <dependent-module archiveName="AstaEJB.jar" deploy-path="/" handle="module:/resource/AstaEJB/AstaEJB">
-                                                
+                                                                                                
+            
+            
+            
+            
             
             
             <dependency-type>uses</dependency-type>
-                                            
+                                                                                            
+        
+        
+        
+        
         
         
         </dependent-module>
-                                
+                                                                
+        
+        
+        
+        
         
         
         <dependent-module archiveName="openpdf-1.3.30.jar" deploy-path="/lib" handle="module:/classpath/lib/C:/dev/jars/Openpdf/openpdf-1.3.30.jar">
-                                                
+                                                                                                
+            
+            
+            
+            
             
             
             <dependency-type>uses</dependency-type>
-                                            
+                                                                                            
+        
+        
+        
+        
         
         
         </dependent-module>
-                                
+                                                                
+        
+        
+        
+        
         
         
         <dependent-module archiveName="mybatis-3.5.5.jar" deploy-path="/lib" handle="module:/classpath/lib/C:/dev/jars/mybatis-3.5.5.jar">
-                                                
+                                                                                                
+            
+            
+            
+            
             
             
             <dependency-type>uses</dependency-type>
-                                            
+                                                                                            
+        
+        
+        
+        
         
         
         </dependent-module>
-                                
+                                                                
+        
+        
+        
+        
         
         
         <dependent-module archiveName="javax.mail.jar" deploy-path="/lib" handle="module:/classpath/lib/C:/dev/jars/javax.mail.jar">
-                                                
+                                                                                                
+            
+            
+            
+            
             
             
             <dependency-type>uses</dependency-type>
-                                            
+                                                                                            
+        
+        
+        
+        
         
         
         </dependent-module>
-                                
+                                                                
+        
+        
+        
+        
         
         
         <dependent-module archiveName="mysql-connector-java-5.1.46.jar" deploy-path="/lib" handle="module:/classpath/lib/C:/dev/jars/mysql-connector-java-5.1.46.jar">
-                                                
+                                                                                                
+            
+            
+            
+            
             
             
             <dependency-type>uses</dependency-type>
-                                            
+                                                                                            
+        
+        
+        
+        
         
         
         </dependent-module>
-                                
+                                                                
+        
+        
+        
+        
         
         
         <dependent-module archiveName="mail.jar" deploy-path="/lib" handle="module:/classpath/lib/C:/dev/jars/mail.jar">
-                                                
+                                                                                                
+            
+            
+            
+            
             
             
             <dependency-type>uses</dependency-type>
-                                            
+                                                                                            
+        
+        
+        
+        
         
         
         </dependent-module>
-                                
+                                                                
+        
+        
+        
+        
         
         
         <dependent-module archiveName="jsr305-3.0.2.jar" deploy-path="/lib" handle="module:/classpath/lib/C:/dev/jars/Openpdf/jsr305-3.0.2.jar">
-                                                
+                                                                                                
+            
+            
+            
+            
             
             
             <dependency-type>uses</dependency-type>
-                                            
+                                                                                            
+        
+        
+        
+        
         
         
         </dependent-module>
+                                        
+        
+        
+        
         <dependent-module archiveName="primefaces-10.0.0.jar" deploy-path="/lib" handle="module:/classpath/lib/C:/dev/jars/primefaces-10.0.0.jar">
+                                                            
+            
+            
+            
+            <dependency-type>uses</dependency-type>
+                                                        
+        
+        
+        
+        </dependent-module>
+                        
+        
+        <dependent-module archiveName="pdflib.jar" deploy-path="/lib" handle="module:/classpath/lib/C:/dev/jars/PDFlib-10.0.1-Windows-x64-java/bind/java/pdflib.jar">
+                                    
+            
+            <dependency-type>uses</dependency-type>
+                                
+        
+        </dependent-module>
+        <dependent-module archiveName="AstaUtils.jar" deploy-path="/lib" handle="module:/resource/AstaUtils/AstaUtils">
             <dependency-type>uses</dependency-type>
         </dependent-module>
-                            
+                                                            
+    
+    
+    
+    
     
     
     </wb-module>
-            
+                            
+
+
+
+
 
 
 </project-modules>
