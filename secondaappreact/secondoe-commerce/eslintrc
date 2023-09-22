@@ -1,0 +1,79 @@
+{
+    "env": {
+        "browser": true,
+        "es6": true,
+        "jest": true
+    },
+    "extends": [
+        "standard",
+        "standard-jsx",
+        "standard-react",
+        "plugin:json/recommended",
+        "plugin:testing-library/recommended",
+        "prettier"
+    ],
+    "parser": "babel-eslint",
+    "parserOptions": {
+        "ecmaVersion": 2018,
+        "sourceType": "module"
+    },
+    "plugins": [
+        "react",
+        "babel",
+        "html",
+        "json",
+        "testing-library"
+    ],
+    "ignorePatterns": [
+        "test-report"
+    ],
+    "rules": {
+        "no-void": "off",
+        "react/jsx-uses-react": "error",
+        "react/jsx-uses-vars": "error",
+        "react/no-unknown-property": "warn",
+        "react/prop-types": [
+            0
+        ],
+        "generator-star-spacing": [
+            "error",
+            {
+                "before": false,
+                "after": true
+            }
+        ],
+        "react/prefer-stateless-function": [
+            0
+        ],
+        "react/jsx-indent": [
+            "off",
+            4
+        ],
+        "react/jsx-closing-bracket-location": [
+            0,
+            {
+                "selfClosing": "after-props"
+            }
+        ],
+        "react/jsx-closing-tag-location": "off",
+        "react/jsx-indent-props": [
+            "off",
+            4
+        ],
+        "indent": [
+            "off",
+            4
+        ],
+        "space-before-function-paren": [
+            "off"
+        ],
+        "new-cap": [
+            "warn",
+            {
+                "newIsCapExceptions": [
+                    "memo"
+                ]
+            }
+        ]
+    }
+}
