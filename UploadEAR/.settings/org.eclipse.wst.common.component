@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
+                        
+    
+    
+    
+    
+    <wb-module deploy-name="UploadEAR">
+                                                
+        
+        
+        
+        
+        <wb-resource deploy-path="/" source-path="/EarContent" tag="defaultRootSource"/>
+                                                
+        
+        
+        
+        
+        <dependent-module archiveName="UploadWEB.war" deploy-path="/" handle="module:/resource/UploadWEB/UploadWEB">
+                                                                        
+            
+            
+            
+            
+            <dependent-object/>
+                                                                        
+            
+            
+            
+            
+            <dependency-type>uses</dependency-type>
+                                                                    
+        
+        
+        
+        
+        </dependent-module>
+                                                
+        
+        
+        
+        
+        <dependent-module archiveName="UploadEJB.jar" deploy-path="/" handle="module:/resource/UploadEJB/UploadEJB">
+                                                                        
+            
+            
+            
+            
+            <dependent-object/>
+                                                                        
+            
+            
+            
+            
+            <dependency-type>uses</dependency-type>
+                                                                    
+        
+        
+        
+        
+        </dependent-module>
+                                
+        
+        
+        <dependent-module archiveName="commons-compress-1.19.jar" deploy-path="/" handle="module:/classpath/lib/C:/dev/jars/commons-compress-1.19.jar">
+                                                
+            
+            
+            <dependent-object/>
+                                                
+            
+            
+            <dependency-type>uses</dependency-type>
+                                            
+        
+        
+        </dependent-module>
+                                
+        
+        
+        <dependent-module archiveName="platform-0.5.10.jar" deploy-path="/lib" handle="module:/classpath/lib/C:/dev/jars/platform-0.5.10.jar">
+                                                
+            
+            
+            <dependency-type>uses</dependency-type>
+                                            
+        
+        
+        </dependent-module>
+                                
+        
+        
+        <dependent-module archiveName="xz-1.9.jar" deploy-path="/lib" handle="module:/classpath/lib/C:/dev/jars/xz-1.9.jar">
+                                                
+            
+            
+            <dependency-type>uses</dependency-type>
+                                            
+        
+        
+        </dependent-module>
+                        
+        
+        <dependent-module archiveName="slf4j-api-2.0.6.jar" deploy-path="/lib" handle="module:/classpath/lib/C:/dev/jars/junrar/slf4j-api-2.0.6.jar">
+                                    
+            
+            <dependency-type>uses</dependency-type>
+                                
+        
+        </dependent-module>
+                        
+        
+        <dependent-module archiveName="junrar-7.5.5.jar" deploy-path="/lib" handle="module:/classpath/lib/C:/dev/jars/junrar/junrar-7.5.5.jar">
+                                    
+            
+            <dependency-type>uses</dependency-type>
+                                
+        
+        </dependent-module>
+                
+        <dependent-module archiveName="log4j-1.2-api-2.20.0.jar" deploy-path="/lib" handle="module:/classpath/lib/C:/dev/jars/log4j-1.2-api-2.20.0.jar">
+                        
+            <dependency-type>uses</dependency-type>
+                    
+        </dependent-module>
+        <dependent-module archiveName="lombok.jar" deploy-path="/" handle="module:/classpath/lib/C:/dev/jars/lombok.jar">
+            <dependent-object/>
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+                                            
+    
+    
+    
+    
+    </wb-module>
+                    
+
+
+
+
+</project-modules>

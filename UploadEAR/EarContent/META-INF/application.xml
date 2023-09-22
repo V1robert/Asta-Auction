@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<application xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:application="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://java.sun.com/xml/ns/javaee/application_5.xsd" id="Application_ID" version="8">
+  <display-name>UploadEAR</display-name>
+  <module>
+    <web>
+      <web-uri>UploadWEB.war</web-uri>
+      <context-root>UploadWEB</context-root>
+    </web>
+  </module>
+  <module>
+    <ejb>UploadEJB.jar</ejb>
+  </module>
+  <module>
+    <java>commons-compress-1.19.jar</java>
+  </module>
+  <module>
+    <java>lombok.jar</java>
+  </module>
+</application>
